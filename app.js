@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:false}));
 app.set('view engine', 'ejs');
 app.set('views',__dirname, '/View');
 
-app.use(require('./Routes/login.routes.js'))
+app.use(require('./Routes/menu.routes.js'))
 
 
 
