@@ -12,12 +12,7 @@ app.set('views',__dirname, '/View');
 
 app.use(require('./Routes/menu.routes.js'))
 
-
-
-
-app.get('/', (req, res) => {
-    res.send('Hola mundo')
-})
+app.use(require('./Routes/user.routes.js'))
 
 
 
