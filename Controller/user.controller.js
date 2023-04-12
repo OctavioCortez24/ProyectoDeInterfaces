@@ -5,6 +5,9 @@ const modelo=require('../Model/user.model')
 controller.login =(request, response) => {
     response.render('./View/login');
 }
+controller.loginPost=(request, response) => {
+    
+}
 
 //Registro
 controller.register =(request, response) => {
@@ -13,7 +16,7 @@ controller.register =(request, response) => {
 controller.registerPost=(request, response) => {
 
     modelo.saveUser(request.body)
-    response.redirect('/')
+    response.redirect('/menu')
 }
 
 module.exports=controller;

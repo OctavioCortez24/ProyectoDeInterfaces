@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>A continuacion llene los campos correspondientes</h1>
+    <legend>Informacion Personal</legend>
+
+    <form action="http://localhost:3000/ConsultaPost" method="post">
+        <div class="mb-3">
+
+
+            <label for="nombre " class="form-label">Nombre:</label>
+            <input type="text " name="nombre " class="form-control" placeholder=" Tu Nombre ">
+        </div>
+        <div class="mb-3">
+            <label for="email " class="form-label">E-mail:</label>
+            <input type="email " class="form-control" name="email " placeholder="Tu Correo Electronico ">
+        </div>
+        <div class="mb-3">
+            <label for="telefono ">Telefono:</label>
+            <input type="tel " class="form-control" name="telefono " placeholder="Tu telefono ">
+        </div>
+
+        <div class="mb-3">
+            <label for="mensaje " class="form-label">Mensaje:</label>
+            <textarea name="mensaje " class="form-control"></textarea>
+        </div>
+
+
+        <input type="submit" value="enviar consulta">
+
+    </form>
+    <br>
+    <a class="btn btn-primary" href="http://localhost:3000/menu">volver</a>
+</body>
+
+</html>

@@ -1,16 +1,85 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hola Archivo de login</h1>
-    <input type="text" placeholder="Username" name="user"><br> <br>
-    <input type="text" placeholder="Password" name="password">
-    <p><input type="submit" name="Enviar" id="Enviar"></p>
-</body>
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/blogs/31115/images/b0qlzF7SuOWwSVzq6Kiy_Atraer-clientes-a-tu-farmacia-1080x675.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    .contenedor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #333333;
+    }
+
+    form {
+    display: flex;
+    flex-direction: column;
+    }
+
+    label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    }
+
+    button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+    background-color: #3e8e41;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="wave-container">
+      <div class="wave"></div>
+      <div class="contenedor">
+        <h1>Iniciar sesión</h1>
+        <form action="bienvenida.html">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" required>
+
+          <label for="contraseña">Contraseña</label>
+          <input type="password" id="contraseña" name="contraseña" required>
+
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
