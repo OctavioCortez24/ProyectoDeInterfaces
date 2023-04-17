@@ -1,7 +1,9 @@
 const modelo = {};
+const modeloA={};
 const Clases = require('../Class')
 const GoogleSheet = require('./Google Sheet/GoogleSheet.js')
 var users = []
+var alquiler=[]
 
 const loadUsers = async () => {
     const registros = await GoogleSheet.requerirRegistros(0);
@@ -40,6 +42,16 @@ modelo.saveUser = (atributosUsuario) => {
         console.log('No se guardo porque hay uno igual');
     }
 
+}
+// creo funcion para crar el objeto de solicitud de alquiler
+modeloA.guardarPeticion =(atributosAlquiler)=>{
+var nombre =atributosAlquiler.nombre;
+var Email=atributosAlquiler.email;
+var telefono=atributosAlquiler.telefono;
+var cars=atributosAlquiler.tipoDeAutomovil;
+var fechaA=atributosAlquiler.fechaDeAdquisicion;
+var fechaD=atributosAlquiler-dechaDeDevolucion;
+var alquilerCars = new Clases.alquiler(nombre,Email,telefono,cars,fechaA,fechaD)
 }
 
 
