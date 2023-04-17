@@ -35,6 +35,26 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #0026ff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+
     input[type="text"],
     input[type="email"],
     input[type="date"],
@@ -68,6 +88,7 @@
   </style>
 </head>
 <body>
+  <a href="http://localhost:3000"><button onclick="goBack()" class="back-button"><span class="arrow">&#8592;</span> Volver</button></a>
   <div class="Contenedor">
   <h1>Registro</h1>
   <form action="http://localhost:3000/registerPost" method="post">
