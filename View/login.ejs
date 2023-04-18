@@ -126,11 +126,11 @@
   <a href="http://localhost:3000"><button onclick="goBack()" class="back-button"><span class="arrow">&#8592;</span> Volver</button></a>
   <div class="contenedor">
     <h1>Inicio de sesión</h1>
-    <form>
+    <form action="http://localhost:3000/loginPost" method="post">
       <label for="username">Nombre de usuario:</label>
-      <input type="text" id="username" name="username">
+      <input type="text" name="username">
       <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password">
+      <input type="password" name="password">
       <input type="submit" value="Iniciar sesión">
     </form>
     <p>¿No tienes una cuenta? <a href="http://localhost:3000/register">Regístrate aquí</a>.</p>
