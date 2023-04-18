@@ -44,14 +44,15 @@ modelo.saveUser = (atributosUsuario) => {
 
 }
 // creo funcion para crar el objeto de solicitud de alquiler
-modeloA.guardarPeticion =(atributosAlquiler)=>{
+modeloA.guardarAqiler =(atributosAlquiler)=>{
 var nombre =atributosAlquiler.nombre;
 var Email=atributosAlquiler.email;
 var telefono=atributosAlquiler.telefono;
 var cars=atributosAlquiler.tipoDeAutomovil;
-var fechaA=atributosAlquiler.fechaDeAdquisicion;
-var fechaD=atributosAlquiler-dechaDeDevolucion;
+var fechaA=atributosAlquiler.fechaA;
+var fechaD=atributosAlquiler.fechaD;
 var alquilerCars = new Clases.alquiler(nombre,Email,telefono,cars,fechaA,fechaD)
+alquiler.push(alquilerCars);
 }
 
 
