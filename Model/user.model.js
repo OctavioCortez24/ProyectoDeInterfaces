@@ -48,4 +48,16 @@ async function saveUserGoogleSheet(user) {
     var numeroHoja = 0;//Es la hoja en la cual se van a guardar los datos
     await GoogleSheet.guardarDatos(numeroHoja, objeto);
 }
+
+modelo.validacion=function comprobarDatos(email, password){
+    var validacion=false;
+    for(var i=0;i<users.length;i++){
+       if(users[i].email==email && users[i].password==password){
+        validacion=true;
+        break;
+       }
+    }
+
+    return validacion;
+}
 module.exports = modelo;

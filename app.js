@@ -1,18 +1,48 @@
 const express= require('express');
 const app= express();
-const path= require('path');
-
+const passport= require('passport');
+const cookieParser= require('cookie-parser');
+const session=require('express-session');
+const PassportLocal=require('passport-local').Strategy;
 const port = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+
+app.use(cookieParser('secreto'));
+
+app.use(session({
+    secret:'Secreto',
+    resave: true,
+    saveUninitialized:true
+}))
+app.use(passport.initialize());
+app.use(passport.session());
  
-app.set('view engine', 'ejs');
-app.set('views',__dirname, '/View');
+const modeloUser=require('./Model/user.model') //Quitar esto Despues
 
-app.use(require('./Routes/menu.routes.js'))
+passport.use(new PassportLocal(function(username, password, done){
+var validation=modeloUser.validacion(username, password);
+if(validation){
+    return done(null,{id:1, name:"test"})
+}else{
+    done(null, false)
+}
+}))
 
-app.use(require('./Routes/user.routes.js'))
+passport.serializeUser(function(user, done){
+    done(null, user.id)
+})
+
+passport.deserializeUser(function(id, done){
+    done(null, id)
+})
+app.set('view engine', 'ejs');//Motor de vista
+app.set('views',__dirname, '/View');//Direccion de la carpetas con las vistas
+
+app.use(require('./Routes/menu.routes.js'))//Rutas del menu
+
+app.use(require('./Routes/user.routes.js'))//Rutas del usuario
 
 
 
