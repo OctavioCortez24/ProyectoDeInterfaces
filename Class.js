@@ -17,5 +17,29 @@ class user{
     setDateOfBirth(dateOfBirth){this.dateOfBirth=dateOfBirth;}
     getDateOfBirth(){return this.dateOfBirth;}
 }
+// creo clases para el alquilr de vehiculos Lunes 17/4
+class alquiler{
+    constructor(nombre,email,telefono,tipoDeAutomovil,fechaAdquisitiva,fechaDevolucion){
+this.nombre=nombre;
+this.email=email;
+this.telefono=telefono;
+this.tipoDeAutomovil=tipoDeAutomovil;
+this.fechaAdquisitiva=fechaAdquisitiva;
+this.fechaDevolucion=fechaDevolucion;
 
-module.exports={user}
+    }
+setNombre(nombre){this.nombre=nombre;}
+getNombre(){return this.nombre;}
+setEmail(email){this.email=email;}
+getEmail(){return this.email;}
+setTelefono(telefono){this.telefono=telefono}
+getTelefono(){return this.telefono;}
+setTipoDeAutomovil(tipoDeAutomovil){this.tipoDeAutomovil=tipoDeAutomovil}
+getTipoDeAutomovil(){return this.tipoDeAutomovil}
+setFechaAdquisitiva(fechaAdquisitiva){this.fechaAdquisitiva=fechaAdquisitiva}
+getFechaAdquisitiva(){return this.fechaAdquisitiva}
+setFechaDevolucion(fechaDevolucion){this.fecha=fechaDevolucion}
+getFechaDevolucion(){return this.fecha}
+
+}
+module.exports={user,alquiler}

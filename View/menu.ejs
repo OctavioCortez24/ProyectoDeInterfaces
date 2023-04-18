@@ -1,13 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: space-between;
+      /* Cambia el valor de justify-content para que los botones estén alineados a los extremos */
+      align-items: center;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .login-button {
+      background-color: #9ACD32;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-right: auto;
+      /* Alinea el botón de inicio de sesión a la izquierda */
+    }
+
+    .register-button {
+      background-color: #9ACD32;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      margin-left: auto;
+      /* Alinea el botón de registro a la derecha */
+    }
+
+    .title {
+      color: rgb(0, 0, 0);
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin: 0 auto;
+      /* Centra el título en la barra */
+    }
+
+    .car-images {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .car-image {
+      width: 30%;
+      margin-right: 20px;
+    }
+
+    .car-image img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
+
 <body>
-    <a href="http://localhost:3000/login">Iniciar Sesión</a><br>
-    <a href="http://localhost:3000/register">Registrarse</a>
+  <div class="buttons-container">
+    <a href="http://localhost:3000/login" class="login-button">Iniciar Sesión</a>
+    <h1 class="title">CONCESIONARIA</h1>
+    <a href="http://localhost:3000/register" class="register-button">Registrarse</a>
+  </div>
+  <div class="car-images">
+    <div class="car-image">
+      <h2 class="image-title">Oficinas</h2>
+      <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Auto 1" />
+    </div>
+    <div class="car-image">
+      <h2 class="image-title">Contactanos</h2>
+      <img src="https://media.istockphoto.com/id/1249239369/es/foto/hombre-usando-su-tel%C3%A9fono-m%C3%B3vil-al-aire-libre.jpg?s=612x612&w=0&k=20&c=V8Hn0BAhIgXw040gTSY0gvr3t9Tp-sCUMRIWlqUVY4I=" alt="Auto 2" />
+    </div>
+    <div class="car-image">
+      <h2 class="image-title">Autos</h2>
+      <img src="https://cdn.pixabay.com/photo/2015/07/11/23/13/mercedes-benz-841465_960_720.jpg" alt="Auto 3" />
+    </div>
+  </div>
 </body>
+
 </html>
