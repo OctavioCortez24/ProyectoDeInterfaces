@@ -1,23 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>farmcia.online</title>
-    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>CONCESIONARIA</title>
+    <style>
+        /* Centra los divs en el medio de la página */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://cdn.pixabay.com/photo/2017/11/09/17/06/porsche-turbo-2934071_960_720.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-top: 8px;
+            background-color: rgba(0, 0, 0, 0.363);
+            padding: 2%;
+            border-radius: 300px;
+        }
+
+        /* Agrega espacio horizontal entre los divs */
+        .image-wrapper:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        /* Estilo para el contenedor de la imagen y el enlace */
+        .image-container {
+            position: relative;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 640px;
+        }
+
+        .Titulo1,
+        .Titulo2 {
+            display: block;
+        }
+
+
+        /* Estilo para la imagen */
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: none;
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        /* Efecto hover en la imagen */
+        .image-container:hover img {
+            transform: scale(1.2);
+        }
+
+        .Titulo1,
+        .Titulo2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+            box-sizing: border-box;
+        }
+
+        /* Estilo para el enlace */
+        .image-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            margin-right: 20px;
+        }
+
+        .back-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #f9f9f95b;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .arrow {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        
+    </style>
 </head>
-<body style="background-color:rgb(227, 214, 214) ;">
-    <h1>Concesonaria Cars </h1>
-    <h3>cars.com</h3>
-    
-<div class="navbar navbar-expand-lg bg-light">
-    <nav class="nav nav-tabs">
-        <a class="nav-link active" aria-current="page" href="">Comprar</a>
-        <a class="nav-link active" aria-current="page" href="http://localhost:3000/Consulta">Alquiler</a>
-        <a class="nav-link active" aria-current="page" href="">Otros</a>
-    </nav>
-</div>
-<img src=https://i0.wp.com/pymesenlaweb.com/wp-content/uploads/2019/12/consulta-gratis-scaled.jpg?resize=1024%2C443&ssl=1"">
+
+<body>
+    <a href="Menu.html"><button onclick="goBack()" class="back-button"><span class="arrow">&#8592;</span>Volver</button></a>
+    <div style="background-color: #ffffff62; padding: 20px; display: flex; flex-direction: row; margin-top: 50px;">
+        <H1>CONCESIONARIA</H1>
+        <div class="image-container">
+            <img src="https://cdn.pixabay.com/photo/2018/04/15/07/55/car-3321032_960_720.jpg" alt="Comprar">
+            <div class="Titulo1">Comprar</div>
+            <a class="image-link" href=""></a>
+        </div>
+
+        <div class="image-container">
+            <img src="https://media.istockphoto.com/id/1057946590/es/foto/vendedor-profesional-durante-el-trabajo-con-el-cliente-en-el-concesionario.jpg?b=1&s=170667a&w=0&k=20&c=xLvR32a4eNMlWgj_84uyf3KKvdQ6ju9kLyNPMm9-7fg="
+                alt="Alquilar">
+            <div class="Titulo2">Alquilar</div>
+            <a class="image-link" href="http://localhost:3000/Consulta"></a>
+        </div>
+    </div>
 </body>
+
 </html>
