@@ -7,6 +7,7 @@ const controller=require('../Controller/menu.controller')
 router.get('/', controller.menu)
 router.get('/menu', controller.menuPrincipal)
 router.get('/Consulta', controller.Consulta)
+router.get('/compras',controller.compras)
 router.post('/ConsultaPost',controller.ConsultaPost)
 
 module.exports=router;

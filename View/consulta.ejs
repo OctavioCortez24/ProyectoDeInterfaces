@@ -16,10 +16,8 @@
 
     <form action="http://localhost:3000/ConsultaPost" method="post">
         <div class="mb-3">
-
-
-            <label for="nombre " class="form-label">Nombre:</label>
-            <input type="text " name="nombre " class="form-control" placeholder=" Tu Nombre ">
+            <label for="search">Usuario</label>
+          <input type="search" name="buscar"  placeholder="buscar cliente">
         </div>
         <div class="mb-3">
             <label for="email " class="form-label">E-mail:</label>
@@ -29,13 +27,22 @@
             <label for="telefono ">Telefono:</label>
             <input type="tel " class="form-control" name="telefono " placeholder="Tu telefono ">
         </div>
-
         <div class="mb-3">
-            <label for="telefono ">tipo de vehiculo:</label>
+            <label for="telefono ">foto Carnet</label>
+            <input type="file" name="fil">
+        </div>
+        <div class="mb-3">
+            <label for="telefono ">Certificado de Aptitud fisica</label>
+            <input type="file" name="fil">
+        </div>
+       
+        <div class="mb-3">
+            <label for="telefono ">Lugar de entrega:</label>
              <select name="tipoDeAutomovil" >
-                <option selected >Selecione el tipo de vehiculo</option>
-                <option value="Auto" >Auto</option>
-                <option value="Camioneta" >Camioneta</option>
+                <option selected >Selecione el Lugar de Entrega</option>
+                <option value="Aeropueto de Mendoza" >Aeropueto de Mendoza</option>
+                <option value="Concesionaria Oficial" >Concesionaria Oficial</option>
+                <option value="Terminal de Omnibus de Mendoza" >Terminal de Omnibus de Mendoza</option>
              </select>
         </div>
         <div class="mb-3">
@@ -46,7 +53,35 @@
             <label for="telefono "> Devolucion :</label>
             <p><label>Fecha</label><label class="col-sm-2 col-form-label"><input type="date" name="fechaD" class="form-control"></label></p>
         </div>
-        <input type="submit" value="enviar consulta">
+        <div class="mb-3">
+            <p>Selecione el tipo de vehiculo</p>
+            <input id="one" type="radio" name="vehiculo">
+            <label for="one">Toyota Hilux 4x4 D/C- 4000$/dia <img src="https://autotest.com.ar/wp-content/uploads/2020/10/TOYOTA-HILUX-2021-2.jpg" width="150px"></label>
+            <br>
+            <input id="two" type="radio" name="vehiculo">
+            <label for="two">Toyota Hilux 4x4 D/C- 3500$/dia <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwtePQJ8WiPbsZZHRHYUiw1JwtMtpkPx6bzQ&usqp=CAU" width="150px"></label>
+            <br>
+            <input id="three" type="radio" name="vehiculo">
+            <label for="three">Toyota Corolla 5/P FULL- 3000$/dia <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCqBepW_1Z4Wu2AhDmwicgePQfLTJPLXifYA&usqp=CAU" width="150px"></label>
+            <br>
+            <input id="Four" type="radio" name="vehiculo">
+            <label for="Four">Chevrolet Cruze 5/P- 3000$/dia <img src="https://cdn.motor1.com/images/mgl/2P3KE/s1/restyling-todo-lo-que-cambiara-en-el-chevrolet-cruze-2019.webp" width="150px"></label>
+            <br>
+            <input id="five" type="radio" name="vehiculo">
+            <label for="five">Chevrolet Camaro 5/p- 4000$/dia <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07oJm9FmCPi5ORdQ8TPGB-DI13YLwBfM3ZA&usqp=CAU" width="150px"></label>
+
+        </div>
+        <div class="mb-3">
+            <label for="telefono ">Pago</label>
+            <p><label>Titular de la Tarjeta</label><label class="col-sm-2 col-form-label"><input type="text" name="" class="form-control" placeholder="Nombre del tiular"></label></p>
+            <p><label>Numero de Tarjeta</label><label class="col-sm-2 col-form-label"><input type="number" name="" class="form-control" placeholder="xxx xxx xxx xxx"></label></p>
+            <p><label>Vencimiento </label><label class="col-sm-2 col-form-label"><input type="text" name="" class="form-control" placeholder="MM/A"></label></p>
+            
+
+
+
+        </div>
+        <input type="submit" value="ALquiliar">
 
     </form>
     <br>

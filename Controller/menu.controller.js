@@ -16,6 +16,9 @@ controller.menuPrincipal=(request, response) => {
 controller.Consulta=(request, response) => {
     response.render('./View/Consulta');
 }
+controller.compras=(request, response) => {
+    response.render('./View/compras');
+}
 controller.ConsultaPost=(request, response) => {
     console.log('Si llego')
     console.log(request.body);
