@@ -1,9 +1,7 @@
 const modelo = {};
-const modeloA={};
 const Clases = require('../Class')
 const GoogleSheet = require('./Google Sheet/GoogleSheet.js')
 var users = []
-var alquiler=[]
 
 const loadUsers = async () => {
     const registros = await GoogleSheet.requerirRegistros(0);
@@ -23,7 +21,11 @@ modelo.saveUser = (atributosUsuario) => {
     var emailUser = atributosUsuario.email;
     var passwordUser = atributosUsuario.password;
     var dateOfBirthUser = atributosUsuario.dateOfBirth;
-    var user = new Clases.user(nameUser, surnameUser, emailUser, passwordUser, dateOfBirthUser)
+    var pais=atributosUsuario.pais;
+    var provincia=atributosUsuario.provincia;
+    var localidad=atributosUsuario.localidad;
+    var cuil=atributosUsuario.cuil
+    var user = new Clases.user( nameUser, surnameUser, emailUser, passwordUser, dateOfBirthUser,pais, provincia, localidad, cuil)
 
 
     var validacion = users.reduce((acumulador, userItem) => {
@@ -43,21 +45,9 @@ modelo.saveUser = (atributosUsuario) => {
     }
 
 }
-// creo funcion para crar el objeto de solicitud de alquiler
-modeloA.guardarAqiler =(atributosAlquiler)=>{
-var nombre =atributosAlquiler.nombre;
-var Email=atributosAlquiler.email;
-var telefono=atributosAlquiler.telefono;
-var cars=atributosAlquiler.tipoDeAutomovil;
-var fechaA=atributosAlquiler.fechaA;
-var fechaD=atributosAlquiler.fechaD;
-var alquilerCars = new Clases.alquiler(nombre,Email,telefono,cars,fechaA,fechaD)
-alquiler.push(alquilerCars);
-}
-
 
 async function saveUserGoogleSheet(user) {
-    var objeto = { "user": '' + JSON.stringify(user) + '' }//Pongo el formato para poder guardar el libro
+    var objeto = { "user": '' + JSON.stringify(user) + '' }//Pongo el formato para poder guardar el usuario
     var numeroHoja = 0;//Es la hoja en la cual se van a guardar los datos
     await GoogleSheet.guardarDatos(numeroHoja, objeto);
 }

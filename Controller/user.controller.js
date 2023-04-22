@@ -16,7 +16,7 @@ controller.register =(request, response) => {
     response.render('./View/register');
 }
 controller.registerPost=(request, response) => {
-
+    
     modelo.saveUser(request.body)
     response.redirect('/menu')
 }

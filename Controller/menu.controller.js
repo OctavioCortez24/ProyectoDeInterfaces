@@ -13,13 +13,13 @@ controller.menu=(request, response) => {
 controller.menuPrincipal=(request, response) => {
     response.render('./View/menuPrincipal');
 }
-controller.Consulta=(request, response) => {
+controller.alquiler=(request, response) => {
     response.render('./View/Consulta');
 }
 controller.compras=(request, response) => {
     response.render('./View/compras');
 }
-controller.ConsultaPost=(request, response) => {
+controller.alquilerPost=(request, response) => {
     console.log('Si llego')
     console.log(request.body);
     response.send(request.body)
