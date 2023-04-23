@@ -19,7 +19,7 @@ router.get('/automovilH',controller.automovilH)
 router.get('/automovilI',controller.automovilI)
 router.get('/automovilJ',controller.automovilJ)
 router.get('/automovilK',controller.automovilK)
-router.post('/ConsultaPost',controller.ConsultaPost)
-router.post('/alquilerPost',controller.alquilerPost)
+router.post('/alquilarPost',controller.alquilerPost)
+router.post('/compraPost',controller.compraPost)
 
 module.exports=router;

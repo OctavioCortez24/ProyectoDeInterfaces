@@ -52,10 +52,15 @@ controller.automovilJ=(request, response) => {
 controller.automovilK=(request, response) => {
     response.render('./View/automovilK')
 }
-controller.ConsultaPost=(request, response) => {
+controller.alquilerPost=(request, response) => {
     console.log('Si llego')
     console.log(request.body);
     response.send(request.body)
+}
+
+controller.compraPost=(request, response) => { 
+
+
 }
 
 
