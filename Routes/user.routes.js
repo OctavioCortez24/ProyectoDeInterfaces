@@ -8,7 +8,7 @@ router.post('/loginPost',controller.loginPost)
 
 //Registro de la aplicación
 router.get('/register',controller.register)
-router.post('/registerPost',controller.loginPost)
+router.post('/registerPost',controller.registerPost)
 
 
 
