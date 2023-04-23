@@ -19,7 +19,6 @@ controller.alquiler=(request, response) => {
 controller.compras=(request, response) => {
     response.render('./View/compras');
 }
-<<<<<<< HEAD
 controller.automovilA=(request, response) => {
     response.render('./View/automovilA');
 }
@@ -54,9 +53,6 @@ controller.automovilK=(request, response) => {
     response.render('./View/automovilK')
 }
 controller.ConsultaPost=(request, response) => {
-=======
-controller.alquilerPost=(request, response) => {
->>>>>>> f3c6742e3ed4f0b83039dd1dd32ce5d84e377c1c
     console.log('Si llego')
     console.log(request.body);
     response.send(request.body)
