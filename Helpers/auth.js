@@ -9,4 +9,4 @@ helpers.tieneAcceso=(request, response, next) =>{
     response.redirect("/login");
 }
 
-module.exports={};
+module.exports=helpers;

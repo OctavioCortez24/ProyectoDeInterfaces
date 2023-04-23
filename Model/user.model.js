@@ -21,15 +21,15 @@ modelo.saveUser = (atributosUsuario) => {
     var emailUser = atributosUsuario.email;
     var passwordUser = atributosUsuario.password;
     var dateOfBirthUser = atributosUsuario.dateOfBirth;
-    var pais=atributosUsuario.pais;
-    var provincia=atributosUsuario.provincia;
-    var localidad=atributosUsuario.localidad;
-    var cuil=atributosUsuario.cuil
-    var user = new Clases.user( nameUser, surnameUser, emailUser, passwordUser, dateOfBirthUser,pais, provincia, localidad, cuil)
+    var pais = atributosUsuario.pais;
+    var provincia = atributosUsuario.provincia;
+    var localidad = atributosUsuario.localidad;
+    var cuil = atributosUsuario.cuil
+    var user = new Clases.user(nameUser, surnameUser, emailUser, passwordUser, dateOfBirthUser, pais, provincia, localidad, cuil)
 
 
     var validacion = users.reduce((acumulador, userItem) => {
-        return acumulador = acumulador || ( userItem.email == user.getEmail());
+        return acumulador = acumulador || (userItem.email == user.getEmail());
     }, false)
 
     //Terimina de comprobar
@@ -52,15 +52,26 @@ async function saveUserGoogleSheet(user) {
     await GoogleSheet.guardarDatos(numeroHoja, objeto);
 }
 
-modelo.validacion=function comprobarDatos(email, password){
-    var validacion=false;
-    for(var i=0;i<users.length;i++){
-       if(users[i].email==email && users[i].password==password){
-        validacion=true;
-        break;
-       }
+modelo.validacion = function comprobarDatos(email, password) {
+    var validacion = false;
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].email == email && users[i].password == password) {
+            validacion = true;
+            break;
+        }
     }
 
     return validacion;
+}
+
+modelo.getIdUser = function conseguirID(email, password) {
+    var idUSer="";
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].email == email && users[i].password == password) {
+            idUSer=users[i].id;
+            break;
+        }
+    }
+    return idUSer;
 }
 module.exports = modelo;

@@ -24,8 +24,11 @@ const modeloUser = require('./Model/user.model') //Quitar esto Despues
 passport.use(new PassportLocal(function (username, password, done) {
 
     var validation = modeloUser.validacion(username, password);
+    
     if (validation) {
-        return done(null, { id: 1, name: "test" })
+        var idUSer=modeloUser.getIdUser(username, password);
+        
+        return done(null, { id: idUSer, name: username })
     } else {
         done(null, false)
     }
