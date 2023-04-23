@@ -10,7 +10,14 @@ controller.loginPost=passport.authenticate('local',{
     successRedirect:"/menu",
     failureRedirect:"/login"
 })
-
+controller.verificarCuil=(request, response, next) => {
+    var validacionCuil=modelo.validacionCuil(request.body.cuil);
+  
+    if(validacionCuil) {
+        return next();
+    }
+    response.redirect("/login")
+}
 //Registro
 controller.register =(request, response) => {
     response.render('./View/register');

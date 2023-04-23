@@ -63,7 +63,18 @@ modelo.validacion = function comprobarDatos(email, password) {
 
     return validacion;
 }
+modelo.validacionCuil = function comprobarCuil(cuil) {
+    
+    var validacion = false;
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].cuil == cuil){
+            validacion = true;
+            break;
+        }
+    }
 
+    return validacion;
+}
 modelo.getIdUser = function conseguirID(email, password) {
     var idUSer="";
     for (var i = 0; i < users.length; i++) {
