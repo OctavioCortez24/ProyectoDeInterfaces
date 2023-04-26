@@ -48,6 +48,8 @@ app.use(require('./Routes/menu.routes.js'))//Rutas del menu
 
 app.use(require('./Routes/user.routes.js'))//Rutas del usuario
 
+app.use(require('./Routes/auto.routes'))//Rutas de los autos
+
 
 
 //Mostrar Puerto-----------------------------------
