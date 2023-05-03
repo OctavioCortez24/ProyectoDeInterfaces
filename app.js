@@ -49,6 +49,7 @@ app.use(require('./Routes/menu.routes.js'))//Rutas del menu
 app.use(require('./Routes/user.routes.js'))//Rutas del usuario
 
 app.use(require('./Routes/auto.routes'))//Rutas de los autos
+app.use(require('./Routes/alquiler.router'))//Rutas de alquiler
 
 
 
