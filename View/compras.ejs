@@ -1,78 +1,175 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197610_960_720.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 1em;
+            background-color: rgba(0, 0, 0, 0.299);
+            padding: 1%;
+            font-size: 3.5em;
+        }
+
+        .lista-productos {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .lista-productos li {
+            background-color: #fff;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .lista-productos li img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .lista-productos li img:hover {
+            transform: scale(1.1);
+        }
+
+        .lista-productos li.pressed img {
+            transform: scale(1.5);
+            z-index: 1;
+        }
+
+        .lista-productos li p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+
+        .lista-productos li .precio {
+            font-size: 18px;
+            font-weight: bold;
+            color: #c00;
+        }
+
+        .lista-productos li .boton {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin-right: 20px;
+            transform: scale(1.2);
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+
+        a:hover {
+            color: #666;
+            border-bottom-color: #666;
+        }
+        
+    </style>
 </head>
+
 <body>
-    <h1>Eleji los Mejores vehiculos</h1>
     <main>
-        <h2>Nuestros Productos</h2>
+        <h1>Nuestros Vehiculos</h1>
+
         <ul class="lista-productos">
             <li>
-                <img src="https://media.toyota.com.ar/4e501cd9-6df2-4685-a3c9-a601a4e8f916.jpeg" width="200px">
-                <p> Toyota Cotolla-2017 | Nafta <span class="precio">$8.000.000</span></p>
-                <a href="http://localhost:3000/automovilA" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/8a/8e/06/8a8e06ff60e71c5553423b035caf6390.jpg" width="200px">
+                <p> Toyota Cotolla-2017 | Nafta</p>
+                <span class="precio">$8.000.000</span>
+                <a href="http://localhost:3000/automovilA" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/toyota-hilux-rad-1-1633083284.jpg" width="200px">
-                <p>Toyota Hilux- SRX 2019 | Diesel <span class="precio">$13.000.000</span></p>
-                <a href="http://localhost:3000/automovilB" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/d2/80/5b/d2805b6ad9de3f888e99bc6ba0bb2893.jpg" width="200px">
+                <p>Toyota Hilux- SRX 2019 | Diesel</p>
+                <span class="precio">$13.000.000</span>
+                <a href="http://localhost:3000/automovilB" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://http2.mlstatic.com/D_NQ_NP_802727-MLA51228318631_082022-O.jpg" width="200px">
-                <p>Chevrolet S-10 4X2 | 2013<span class="precio">$6.000.000</span></p>
-                <a href="http://localhost:3000/automovilC" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/d3/60/08/d360080ac6e6bd87ef5479c21459925a.jpg" width="200px">
+                <p>Chevrolet S-10 4X2 | 2013</p>
+                <span class="precio">$6.000.000</span>
+                <a href="http://localhost:3000/automovilC" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://www.deruedas.com.ar/images/autos/Chevrolet-Onix-2017/560/560541_1_im.jpg?edit=12" width="200px">
-                <p>Chevrolet Onix 2015 | Nafta<span class="precio">$2.50.000</span></p>
-                
-                <a href="http://localhost:3000/automovilD" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/90/a3/67/90a36764f74c45d6963ea94ad23f3f90.jpg" width="200px">
+                <p>Chevrolet Onix 2015 | Nafta</p>
+                <span class="precio">$2.50.000</span>
+                <a href="http://localhost:3000/automovilD" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://www.deruedas.com.ar/images/autos/Ford-Fiesta-KD-2016/577/577562_1_im.jpg?edit=4" width="200px">
-                <p>Ford Fiesta KD 2015 | Nafta<span class="precio">$ 3.500.000</span></p>
-                <a href="http://localhost:3000/automovilE" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/d3/08/f4/d308f4074592c1f7630b266835e94b15.jpg" width="200px">
+                <p>Ford Fiesta KD 2015 | Nafta</p>
+                <span class="precio">$ 3.500.000</span>
+                <a href="http://localhost:3000/automovilE" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://www.deruedas.com.ar/images/autos/BMW-Serie-5-2005/583/583791_2_im.jpg?edit=2" width="200px">
-                <p>BMW Serie 5<span class="precio">$4.000.000</span></p>
-                <a href="http://localhost:3000/automovilF" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/b0/15/03/b01503acc46f87358a06ce4a6d343b6b.jpg" width="200px">
+                <p>BMW Serie 5</p>
+                <span class="precio">$4.000.000</span>
+                <a href="http://localhost:3000/automovilF" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://www.deruedas.com.ar/images/autos/Ford-Ranger-2016/572/572213_1_im.jpg?edit=3" width="200px">
-                <p>Ford Ranger C/D 4x2 XLS 2018 | Diesel<span class="precio">$ 8.200.000</span></p>
-                
-                <a href="http://localhost:3000/automovilG" class="boton">ver mas</a>
-            </li>
-            
-            <li>
-                <img src="https://www.deruedas.com.ar/images/autos/Fiat-Toro-2020/567/567052_1_im.jpg?edit=7" width="200px">
-                <p>Fiat Toro Ranch 2.0TDI 4x4 AT<span class="precio">$ 10.500.000</span></p>
-                <a href="http://localhost:3000/automovilH" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/9b/7c/39/9b7c39edc9734babc9b91079cb7427bb.jpg" width="200px">
+                <p>Ford Ranger C/D 4x2 XLS 2018 | Diesel</p>
+                <span class="precio">$ 8.200.000</span>
+                <a href="http://localhost:3000/automovilG" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://www.deruedas.com.ar/images/autos/Volkswagen-Amarok-2012/565/565724_2_im.jpg?edit=3" width="200px">
-                <p>Volkswagen Amarok (L10) 2.0TD 4x4 C/D Highline Pack<span class="precio">$ 7.450.000 </span></p>
-                <a href="http://localhost:3000/automovilI" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/a0/6e/f8/a06ef8a17f4f6a62e9fb6c8b593708c9.jpg" width="200px">
+                <p>Fiat Toro Ranch 2.0TDI 4x4 AT</p>
+                <span class="precio">$ 10.500.000</span>
+                <a href="http://localhost:3000/automovilH" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://www.deruedas.com.ar/images/autos/Toyota-Hilux-2023/584/584073_1_im.jpg?edit=2" width="200px">
-                <p>Toyota Hilux (L21) 2.8 D/C 4X4 TDI Conquest AT6<span class="precio">$ 19.800.000</span></p>
-               
-                <a href="http://localhost:3000/automovilJ" class="boton">ver mas</a>
+                <img src="https://i.pinimg.com/564x/e5/c5/66/e5c566219a87d12db1a78bad2da0bf8f.jpg" width="200px">
+                <p>Volkswagen Amarok (L10) 2.0TD 4x4 C/D Highline Pack</p>
+                <span class="precio">$ 7.450.000 </span>
+                <a href="http://localhost:3000/automovilI" class="boton">Ver Mas</a>
             </li>
             <li>
-                <img src="https://www.deruedas.com.ar/images/autos/Mercedes-Benz-Clase-C-2017/583/583489_1_im.jpg?edit=2" width="200px">
-                <p>Mercedes Benz Clase C 200 Avantgarde AT <span class="precio">$15.200.000</span></p>
-            
-                <a href="http://localhost:3000/automovilJ" class="boton">Ver mas</a>
+                <img src="https://i.pinimg.com/564x/24/12/03/241203dcb7a29a38cb31f88948894cbe.jpg" width="200px">
+                <p>Toyota Hilux (L21) 2.8 D/C 4X4 TDI Conquest AT6</p>
+                <span class="precio">$ 19.800.000</span>
+                <a href="http://localhost:3000/automovilJ" class="boton">Ver Mas</a>
             </li>
-
+            <li>
+                <img src="https://cdn.pixabay.com/photo/2016/06/22/21/57/mercedes-benz-1474196_960_720.jpg"
+                    width="200px">
+                <p>Mercedes Benz Clase C 200 Avantgarde AT</p>
+                <span class="precio">$15.200.000</span>
+                <a href="http://localhost:3000/automovilJ" class="boton">Ver Mas</a>
+            </li>
         </ul>
     </main>
 </body>
+
 </html>
