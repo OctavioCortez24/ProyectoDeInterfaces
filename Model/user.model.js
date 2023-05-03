@@ -53,6 +53,7 @@ async function saveUserGoogleSheet(user) {
 }
 
 modelo.validacion = function comprobarDatos(email, password) {
+   
     var validacion = false;
     for (var i = 0; i < users.length; i++) {
         if (users[i].email == email && users[i].password == password) {
