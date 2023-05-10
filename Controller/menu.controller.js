@@ -13,22 +13,15 @@ controller.menu=(request, response) => {
 controller.menuPrincipal=(request, response) => {
     response.render('./View/menuPrincipal');
 }
-controller.alquiler=(request, response) => {
-    response.render('./View/Consulta');
-}
+
 controller.compras=(request, response) => {
     response.render('./View/compras');
 }
 
-controller.alquilerPost=(request, response) => {
-    
-    response.redirect("/pagar")
-
-}
 
 controller.compraPost=(request, response) => { 
 
-
+    response.redirect("/pagar");
 }
 
 controller.Pagar=(request, response) => {
