@@ -1,16 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Toyota Hilux</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1620064853086-abbd426f9cbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+            max-width: 60%;
+            /* Ajustar al tamaño de la imagen */
+            margin: 2rem auto;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 390px;
+            height: 580px;
+        }
+
+
+        .Imagen {
+            /* Eliminar el ancho fijo */
+            height: 100%;
+            border-radius: 20px 0 0 10px;
+            object-fit: cover;
+            /* Ajustar al tamaño del contenedor sin distorsionar */
+        }
+
+        .description {
+            padding: 1rem;
+        }
+
+        .description p {
+            text-align: justify;
+            padding-right: 10%;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 1rem;
+            position: absolute;
+            left: 58%;
+            bottom: 7%;
+        }
+
+        .button-container a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background-color: #E51837;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+    </style>
+
+    <style>
+        .Home {
+            display: flex;
+        }
+
+        .Home li {
+            margin: 20px;
+        }
+
+        .Barra {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: large;
+        }
+    </style>
+
 </head>
+
 <body>
-    <h1>Toyota Hilux</h1>
-    <img src="https://cdn.dribbble.com/users/1245856/screenshots/3921416/hilux_anim_gif_ok.gif" alt="">
-    <p>Aire acondicionado, Climatizador automático, Dirección asistida, Cierre centralizado, Cierre de puertas y encendido sin llave, Vidrios eléctricos, Butacas de cuero, Butacas eléctricas, Volante regulable, Volante de cuero, Computadora de abordo, Control de velocidad crucero, Espejos eléctricos, Faros antiniebla, Faros de Xenon, Doble tracción / 4x4, Motor Turbo, Camara de estacionamiento trasera, Llantas de Aleación, Alarma, Frenos ABS, Airbags, Control de tracción, Control de estabilidad (ESP), Anclaje de asientos infantiles (Isofix), Rueda de auxilio de igual medida, Reproduce CD / DVD, Entrada USB / Auxiliar, 
-        Bluetooth, Comandos en el volante / satelital, Sistema de sonido de alto rendimiento, GPS</p>
-        <a href="http://localhost:3000/pago">Comprar</a>
+
+    <nav class="Barra">
+        <nav class="Home">
+            <li><a href="#" style="text-decoration: none; color: #000;" onclick="history.back()">Regresar</a></li>
+            <li><a href="#" style="text-decoration: none; color: #000;">Home</a></li>
+            <li><a href="#" style="text-decoration: none; color: #000;">Contactanos</a></li>
+            <li><a href="#" style="text-decoration: none; color: #000;">Acerca de</a></li>
+        </nav>
+    </nav>
+
+    <main>
+        <div class="container">
+            
+            <div class="Imagen">
+                <img src="https://images.unsplash.com/photo-1641431616381-3f0613d82ca7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80">
+            </div>
+
+            <div class="description">
+                <h1>Toyota Hilux</h1>
+                <p> 
+                    Aire acondicionado, Climatizador automático, Dirección asistida, Cierre centralizado, 
+                    Cierre de puertas y encendido sin llave, Vidrios eléctricos, Butacas de cuero, Butacas eléctricas, 
+                    Volante regulable, Volante de cuero, Computadora de abordo, Control de velocidad crucero, 
+                    Espejos eléctricos, Faros antiniebla, Faros de Xenon, Doble tracción / 4x4, Motor Turbo, 
+                    Camara de estacionamiento trasera, Llantas de Aleación, Alarma, Frenos ABS, Airbags, 
+                    Control de tracción, Control de estabilidad (ESP), Anclaje de asientos infantiles (Isofix), 
+                    Rueda de auxilio de igual medida, Reproduce CD / DVD, Entrada USB / Auxiliar, 
+                    Bluetooth, Comandos en el volante / satelital, Sistema de sonido de alto rendimiento, GPS
+                </p>
+            </div>
+            <div class="button-container">
+                <a href="http://localhost:3000/pago">COMPRAR</a>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
