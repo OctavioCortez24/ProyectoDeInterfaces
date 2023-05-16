@@ -86,4 +86,7 @@ modelo.getIdUser = function conseguirID(email, password) {
     }
     return idUSer;
 }
+modelo.enviarUsuariosClientes=function sendUserClient(){
+    return users;
+}
 module.exports = modelo;

@@ -8,7 +8,7 @@ router.get('/', controller.menu)
 router.get('/menu',tieneAcceso, controller.menuPrincipal)
 
 router.get('/compras',controller.compras)
-router.post('/compraPost',controller.compraPost)
+router.post('/compraPost',controller.compraPost) 
 
 router.get("/pagar", controller.Pagar)
 

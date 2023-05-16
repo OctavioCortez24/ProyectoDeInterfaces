@@ -62,7 +62,7 @@ class alquiler {
 class auto{
     constructor(marca, modelo, fechaFabriicacion,){
         this.id =uuidv4.v4();
-
+        
     }
 
 

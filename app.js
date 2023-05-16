@@ -21,6 +21,7 @@ app.use(passport.session());
 
 const modeloUser = require('./Model/user.model') //Quitar esto Despues
 
+
 passport.use(new PassportLocal(function (username, password, done) {
     
     var validation = modeloUser.validacion(username, password);
@@ -57,3 +58,5 @@ app.use(require('./Routes/alquiler.router'))//Rutas de alquiler
 app.listen(port, () => {
     console.log(`Express listen on port ${port}!`);
 });
+
+

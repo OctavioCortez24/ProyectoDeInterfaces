@@ -16,16 +16,10 @@
 
     <form action="http://localhost:3000/alquilarPost" method="post">
         <div class="mb-3">
-            <label for="search">Usuario</label>
-          <input type="search" name="buscar"  placeholder="buscar cliente">
-        </div>
-        <div class="mb-3">
-            <label for="email " class="form-label">E-mail:</label>
-            <input type="email " class="form-control" name="email " placeholder="Tu Correo Electronico ">
-        </div>
-        <div class="mb-3">
-            <label for="telefono ">Telefono:</label>
-            <input type="tel " class="form-control" name="telefono " placeholder="Tu telefono ">
+            <select name="usuario">
+                <option selected value=''>Seleccionar su Cuil</option>
+                <%- usuarios %>
+            </select>
         </div>
         <div class="mb-3">
             <label for="telefono ">foto Carnet</label>
