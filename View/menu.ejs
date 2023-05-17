@@ -2,192 +2,183 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
-      background-size: cover;
-      background-repeat: no-repeat;
-      font-family: 'Open Sans', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
 
-    .buttons-container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 20px;
-    }
+    <style>
+        /*...Cuerpo...*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .login-button,
-    .register-button {
-      padding: 10px;
-      margin-left: 10px;
-      background-color: #1e00ff;
-      border: 1px solid #ffffff22;
-      border-radius: 5px;
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 14px;
-    }
+        /*...Barra...*/
 
-    .title {
-      color: black;
-      position: fixed;
-      font-size: 70px;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Montserrat', sans-serif;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
 
-    /* Centra los divs en el medio de la página */
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+        .about {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+        }
 
-    h1 {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-    }
+        .logo {
+            margin-left: -100px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+        }
 
-    h1 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-top: 8px;
-      background-color: rgba(0, 0, 0, 0.363);
-      padding: 2%;
-      border-radius: 300px;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: large;
+            position: relative;
+            right: 70px;
+            left: 70px;
+        }
 
-    /* Agrega espacio horizontal entre los divs */
-    .image-wrapper:not(:last-child) {
-      margin-right: 20px;
-    }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
 
-    /* Estilo para el contenedor de la imagen y el enlace */
-    .image-container {
-      position: relative;
-      border: 1px solid #fff;
-      border-radius: 5px;
-      overflow: hidden;
-      width: 640px;
-    }
+        nav ul li {
+            margin-right: 20px;
+        }
 
-    .Titulo1,
-    .Titulo2 {
-      display: block;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
 
+        /*...Segunda Seccion...*/
 
-    /* Estilo para la imagen */
-    .image-container img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-width: none;
-      transform: scale(1.1);
-      transition: transform 0.5s ease;
-    }
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 3%;
+            background-color: rgba(240, 248, 255, 0.772);
+            padding-left: 50px;
+            padding-right: 70px;
+        }
 
-    /* Efecto hover en la imagen */
-    .image-container:hover img {
-      transform: scale(1.2);
-    }
+        .main-content .text {
+            max-width: 30%;
+        }
 
-    .Titulo1,
-    .Titulo2 {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      text-align: center;
-      font-size: 1.2rem;
-      box-sizing: border-box;
-    }
+        .main-content p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
 
-    /* Estilo para el enlace */
-    .image-link {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+        .main-content figure img {
+            max-width: 110%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-    div {
-      margin-right: 20px;
-    }
+        /*...Slider...*/
 
-    .back-button {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #f9f9f95b;
-      color: rgb(255, 255, 255);
-      padding: 10px 20px;
-      border-radius: 5px;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-    }
+        .Slider {
+            position: relative;
+            overflow: hidden;
+        }
 
-    .arrow {
-      font-size: 20px;
-      margin-right: 5px;
-    }
-  </style>
+        .slider-wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+            animation: slider-animation 10s infinite linear;
+        }
+
+        .slider-slide {
+            flex: 0 0 100%;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /*... Frame Animation...*/
+
+        @keyframes slider-animation {
+            0% {transform: translateX(0%);}
+            25% {transform: translateX(0%);}
+            33.33% {transform: translateX(-100%);}
+            58.33% {transform: translateX(-100%);}
+            66.66% {transform: translateX(-200%);}
+            91.66% {transform: translateX(-200%);}
+            100% {transform: translateX(0%);}
+        }
+    </style>
 </head>
 
 <body>
-  <h1 class="title">COMPANY</h1>
-  <div class="buttons-container">
-    <a href="http://localhost:3000/login" class="login-button">Iniciar Sesión</a>
-    <a href="http://localhost:3000/register" class="register-button">Registrarse</a>
-    <p>Texto de presentacion</p>
-  </div>
+    <div class="container">
+        <nav>
+            <a class="logo" href="#">Logo</a>
+            <ul>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="http://localhost:3000/compras">Comprar</a></li>
+                <li><a href="http://localhost:3000/alquiler">Alquilar</a></li>
+                <li><a href="#">Contactanos</a></li>
+            </ul>
+            <a href="http://localhost:3000/login" class="about">Ingresar</a>
+        </nav>
 
+        <div class="main-content">
+            <div class="text">
+                <h1>Nosotros</h1>
+                <p>Somos una empresa especializada en la venta y alquiler de vehículos. Ofrecemos una amplia variedad de
+                    opciones, desde coches compactos hasta vehículos de lujo. Nuestro objetivo es brindar una
+                    experiencia satisfactoria y sin complicaciones a nuestros clientes. Visítenos para encontrar
+                    vehículos confiables y de calidad.
+                </p>
+            </div>
 
-  <div style="background-color: #ffffff62; padding: 20px; display: flex; flex-direction: row; margin-top: 50px;">
-    <div class="image-container">
-      <img src="https://cdn.pixabay.com/photo/2018/04/15/07/55/car-3321032_960_720.jpg" alt="Comprar">
-      <div class="Titulo1">Comprar</div>
-      <a class="image-link" href="http://localhost:3000/compras"></a>
+            <figure class="Slider">
+                <div class="slider-wrapper">
+                    <div class="slider-slide">
+                        <a href="autos/b.html">
+                            <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                            alt="Imagen 1">
+                        </a>
+                    </div>
+                    <div class="slider-slide">
+                        <a href="autos/a.html">
+                            <img src="https://images.unsplash.com/photo-1563339018-51d1ef22f402?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                            alt="Imagen 2">
+                        </a>
+                    </div>
+                    <div class="slider-slide">
+                        <a href="Compras.html">
+                            <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                            alt="Imagen 3">
+                        </a>
+                    </div>
+                </div>
+            </figure>
+
+        </div>
     </div>
-
-    <div class="image-container">
-      <img
-        src="https://media.istockphoto.com/id/1057946590/es/foto/vendedor-profesional-durante-el-trabajo-con-el-cliente-en-el-concesionario.jpg?b=1&s=170667a&w=0&k=20&c=xLvR32a4eNMlWgj_84uyf3KKvdQ6ju9kLyNPMm9-7fg="
-        alt="Alquilar">
-      <div class="Titulo2">Alquilar</div>
-      <a class="image-link" href="http://localhost:3000/alquiler"></a>
-    </div>
-  </div>
 </body>
-
-</html>
