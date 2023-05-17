@@ -21,14 +21,13 @@ app.use(passport.session());
 
 const modeloUser = require('./Model/user.model') //Quitar esto Despues
 
-
 passport.use(new PassportLocal(function (username, password, done) {
     
     var validation = modeloUser.validacion(username, password);
     
     if (validation) {
         var idUSer=modeloUser.getIdUser(username, password);
-        
+       
         return done(null, { id: idUSer, name: username })
     } else {
         done(null, false)
@@ -42,6 +41,7 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (id, done) {
     done(null, id)
 })
+
 app.set('view engine', 'ejs');//Motor de vista
 app.set('views', __dirname, '/View');//Direccion de la carpetas con las vistas
 
@@ -57,6 +57,6 @@ app.use(require('./Routes/alquiler.router'))//Rutas de alquiler
 //Mostrar Puerto-----------------------------------
 app.listen(port, () => {
     console.log(`Express listen on port ${port}!`);
+    console.log(`Enlace---> http://localhost:${port}/`)
 });
-
 

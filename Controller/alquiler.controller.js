@@ -13,6 +13,7 @@ controller.alquiler=(request, response) => {
 
 controller.alquilerPost=(request, response) => {
     //request.body.iDK="Lorezo"
+    
   
     response.redirect("/pagar")
 

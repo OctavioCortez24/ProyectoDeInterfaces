@@ -10,6 +10,13 @@ controller.loginPost=passport.authenticate('local',{
     successRedirect:"/menu",
     failureRedirect:"/login"
 })
+
+controller.getUser=(request, response, next) => {
+    
+    var id=modelo.getIdUser(request.body.username, request.body.password)
+    console.log(id)
+    next();
+}
 controller.verificarCuil=(request, response, next) => {
     var validacionCuil=modelo.validacionCuil(request.body.cuil);
   
