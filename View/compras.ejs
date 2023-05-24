@@ -8,18 +8,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url("https://cdn.pixabay.com/photo/2018/03/04/09/51/space-3197610_960_720.jpg");
             background-size: cover;
             background-position: center;
-        }
-
-        h1 {
-            color: rgb(255, 255, 255);
-            text-align: center;
-            font-size: 1em;
-            background-color: rgba(0, 0, 0, 0.299);
-            padding: 1%;
-            font-size: 3.5em;
+            background-repeat: no-repeat;
+            background-color: rgb(255, 255, 255);
         }
 
         .lista-productos {
@@ -73,7 +65,7 @@
         }
 
         .lista-productos li .boton {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -82,23 +74,72 @@
             transform: scale(1.2);
         }
 
-        a {
-            color: #333;
-            text-decoration: none;
-            border-bottom: 1px solid #333;
+    </style>
+
+    <style>
+        /*...Barra...*/
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
         }
 
-        a:hover {
-            color: #666;
-            border-bottom-color: #666;
+        .Acerca-de {
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
         }
-        
+
+        .Regresar {
+            font-size: 25px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: large;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
     </style>
+
 </head>
 
 <body>
+
+    <nav>
+        <a href="#" class="Regresar" onclick="history.back()">Regresar</a>
+        <ul>
+            <li><a href="http://localhost:3000/alquiler">Alquilar</a></li>
+            <li><a href="#">Contactanos</a></li>
+            <li><a href="http://localhost:3000/compras">Comprar</a></li>
+        </ul>
+        <a href="#" class="Acerca-de">Acerca de</a>
+    </nav>
+
     <main>
-        <h1>Nuestros Vehiculos</h1>
 
         <ul class="lista-productos">
             <li>
