@@ -1,5 +1,6 @@
 const express = require('express');
 const router= express.Router();
+const {tieneAcceso}=require('../Helpers/auth')
 
 const controller=require('../Controller/user.controller')
 //Login de la aplicación

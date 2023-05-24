@@ -4,7 +4,7 @@ const {tieneAcceso}=require('../Helpers/auth')
 
 const controller=require('../Controller/alquiler.controller')
 
-router.get('/alquiler', controller.alquiler)
+router.get('/alquiler', tieneAcceso,controller.alquiler)
 router.post('/alquilarPost',controller.alquilerPost)
 
 

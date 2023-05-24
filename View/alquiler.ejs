@@ -16,12 +16,6 @@
 
     <form action="http://localhost:3000/alquilarPost" method="post">
         <div class="mb-3">
-            <select name="usuario">
-                <option selected value=''>Seleccionar su Cuil</option>
-                <%- usuarios %>
-            </select>
-        </div>
-        <div class="mb-3">
             <label for="telefono ">foto Carnet</label>
             <input type="file" name="fil">
         </div>
@@ -32,8 +26,8 @@
        
         <div class="mb-3">
             <label for="telefono ">Lugar de entrega:</label>
-             <select name="tipoDeAutomovil" >
-                <option selected >Selecione el Lugar de Entrega</option>
+             <select name="tipoDeAutomovil" required >
+                <option value="" >Selecione el Lugar de Entrega</option>
                 <option value="Aeropueto de Mendoza" >Aeropueto de Mendoza</option>
                 <option value="Concesionaria Oficial" >Concesionaria Oficial</option>
                 <option value="Terminal de Omnibus de Mendoza" >Terminal de Omnibus de Mendoza</option>
@@ -70,7 +64,7 @@
 
     </form>
     <br>
-    <a class="btn btn-primary" href="http://localhost:3000/menu">Volver </a>
+    <a class="btn btn-primary" href="http://localhost:3000/">Volver </a>
 </body>
 
 </html>

@@ -3,19 +3,21 @@ const controller={};
 const passport = require('passport');
 const modelo=require('../Model/user.model')
 //Login
+  
 controller.login =(request, response) => {
     response.render('./View/login');
 }
 controller.loginPost=passport.authenticate('local',{
-    successRedirect:"/menu",
+    successRedirect:"/alquiler",
     failureRedirect:"/login"
 })
 
 controller.getUser=(request, response, next) => {
     
-    var id=modelo.getIdUser(request.body.username, request.body.password)
-    console.log(id)
+    controller.id =modelo.getIdUser(request.body.username, request.body.password)
+   
     next();
+    
 }
 controller.verificarCuil=(request, response, next) => {
     var validacionCuil=modelo.validacionCuil(request.body.cuil);

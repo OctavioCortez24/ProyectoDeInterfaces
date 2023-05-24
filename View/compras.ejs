@@ -5,7 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compras</title>
+
     <style>
+        /*...Barra...*/
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .Acerca-de {
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .Regresar {
+            font-size: 25px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: large;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
         body {
             font-family: Arial, sans-serif;
             background-size: cover;
@@ -65,63 +112,15 @@
         }
 
         .lista-productos li .boton {
+            /*
             position: fixed;
+            */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             margin-right: 20px;
             transform: scale(1.2);
-        }
-
-    </style>
-
-    <style>
-        /*...Barra...*/
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
-        }
-
-        .Acerca-de {
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
-        }
-
-        .Regresar {
-            font-size: 25px;
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-            font-size: large;
-            padding: 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
         }
     </style>
 
@@ -147,6 +146,7 @@
                 <p> Toyota Cotolla-2017 | Nafta</p>
                 <span class="precio"> $ USD 25.000 </span>
                 <a href="http://localhost:3000/automovilA" class="boton">Ver Mas</a>
+                
             </li>
             <li>
                 <img src="https://i.pinimg.com/564x/d2/80/5b/d2805b6ad9de3f888e99bc6ba0bb2893.jpg" width="200px">
@@ -207,9 +207,12 @@
                     width="200px">
                 <p>Mercedes Benz Clase C 200 Avantgarde AT</p>
                 <span class="precio">$ USD 35.000</span>
-                <a href="http://localhost:3000/automovilJ" class="boton">Ver Mas</a>
+                <a href="http://localhost:3000/automovilA" class="boton">Ver Mas</a>
             </li>
         </ul>
+
+
+        
     </main>
 </body>
 

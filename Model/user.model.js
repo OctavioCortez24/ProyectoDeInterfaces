@@ -3,7 +3,7 @@ const Clases = require('../Class')
 const GoogleSheet = require('./Google Sheet/GoogleSheet.js')
 var users = []
 
-const loadUsers = async () => {
+const loadUsers = async () => { 
     const registros = await GoogleSheet.requerirRegistros(0);
 
     for (let i = 0; i < registros.length; i++) {
