@@ -8,7 +8,7 @@ controller.login =(request, response) => {
     response.render('./View/login');
 }
 controller.loginPost=passport.authenticate('local',{
-    successRedirect:"/alquiler",
+    successRedirect:"/",
     failureRedirect:"/login"
 })
 
