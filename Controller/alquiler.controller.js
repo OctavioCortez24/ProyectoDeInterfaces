@@ -33,24 +33,7 @@ controller.alquilerFactura = async (request, response) => {
     });
     doc.on('data', (data) => { stream.write(data) });
     doc.on('end', () => { stream.end() });
-
-    /* const platos = [
-         {
-             nro: 1,
-             descripcion: "Charque",
-             precio: 13.5,
-             cantidad: 3,
-             subtotal: 37.5
-         },
-         {
-             nro: 2,
-             descripcion: "Sarque",
-             precio: 14.5,
-             cantidad: 5,
-             subtotal: 40.5
-         }
-     ];*/
-
+    doc.lineJoin('miter').rect(10, 19,592, 755).stroke();
 
     const fechaActual = new Date();
     doc.setDocumentHeader({
