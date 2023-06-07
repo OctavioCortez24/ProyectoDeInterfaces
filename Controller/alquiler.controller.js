@@ -79,9 +79,9 @@ controller.alquilerFactura = async (request, response) => {
 
 
         //Cuadrado Derecho
-        doc.lineJoin('miter')
-            .rect(301.4, 55, 296, 90)
-            .stroke();
+        doc.rect(301.4, 55, 296, 0)//Linea superior Izquierda
+        doc.rect(597, 55, 0, 90).lineWidth(1);//Linea recta Izquierda
+        doc.rect(301.4, 145, 296, 0).lineWidth(1);//Linea inferior Izquierda
         //--------------------
         doc.fontSize(10).text('Punto de Venta:', 330, 80, {
             border: { size: 5, color: 'black' }
@@ -104,9 +104,10 @@ controller.alquilerFactura = async (request, response) => {
         })
 
         //Cuadrado Izquierdo
-        doc.lineJoin('miter')
-            .rect(15, 55, 286, 90)
-            .stroke();
+        doc.rect(15, 55, 286, 0)//Linea superior Izquierda
+        doc.rect(15, 55, 0, 90).lineWidth(1);//Linea recta Izquierda
+        doc.rect(15, 145, 286, 0).lineWidth(1);//Linea inferior Izquierda
+        doc.rect(301.4, 145, 0, -40).lineWidth(1);//Linea recta Derecha
         //----------------
         doc.text('Razon Social:', 25, 90, {
             border: { size: 5, color: 'black' }
@@ -118,7 +119,7 @@ controller.alquilerFactura = async (request, response) => {
             border: { size: 5, color: 'black' }
         })
 
-
+        //Cuadrado Izquierdo SUperior
         doc.fontSize(10.5).text('Periodo de Facturado Desde: ' + fechaActual.toLocaleDateString(), 25, 157);
         doc.fontSize(10.5).text('Hasta: ' + fechaActual.toLocaleDateString(), 244, 157);
         doc.fontSize(10.5).text('Fecha de Vto. para el pago: ' + fechaActual.toLocaleDateString(), 350, 157)
@@ -148,55 +149,83 @@ controller.alquilerFactura = async (request, response) => {
             .stroke();
 
         //Cuadradito del medio
-        doc.lineJoin('miter').rect(277, 55, 50, 50).fillOpacity(1).fillAndStroke("white", "black").stroke();
+        //Cuadradito del medio
+
+        doc.fontSize(35).text('B', 291, 65, {
+            fill: true,
+        });
+        //----------------
+        doc.lineJoin('miter').rect(277, 55, 50, 50).stroke();
         //----------------
 
 
     });
 
-
-    doc.addTable([
-        { key: 'codigo', label: 'Codigo', align:'center' },
-        { key: 'p_servicio', label: 'Producto/Servicio', align: "center" },
-        { key: 'cantidad', label: 'Cantidad', align: "center" },
-        { key: 'precioUni', label: 'Precio Unitario', align: "center" },
-        { key: 'boni', label: '% Bonif', align: "center" },
-        { key: 'impuestoBoni', label: 'Impuesto Bonificación', align: "center" },
-        { key: 'subtotal', label: 'Sub Total', align: "center" }
-
-    ], [
-
-        {
-            codigo: '1',
-            p_servicio: 'Ejemplo',
-            cantidad: '1',
-            precioUni: '50',
-            boni: 'no',
-            impuestoBoni: 'no',
-            subtotal: '599'
-        }
-    ], {
-
-        headBackground: '#DEDCDC',
-        border: { size: 1, color: null },
-        width: "fill_body",
-        striped: true,
-        stripedColors: ["white", "white"],
-        cellsPadding: 10,
-        marginLeft: 5,
-        marginRight: 5,
-        cellsAlign : 'center',
-        headBorder: true
-
+    doc.setDocumentFooter({
+        height: '50%',
+    }, () =>{
+        doc.addTable([
+            { key: 'codigo', label: 'Codigo', align: 'center' },
+            { key: 'p_servicio', label: 'Producto/Servicio', align: "center" },
+            { key: 'cantidad', label: 'Cantidad', align: "center" },
+            { key: 'precioUni', label: 'Precio Unitario', align: "center" },
+            { key: 'boni', label: '% Bonif', align: "center" },
+            { key: 'impuestoBoni', label: 'Impuesto Bonificación', align: "center" },
+            { key: 'subtotal', label: 'Sub Total', align: "center" }
+    
+        ], [
+    
+            {
+                codigo: '1',
+                p_servicio: 'Ejemplo',
+                cantidad: '1',
+                precioUni: '50',
+                boni: 'no',
+                impuestoBoni: 'no',
+                subtotal: '599'
+            }
+        ], {
+    
+            headBackground: '#DEDCDC',
+            border: { size: 1, color: null },
+            width: "fill_body",
+            striped: true,
+            stripedColors: ["white", "white"],
+            cellsPadding: 10,
+            marginLeft: 5,
+            marginRight: 5,
+            cellsAlign: 'center',
+            headBorder: true
+    
+        })
+        doc.fontSize(12);
+        doc.text('Subtotal: $', 365, 616, {
+            border: { size: 5, color: 'black' }
+        });
+        doc.text('Importe Otros Tributos: $', 291, 628, {
+            border: { size: 5, color: 'black' }
+        });
+        doc.text('Importe Total: $', 340, 640, {
+            border: { size: 5, color: 'black' }
+        });
+    
+        //Cuadradito del final
+        doc.lineJoin('miter')
+            .rect(15, 595, 582, 60)
+            .stroke();
+        //---------------------------------------
+        //----------------
+        doc.fontSize(25).text('AFIP', 27, 690, {
+            stroke: true,
+            oblique: true,
+            border: { size: 5, color: 'black' }
+        });
+        //Cuadradito del final-Mediano
+        doc.lineJoin('miter')
+            .rect(15, 660, 582, 25)
+            .stroke();
+        //---------------------------------------
     })
-
-
-
-    doc.fontSize(19).text('AFIP', 27, 390, {
-        stroke: true,
-        oblique: true,
-        border: { size: 5, color: 'black' }
-    });
 
 
 
