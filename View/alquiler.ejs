@@ -125,21 +125,21 @@
             margin: 10px;
         }
 
-        .text{
-            display:flex;
+        .text {
+            display: flex;
             gap: 15px;
             margin-bottom: 10px;
         }
 
-        .t1{
+        .t1 {
             color: #000;
         }
 
-        .t2{
+        .t2 {
             color: #aaacab;
         }
 
-        form {
+        .Parte1 {
             margin: 35px;
         }
 
@@ -212,10 +212,11 @@
         }
 
         .Parte2 {
-            margin-bottom: 45px;
+            margin-top: 45px;
         }
 
         .Boton {
+            margin-top: 35px;
             margin-bottom: 40px;
             width: 100%;
             height: 50px;
@@ -229,22 +230,22 @@
             text-transform: uppercase;
         }
 
-        input[type="radio"]{
+        input[type="radio"] {
             width: 20px;
             height: 20px;
         }
 
-        .opcion{
+        .opcion {
             transition: all 0.3s;
         }
 
-        .opcion:hover{
+        .opcion:hover {
             transform: scale(1.05);
             border: 1px solid aqua;
             box-shadow: 2px 2px 4px aquamarine;
         }
 
-        .bordes{
+        .bordes {
             border: 1px solid rgb(170, 170, 170);
             display: flex;
             align-items: center;
@@ -256,9 +257,9 @@
             border: 1px solid rgb(1, 255, 230);
         }
 
-        .iconos{
+        .iconos {
             display: flex;
-            justify-content:space-around;
+            justify-content: space-around;
         }
 
     </style>
@@ -314,7 +315,7 @@
                                         </svg>
                                     </div>
                                     <span>Foto Carnet</span>
-                                    <input type="file" class="File">
+                                    <input type="file" class="File" name="fotoCarnet">
                                 </label>
 
                                 <label class="Doc">
@@ -331,7 +332,7 @@
                                         </svg>
                                     </div>
                                     <span>Aptitud física</span>
-                                    <input type="file" class="File">
+                                    <input type="file" class="File" name="AptitudFisica">
                                 </label>
                             </div>
 
@@ -366,141 +367,144 @@
                         </div>
                     </section>
                 </div>
+                <div class="Parte2">
+                    <article class="Vehiculos">
+
+                        <div class="opcion">
+                            <img src="https://images.unsplash.com/photo-1614026480241-23ba865d1ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="Imagen">
+                            <div class="info">
+                                <div class="text">
+                                    <span class="t1">BMW X6</span>
+                                    <span class="t2">(Categoria A)</span>
+                                </div>
+
+                                <div class="iconos">
+                                    <i class="fi fi-tr-temperature-frigid"></i>
+                                    <i class="fi fi-rr-users-alt"></i>
+                                    <i class="fi fi-rr-tire-rugged"></i>
+                                    <i class="fi fi-bs-shield-check"></i>
+                                    <i class="fi fi-tr-circle-bolt"></i>
+
+                                    <label class="bordes">
+                                        <input type="radio" name="eleccion" class="Radio" value="BMW X6">
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="opcion">
+                            <img src="https://images.unsplash.com/photo-1533127321739-d5dc53c221c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                                class="Imagen">
+                            <div class="info">
+                                <div class="text">
+                                    <span class="t1">JEEP</span>
+                                    <span class="t2">(Categoria A)</span>
+                                </div>
+                                <div class="iconos">
+                                    <i class="fi fi-tr-temperature-frigid"></i>
+                                    <i class="fi fi-rr-users-alt"></i>
+                                    <i class="fi fi-rr-tire-rugged"></i>
+                                    <i class="fi fi-bs-shield-check"></i>
+                                    <i class="fi fi-tr-circle-bolt"></i>
+
+                                    <label class="bordes">
+                                        <input type="radio" name="eleccion" class="Radio" value="JEEP">
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="opcion">
+                            <img src="https://images.unsplash.com/photo-1600016325494-1b4219d293c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="Imagen">
+                            <div class="info">
+                                <div class="text">
+                                    <span class="t1">MINI COOPER</span>
+                                    <span class="t2">(Categoria A)</span>
+                                </div>
+
+                                <div class="iconos">
+                                    <i class="fi fi-tr-temperature-frigid"></i>
+                                    <i class="fi fi-rr-users-alt"></i>
+                                    <i class="fi fi-rr-tire-rugged"></i>
+                                    <i class="fi fi-bs-shield-check"></i>
+                                    <i class="fi fi-tr-circle-bolt"></i>
+
+                                    <label class="bordes">
+                                        <input type="radio" name="eleccion" class="Radio" value="Mini-Cooper">
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="opcion">
+                            <img src="https://images.unsplash.com/photo-1617195920791-e42b4d1e559a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="Imagen">
+                            <div class="info">
+                                <div class="text">
+                                    <span class="t1">AUDI TTRS</span>
+                                    <span class="t2">(Categoria A)</span>
+                                </div>
+
+                                <div class="iconos">
+                                    <i class="fi fi-tr-temperature-frigid"></i>
+                                    <i class="fi fi-rr-users-alt"></i>
+                                    <i class="fi fi-rr-tire-rugged"></i>
+                                    <i class="fi fi-bs-shield-check"></i>
+                                    <i class="fi fi-tr-circle-bolt"></i>
+
+                                    <label class="bordes">
+                                        <input type="radio" name="eleccion" class="Radio">
+                                    </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="opcion">
+                            <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                class="Imagen">
+                            <div class="info">
+                                <div class="text">
+                                    <span class="t1">HONDA CBR 300</span>
+                                    <span class="t2">(Categoria B)</span>
+                                </div>
+
+                                <div class="iconos">
+                                    <i class="fi fi-tr-temperature-frigid"></i>
+                                    <i class="fi fi-rr-users-alt"></i>
+                                    <i class="fi fi-rr-tire-rugged"></i>
+                                    <i class="fi fi-bs-shield-check"></i>
+                                    <i class="fi fi-tr-circle-bolt"></i>
+
+                                    <label class="bordes">
+                                        <input type="radio" name="eleccion" class="Radio">
+                                    </label>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </article>
+                </div>
+                <input type="submit" value="alquilar" class="Boton">
             </form>
         </div>
 
-        <div class="Parte2">
-            <article class="Vehiculos">
 
-                <div class="opcion">
-                    <img src="https://images.unsplash.com/photo-1614026480241-23ba865d1ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                        class="Imagen">
-                    <div class="info">
-                        <div class="text">
-                            <span class="t1">BMW X6</span>
-                            <span class="t2">(Categoria A)</span>
-                        </div>
 
-                        <div class="iconos">
-                            <i class="fi fi-tr-temperature-frigid"></i>
-                            <i class="fi fi-rr-users-alt"></i>
-                            <i class="fi fi-rr-tire-rugged"></i>
-                            <i class="fi fi-bs-shield-check"></i>
-                            <i class="fi fi-tr-circle-bolt"></i>
-
-                            <label class="bordes">
-                                <input type="radio" name="eleccion" class="Radio">
-                            </label>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opcion">
-                    <img src="https://images.unsplash.com/photo-1533127321739-d5dc53c221c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                        class="Imagen">
-                    <div class="info">
-                        <div class="text">
-                            <span class="t1">JEEP</span>
-                            <span class="t2">(Categoria A)</span>
-                        </div>
-                        <div class="iconos">
-                            <i class="fi fi-tr-temperature-frigid"></i>
-                            <i class="fi fi-rr-users-alt"></i>
-                            <i class="fi fi-rr-tire-rugged"></i>
-                            <i class="fi fi-bs-shield-check"></i>
-                            <i class="fi fi-tr-circle-bolt"></i>
-
-                            <label class="bordes">
-                                <input type="radio" name="eleccion" class="Radio">
-                            </label>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opcion">
-                    <img src="https://images.unsplash.com/photo-1600016325494-1b4219d293c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                        class="Imagen">
-                    <div class="info">
-                        <div class="text">
-                            <span class="t1">MINI COOPER</span>
-                            <span class="t2">(Categoria A)</span>
-                        </div>
-
-                        <div class="iconos">
-                            <i class="fi fi-tr-temperature-frigid"></i>
-                            <i class="fi fi-rr-users-alt"></i>
-                            <i class="fi fi-rr-tire-rugged"></i>
-                            <i class="fi fi-bs-shield-check"></i>
-                            <i class="fi fi-tr-circle-bolt"></i>
-
-                            <label class="bordes">
-                                <input type="radio" name="eleccion" class="Radio">
-                            </label>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opcion">
-                    <img src="https://images.unsplash.com/photo-1617195920791-e42b4d1e559a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                        class="Imagen">
-                    <div class="info">
-                        <div class="text">
-                            <span class="t1">AUDI TTRS</span>
-                            <span class="t2">(Categoria A)</span>
-                        </div>
-
-                        <div class="iconos">
-                            <i class="fi fi-tr-temperature-frigid"></i>
-                            <i class="fi fi-rr-users-alt"></i>
-                            <i class="fi fi-rr-tire-rugged"></i>
-                            <i class="fi fi-bs-shield-check"></i>
-                            <i class="fi fi-tr-circle-bolt"></i>
-
-                            <label class="bordes">
-                                <input type="radio" name="eleccion" class="Radio">
-                            </label>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opcion">
-                    <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                        class="Imagen">
-                    <div class="info">
-                        <div class="text">
-                            <span class="t1">HONDA CBR 300</span>
-                            <span class="t2">(Categoria B)</span>
-                        </div>
-
-                        <div class="iconos">
-                            <i class="fi fi-tr-temperature-frigid"></i>
-                            <i class="fi fi-rr-users-alt"></i>
-                            <i class="fi fi-rr-tire-rugged"></i>
-                            <i class="fi fi-bs-shield-check"></i>
-                            <i class="fi fi-tr-circle-bolt"></i>
-
-                            <label class="bordes">
-                                <input type="radio" name="eleccion" class="Radio">
-                            </label>
-
-                        </div>
-                    </div>
-                </div>
-
-            </article>
-        </div>
-
-        <button onclick="redireccionar()" class="Boton"><span class="texto">Alquilar</span></button>
+        <!--<button onclick="redireccionar()" class="Boton"><span class="texto">Alquilar</span></button> -->
 
     </section>
 
     <script>
         function redireccionar() {
-            window.location.href = "http://localhost:3000/pago";
+            window.location.href = "http://localhost:3000/alquilarPost";
         }
     </script>
 
