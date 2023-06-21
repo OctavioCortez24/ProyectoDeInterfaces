@@ -13,7 +13,7 @@ controller.alquiler = (request, response) => {
 }
 
 controller.alquilerPost = (request, response) => {
-   
+    //request.body.iDK="Lorezo"
     request.body.usuario = controladorDeUsuarios.id
     response.send(request.body)
     //controller.alquilerFactura(request.body, response)
