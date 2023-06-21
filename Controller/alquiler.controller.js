@@ -15,13 +15,15 @@ controller.alquiler = (request, response) => {
 controller.alquilerPost = (request, response) => {
    
     request.body.usuario = controladorDeUsuarios.id
-    response.send(request.body);
+    response.send(request.body)
+    //controller.alquilerFactura(request.body, response)
     //response.redirect("/pagar")
 
 }
 
 
 controller.alquilerFactura = async (request, response) => {
+    console.log('Si llego aca')
     const doc = new PDF({ bufferPages: true });
 
     const filename = `Factura${Date.now()}.pdf`;
