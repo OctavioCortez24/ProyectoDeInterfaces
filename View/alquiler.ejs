@@ -5,66 +5,505 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-straight/css/uicons-thin-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <title>Alquilar</title>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /*//////////    Opciones    //////////*/
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .date {
+            flex: 1 0 calc(100% - 50px);
+            min-width: 170px;
+            max-width: 350px;
+            background: transparent;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            padding-bottom: 20px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .Inputs input {
+            padding: 8px;
+            margin: 8px;
+            background: #ffffff64;
+            border-right: none;
+            border-top: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .contenedor .Doc .icon svg {
+            height: 85px;
+            width: auto;
+            fill: rgba(75, 85, 99, 1);
+        }
+
+        .Doc {
+            width: auto;
+            cursor: pointer;
+            border: 2px dashed #cacaca;
+        }
+
+        .archive {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .File {
+            display: none;
+        }
+
+        .Con {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .Fecha input {
+            cursor: pointer;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            background: #ffffff;
+            box-shadow: gray;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .info select {
+            cursor: pointer;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 3px solid #aaacab;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /*//////////////*/
+
+        .Vehiculos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .Imagen {
+            width: 100%;
+            height: auto;
+        }
+
+        .Vehiculos .opcion {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .Vehiculos .opcion .info {
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 1px;
+            margin: 10px;
+        }
+
+        .text{
+            display:flex;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .t1{
+            color: #000;
+        }
+
+        .t2{
+            color: #aaacab;
+        }
+
+        form {
+            margin: 35px;
+        }
+
+        .iconos {
+            font-size: 18px;
+            letter-spacing: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /*///////////////////*/
+
+        .logo {
+            margin-left: 24px;
+            margin-top: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            padding: 10px 1px;
+            margin: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 60px;
+        }
+
+        nav ul li {
+            margin-right: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* Estilos para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .logo {
+                margin-left: 0;
+            }
+
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                position: static;
+                right: 0;
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        .Parte2 {
+            margin-bottom: 45px;
+        }
+
+        .Boton {
+            margin-bottom: 40px;
+            width: 100%;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.842);
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            font-family: inherit;
+            font-size: larger;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        input[type="radio"]{
+            width: 20px;
+            height: 20px;
+        }
+
+        .opcion{
+            transition: all 0.3s;
+        }
+
+        .opcion:hover{
+            transform: scale(1.05);
+            border: 1px solid aqua;
+            box-shadow: 2px 2px 4px aquamarine;
+        }
+
+        .bordes{
+            border: 1px solid rgb(170, 170, 170);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: auto;
+            border-bottom-right-radius: 10px;
+            padding-bottom: 4px;
+            border: 1px solid rgb(1, 255, 230);
+        }
+
+        .iconos{
+            display: flex;
+            justify-content:space-around;
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <h1>A continuacion llene los campos correspondientes</h1>
-    <legend>Informacion Personal</legend>
 
-    <form action="http://localhost:3000/alquilarPost" method="post">
-        <div class="mb-3">
-            <label for="telefono ">foto Carnet</label>
-            <input type="file" name="fil">
-        </div>
-        <div class="mb-3">
-            <label for="telefono ">Certificado de Aptitud fisica</label>
-            <input type="file" name="fil">
-        </div>
-       
-        <div class="mb-3">
-            <label for="telefono ">Lugar de entrega:</label>
-             <select name="tipoDeAutomovil" required >
-                <option value="" >Selecione el Lugar de Entrega</option>
-                <option value="Aeropueto de Mendoza" >Aeropueto de Mendoza</option>
-                <option value="Concesionaria Oficial" >Concesionaria Oficial</option>
-                <option value="Terminal de Omnibus de Mendoza" >Terminal de Omnibus de Mendoza</option>
-             </select>
-        </div>
-        <div class="mb-3">
-            <label for="telefono ">Adquirir el  :</label>
-            <p><label>Fecha</label><label class="col-sm-2 col-form-label"><input type="date" name="fechaA" class="form-control"></label></p>
-        </div>
-        <div class="mb-3">
-            <label for="telefono "> Devolucion :</label>
-            <p><label>Fecha</label><label class="col-sm-2 col-form-label"><input type="date" name="fechaD" class="form-control"></label></p>
-        </div>
-        <div class="mb-3">
-            <p>Selecione el tipo de vehiculo</p>
-            <input id="one" type="radio" name="vehiculo">
-            <label for="one">Toyota Hilux 4x4 D/C- 4000$/dia <img src="https://autotest.com.ar/wp-content/uploads/2020/10/TOYOTA-HILUX-2021-2.jpg" width="150px"></label>
-            <br>
-            <input id="two" type="radio" name="vehiculo">
-            <label for="two">Toyota Hilux 4x4 D/C- 3500$/dia <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwtePQJ8WiPbsZZHRHYUiw1JwtMtpkPx6bzQ&usqp=CAU" width="150px"></label>
-            <br>
-            <input id="three" type="radio" name="vehiculo">
-            <label for="three">Toyota Corolla 5/P FULL- 3000$/dia <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCqBepW_1Z4Wu2AhDmwicgePQfLTJPLXifYA&usqp=CAU" width="150px"></label>
-            <br>
-            <input id="Four" type="radio" name="vehiculo">
-            <label for="Four">Chevrolet Cruze 5/P- 3000$/dia <img src="https://cdn.motor1.com/images/mgl/2P3KE/s1/restyling-todo-lo-que-cambiara-en-el-chevrolet-cruze-2019.webp" width="150px"></label>
-            <br>
-            <input id="five" type="radio" name="vehiculo">
-            <label for="five">Chevrolet Camaro 5/p- 4000$/dia <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07oJm9FmCPi5ORdQ8TPGB-DI13YLwBfM3ZA&usqp=CAU" width="150px"></label>
+    <nav>
+        <a class="logo" href="#">Logo Empresa</a>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="http://localhost:3000/compras">Comprar</a></li>
+            <li><a href="http://localhost:3000/alquiler">Alquilar</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="https://linktab.co/RedesDS">Contactanos</a></li>
+        </ul>
+    </nav>
 
+    <section class="Contenido">
+
+        <div class="Parte1">
+            <form action="http://localhost:3000/alquilarPost" method="post" class="Datos">
+
+                <div class="contenedor">
+                    <section class="date">
+                        <div class="info">
+                            <h2 style="text-align: center;">Datos Personales</h2>
+                            <div class="Inputs">
+                                <input type="search" class="Usuario" placeholder="Usuario">
+                                <input type="email " class="Email" name="email" placeholder="Email">
+                                <input type="tel " class="Telefono" name="telefono" placeholder="Tu telefono">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="date">
+                        <div class="info">
+                            <h2 style="text-align: center;">Certificados</h2>
+
+                            <div class="archive">
+                                <label class="Doc">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24">
+                                            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                                            <g stroke-linejoin="round" stroke-linecap="round"
+                                                id="SVGRepo_tracerCarrier"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path fill=""
+                                                    d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z"
+                                                    clip-rule="evenodd" fill-rule="evenodd"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <span>Foto Carnet</span>
+                                    <input type="file" class="File">
+                                </label>
+
+                                <label class="Doc">
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24">
+                                            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                                            <g stroke-linejoin="round" stroke-linecap="round"
+                                                id="SVGRepo_tracerCarrier"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path fill=""
+                                                    d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z"
+                                                    clip-rule="evenodd" fill-rule="evenodd"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <span>Aptitud física</span>
+                                    <input type="file" class="File">
+                                </label>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="date">
+                        <div class="info">
+                            <h2 style="text-align: center;">Luegar de entrega</h2>
+
+                            <select name="tipoDeAutomovil" class="op">
+                                <option selected>Seleccionar</option>
+                                <option value="Aeropueto de Mendoza">Aeropueto de Mendoza</option>
+                                <option value="Concesionaria Oficial">Concesionaria Oficial</option>
+                                <option value="Terminal de Omnibus de Mendoza">Terminal de Omnibus de Mendoza</option>
+                            </select>
+
+                            <div class="Cont">
+                                <h1>Fechas</h1>
+                                <div class="Con">
+                                    <div class="Fecha">
+                                        <input type="date">
+                                        <p>Salida</p>
+                                    </div>
+                                    <div class="Fecha">
+                                        <input type="date">
+                                        <p>Regreso</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </form>
         </div>
-        <input type="submit" value="Cargar Datos ">
 
+        <div class="Parte2">
+            <article class="Vehiculos">
 
-    </form>
-    <br>
-    <a class="btn btn-primary" href="http://localhost:3000/">Volver </a>
+                <div class="opcion">
+                    <img src="https://images.unsplash.com/photo-1614026480241-23ba865d1ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        class="Imagen">
+                    <div class="info">
+                        <div class="text">
+                            <span class="t1">BMW X6</span>
+                            <span class="t2">(Categoria A)</span>
+                        </div>
+
+                        <div class="iconos">
+                            <i class="fi fi-tr-temperature-frigid"></i>
+                            <i class="fi fi-rr-users-alt"></i>
+                            <i class="fi fi-rr-tire-rugged"></i>
+                            <i class="fi fi-bs-shield-check"></i>
+                            <i class="fi fi-tr-circle-bolt"></i>
+
+                            <label class="bordes">
+                                <input type="radio" name="eleccion" class="Radio">
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opcion">
+                    <img src="https://images.unsplash.com/photo-1533127321739-d5dc53c221c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+                        class="Imagen">
+                    <div class="info">
+                        <div class="text">
+                            <span class="t1">JEEP</span>
+                            <span class="t2">(Categoria A)</span>
+                        </div>
+                        <div class="iconos">
+                            <i class="fi fi-tr-temperature-frigid"></i>
+                            <i class="fi fi-rr-users-alt"></i>
+                            <i class="fi fi-rr-tire-rugged"></i>
+                            <i class="fi fi-bs-shield-check"></i>
+                            <i class="fi fi-tr-circle-bolt"></i>
+
+                            <label class="bordes">
+                                <input type="radio" name="eleccion" class="Radio">
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opcion">
+                    <img src="https://images.unsplash.com/photo-1600016325494-1b4219d293c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        class="Imagen">
+                    <div class="info">
+                        <div class="text">
+                            <span class="t1">MINI COOPER</span>
+                            <span class="t2">(Categoria A)</span>
+                        </div>
+
+                        <div class="iconos">
+                            <i class="fi fi-tr-temperature-frigid"></i>
+                            <i class="fi fi-rr-users-alt"></i>
+                            <i class="fi fi-rr-tire-rugged"></i>
+                            <i class="fi fi-bs-shield-check"></i>
+                            <i class="fi fi-tr-circle-bolt"></i>
+
+                            <label class="bordes">
+                                <input type="radio" name="eleccion" class="Radio">
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opcion">
+                    <img src="https://images.unsplash.com/photo-1617195920791-e42b4d1e559a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        class="Imagen">
+                    <div class="info">
+                        <div class="text">
+                            <span class="t1">AUDI TTRS</span>
+                            <span class="t2">(Categoria A)</span>
+                        </div>
+
+                        <div class="iconos">
+                            <i class="fi fi-tr-temperature-frigid"></i>
+                            <i class="fi fi-rr-users-alt"></i>
+                            <i class="fi fi-rr-tire-rugged"></i>
+                            <i class="fi fi-bs-shield-check"></i>
+                            <i class="fi fi-tr-circle-bolt"></i>
+
+                            <label class="bordes">
+                                <input type="radio" name="eleccion" class="Radio">
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opcion">
+                    <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                        class="Imagen">
+                    <div class="info">
+                        <div class="text">
+                            <span class="t1">HONDA CBR 300</span>
+                            <span class="t2">(Categoria B)</span>
+                        </div>
+
+                        <div class="iconos">
+                            <i class="fi fi-tr-temperature-frigid"></i>
+                            <i class="fi fi-rr-users-alt"></i>
+                            <i class="fi fi-rr-tire-rugged"></i>
+                            <i class="fi fi-bs-shield-check"></i>
+                            <i class="fi fi-tr-circle-bolt"></i>
+
+                            <label class="bordes">
+                                <input type="radio" name="eleccion" class="Radio">
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+
+        <button onclick="redireccionar()" class="Boton"><span class="texto">Alquilar</span></button>
+
+    </section>
+
+    <script>
+        function redireccionar() {
+            window.location.href = "http://localhost:3000/pago";
+        }
+    </script>
+
 </body>
 
 </html>
