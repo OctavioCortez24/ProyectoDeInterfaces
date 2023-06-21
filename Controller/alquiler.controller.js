@@ -92,13 +92,13 @@ controller.alquilerFactura = async (request, response) => {
         doc.rect(15, 145, 286, 0).lineWidth(1);//Linea inferior Izquierda
         doc.rect(301.4, 145, 0, -40).lineWidth(1);//Linea recta Derecha
         //----------------
-        doc.text('Razon Social:', 25, 90, {
+        doc.text('Razon Social: Autos.Inc', 25, 90, {
             border: { size: 5, color: 'black' }
         })
         doc.text('Condición frente al IVA:', 25, 130, {
             border: { size: 5, color: 'black' }
         })
-        doc.text('Domicilio Comercial:', 25, 110, {
+        doc.text('Domicilio Comercial: Colonia Segovia El banco 8230', 25, 110, {
             border: { size: 5, color: 'black' }
         })
 
