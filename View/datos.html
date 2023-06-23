@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+    <h1>A continuacion complete los datos personales</h1>
+    <input type="text" class="Usuario" placeholder="Domicilio de recidencia" />
+    <br>
+    <select name="condicion_iva" id="condicion_iva" class="Inputs">
+      <option>Condición frente al IVA:</option>
+      <option value="responsable_inscripto">Responsable Inscripto</option>
+      <option value="monotributista_clase_a">Monotributista Clase A</option>
+      <option value="monotributista_clase_b">Monotributista Clase B</option>
+    </select>
+
+    <br>
+    <select name="pago" id="pago" onchange="mostrarFinanciacion()">
+        <option value="contado">contado</option>
+        <option value="financiado">financiado</option>
+    </select>
+    <br>
+<label for="cuota">selecione el tipo de cuota que desea abonar</label>
+<select name="cuota" id="cuota">
+    
+</select>
+
+<br>
+<script>
+  function mostrarFinanciacion() {
+    var tipoPago= document.getElementById("pago");
+    var tipoCuota = document.getElementById("cuota");
+    var pagoSelecionado = tipoPago.value;
+
+    
+    tipoCuota.innerHTML = "";
+
+    // Generar las opciones correspondientes de cuotas
+    if (pagoSelecionado === "financiado") {
+      agregarOption(tipoCuota, "uno", "3 cuotas de 14.000 USD");
+      agregarOption(tipoCuota, "dos", "6 cuotas de 10.000 USD");
+      agregarOption(tipoCuota, "tres", "12 cuotas de 4.000 USD");
+     
+    }
+    
+
+    // Función auxiliar para agregar opciones al select de cuotas
+    function agregarOption(select, value, text) {
+      var option = document.createElement("option");
+      option.value = value;
+      option.text = text;
+      select.appendChild(option);
+    }
+  }
+</script>
+<input type="submit" value="siguiente" class="Boton">
+</form>
+  </body>
+</html>
