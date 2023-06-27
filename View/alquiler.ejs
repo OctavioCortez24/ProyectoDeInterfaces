@@ -14,9 +14,12 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css'>
     <title>Alquilar</title>
     <style>
-        body {
+        html body {
             background-repeat: no-repeat;
             background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100%;
         }
 
         /*//////////    Opciones    //////////*/
@@ -31,7 +34,7 @@
             flex: 1 0 calc(100% - 50px);
             min-width: 170px;
             max-width: 350px;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.527);
             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             border-radius: 4px;
             padding-bottom: 20px;
@@ -53,7 +56,7 @@
         .contenedor .Doc .icon svg {
             height: 85px;
             width: auto;
-            fill: rgba(75, 85, 99, 1);
+            fill: rgb(113, 112, 112);
         }
 
         .Doc {
@@ -97,8 +100,6 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 10px;
         }
-
-        /*//////////////*/
 
         .Vehiculos {
             display: grid;
@@ -154,63 +155,42 @@
 
         /*///////////////////*/
 
-        .logo {
-            margin-left: 24px;
-            margin-top: 15px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
+        header {
+            background-color: rgb(255, 255, 255);
         }
 
-        nav {
+        .menu {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            cursor: pointer;
             display: flex;
-            justify-content: space-between;
-            font-size: 20px;
-            padding: 10px 1px;
-            margin: 10px 20px;
+            justify-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 8vh;
+            width: auto;
+            margin-top: 0;
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 60px;
+        .RAD {
+            display: none;
         }
 
-        nav ul li {
-            margin-right: 40px;
+        .barra {
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+            border: none;
+            border-bottom: 1.5px solid rgb(148, 148, 148);
+            transform: all 0.2s;
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            padding: 10px;
-        }
-
-        /* Estilos para pantallas más pequeñas */
-        @media (max-width: 768px) {
-            .logo {
-                margin-left: 0;
-            }
-
-            nav {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-                position: static;
-                right: 0;
-                left: 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-                margin-top: 20px;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
+        .menu input:checked+.barra {
+            transform: translate(x 1s);
+            border: none;
+            border-top: transparent;
+            border-left: transparent;
+            border-right: transparent;
+            border-bottom: 3px solid aqua;
         }
 
         .Parte2 {
@@ -219,7 +199,7 @@
 
         .Boton {
             margin-top: 35px;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
             width: 100%;
             height: 50px;
             background: rgba(255, 255, 255, 0.842);
@@ -237,49 +217,75 @@
             height: 20px;
         }
 
+        .Radio {
+            display: none;
+        }
+
+        .like {
+            padding: 2px;
+            width: 20px;
+            height: auto;
+            border: 1px solid rgb(197, 202, 207);
+            border-radius: 50%;
+            color: rgb(197, 202, 207);
+        }
+
+        .opcion input:checked+.like {
+            color: rgb(0, 251, 255);
+            border: 2px solid rgb(6, 255, 251);
+        }
+
         .opcion {
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .opcion:hover {
             transform: scale(1.05);
-            border: 1px solid aqua;
-            box-shadow: 2px 2px 4px aquamarine;
-        }
-
-        .bordes {
-            border: 1px solid rgb(170, 170, 170);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: auto;
-            border-bottom-right-radius: 10px;
-            padding-bottom: 4px;
-            border: 1px solid rgb(1, 255, 230);
+            border: 3px solid aqua;
+            box-shadow: 4px 4px 4px aquamarine;
         }
 
         .iconos {
             display: flex;
             justify-content: space-around;
         }
-
     </style>
 
 </head>
 
 <body>
 
-    <nav>
-        <a class="logo" href="#">Logo Empresa</a>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="http://localhost:3000/compras">Comprar</a></li>
-            <li><a href="http://localhost:3000/alquiler">Alquilar</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="https://linktab.co/RedesDS">Contactanos</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="Principal">
+
+            <ul class="menu">
+
+                <label class="MARCADO" onclick="INICIO()">
+                    <input type="radio" class="RAD" id="uno"><span class="barra">INICIO</span>
+                </label>
+
+                <label class="MARCADO" onclick="COMPRAR()">
+                    <input type="radio" class="RAD" id="dos"><span class="barra">COMPRAR</span>
+                </label>
+
+                <label class="MARCADO" onclick="ALQUILAR()">
+                    <input type="radio" class="RAD" id="tres"><span class="barra">ALQUILAR</span>
+                </label>
+
+                <label class="MARCADO" onclick="ACERCA_DE()">
+                    <input type="radio" class="RAD" id="cuatro"><span class="barra">ACERCA DE</span>
+                </label>
+
+                <label class="MARCADO" onclick="CONTACTANOS()">
+                    <input type="radio" class="RAD" id="cinco"><span class="barra">CONTACTANOS</span>
+                </label>
+
+            </ul>
+
+        </div>
+
+    </header>
 
     <section class="Contenido">
 
@@ -291,16 +297,16 @@
                         <div class="info">
                             <h2 style="text-align: center;">Datos Personales</h2>
                             <div class="Inputs">
-                                
+
                                 <select name="condicion_iva" id="condicion_iva" class="Inputs">
                                     <option>Condición frente al IVA:</option>
-                                  <option value="Responsable Inscripto">Responsable Inscripto</option>
-                                  <option value="Monotributista Clase A">Monotributista Clase A</option>
-                                  <option value="Monotributista Clase B">Monotributista Clase B</option>
-                                  
+                                    <option value="responsable_inscripto">Responsable Inscripto</option>
+                                    <option value="monotributista_clase_a">Monotributista Clase A</option>
+                                    <option value="monotributista_clase_b">Monotributista Clase B</option>
+
                                 </select>
-            
-                              <input type="text" class="Usuario" placeholder="Domicilio de recidencia" name="domicilio">
+
+                                <input type="text" class="Usuario" placeholder="Domicilio de recidencia" />
                             </div>
                         </div>
                     </section>
@@ -324,7 +330,6 @@
                                         </svg>
                                     </div>
                                     <span>Foto Carnet</span>
-                                    <input type="file" class="File" name="fotoCarnet">
                                 </label>
 
                                 <label class="Doc">
@@ -376,10 +381,11 @@
                         </div>
                     </section>
                 </div>
+
                 <div class="Parte2">
                     <article class="Vehiculos">
 
-                        <div class="opcion">
+                        <label class="opcion">
                             <img src="https://images.unsplash.com/photo-1614026480241-23ba865d1ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                                 class="Imagen">
                             <div class="info">
@@ -395,15 +401,18 @@
                                     <i class="fi fi-bs-shield-check"></i>
                                     <i class="fi fi-tr-circle-bolt"></i>
 
-                                    <label class="bordes">
-                                        <input type="radio" name="eleccion" class="Radio" value="BMW X6">
-                                    </label>
+                                    <input type="radio" name="eleccion" class="Radio" value="BMW X6" id="miRadio">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="like">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
 
                                 </div>
                             </div>
-                        </div>
+                        </label>
 
-                        <div class="opcion">
+                        <label class="opcion">
                             <img src="https://images.unsplash.com/photo-1533127321739-d5dc53c221c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
                                 class="Imagen">
                             <div class="info">
@@ -418,15 +427,18 @@
                                     <i class="fi fi-bs-shield-check"></i>
                                     <i class="fi fi-tr-circle-bolt"></i>
 
-                                    <label class="bordes">
-                                        <input type="radio" name="eleccion" class="Radio" value="JEEP">
-                                    </label>
+                                    <input type="radio" name="eleccion" class="Radio" value="JEEP">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="like">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
 
                                 </div>
                             </div>
-                        </div>
+                        </label>
 
-                        <div class="opcion">
+                        <label class="opcion">
                             <img src="https://images.unsplash.com/photo-1600016325494-1b4219d293c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                                 class="Imagen">
                             <div class="info">
@@ -442,15 +454,18 @@
                                     <i class="fi fi-bs-shield-check"></i>
                                     <i class="fi fi-tr-circle-bolt"></i>
 
-                                    <label class="bordes">
-                                        <input type="radio" name="eleccion" class="Radio" value="Mini-Cooper">
-                                    </label>
+                                    <input type="radio" name="eleccion" class="Radio" value="Mini-Cooper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="like">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
 
                                 </div>
                             </div>
-                        </div>
+                        </label>
 
-                        <div class="opcion">
+                        <label class="opcion">
                             <img src="https://images.unsplash.com/photo-1617195920791-e42b4d1e559a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                                 class="Imagen">
                             <div class="info">
@@ -466,15 +481,18 @@
                                     <i class="fi fi-bs-shield-check"></i>
                                     <i class="fi fi-tr-circle-bolt"></i>
 
-                                    <label class="bordes">
-                                        <input type="radio" name="eleccion" class="Radio">
-                                    </label>
+                                    <input type="radio" name="eleccion" class="Radio">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="like">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
 
                                 </div>
                             </div>
-                        </div>
+                        </label>
 
-                        <div class="opcion">
+                        <label class="opcion">
                             <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                                 class="Imagen">
                             <div class="info">
@@ -490,14 +508,17 @@
                                     <i class="fi fi-bs-shield-check"></i>
                                     <i class="fi fi-tr-circle-bolt"></i>
 
-                                    <label class="bordes">
-                                        <input type="radio" name="eleccion" class="Radio">
-                                    </label>
+                                    <input type="radio" name="eleccion" class="Radio">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="like">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
 
                                 </div>
                             </div>
 
-                        </div>
+                        </label>
 
                     </article>
                 </div>
@@ -505,16 +526,28 @@
             </form>
         </div>
 
-
-
-        <!--<button onclick="redireccionar()" class="Boton"><span class="texto">Alquilar</span></button> -->
-
     </section>
 
     <script>
         function redireccionar() {
             window.location.href = "http://localhost:3000/alquilarPost";
         }
+        function INICIO(){
+            window.location.href = "http://localhost:3000/compras";
+        }
+        function COMPRAR(){
+            window.location.href = "http://localhost:3000/alquiler";  
+        }
+        function ALQUILAR(){
+            window.location.href = "#";
+        }
+        function ACERCA_DE(){
+            window.location.href = "#";
+        }
+        function CONTACTANOS(){
+            window.location.href = "https://linktab.co/RedesDS";
+        }
+
     </script>
 
 </body>
