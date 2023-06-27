@@ -86,6 +86,21 @@ modelo.getIdUser = function conseguirID(email, password) {
     }
     return idUSer;
 }
+
+modelo.getDatosUser= function conseguirID(email, password) {
+    var datos={};
+    
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].email == email && users[i].password == password) {
+            datos.nombreApe=users[i].name+' '+users[i].surname;
+            datos.cuil=users[i].cuil;
+            break;
+        }
+    }
+
+
+    return datos;
+}
 modelo.enviarUsuariosClientes=function sendUserClient(){
     return users;
 }

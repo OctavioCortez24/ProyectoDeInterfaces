@@ -15,6 +15,7 @@ controller.loginPost=passport.authenticate('local',{
 controller.getUser=(request, response, next) => {
     
     controller.id =modelo.getIdUser(request.body.username, request.body.password)
+    controller.datos=modelo.getDatosUser(request.body.username, request.body.password);
    
     next();
     

@@ -15,15 +15,17 @@ controller.alquiler = (request, response) => {
 controller.alquilerPost = (request, response) => {
     //request.body.iDK="Lorezo"
     request.body.usuario = controladorDeUsuarios.id
-    response.send(request.body)
-    //controller.alquilerFactura(request.body, response)
+
+    request.body.datos=controladorDeUsuarios.datos
+
+    controller.alquilerFactura(request.body, response)
     //response.redirect("/pagar")
 
 }
 
 
 controller.alquilerFactura = async (request, response) => {
-    console.log('Si llego aca')
+   
     const doc = new PDF({ bufferPages: true });
 
     const filename = `Factura${Date.now()}.pdf`;
@@ -97,7 +99,7 @@ controller.alquilerFactura = async (request, response) => {
         doc.text('Razon Social: Autos.Inc', 25, 90, {
             border: { size: 5, color: 'black' }
         })
-        doc.text('Condición frente al IVA:', 25, 130, {
+        doc.text('Condición frente al IVA: Responsable Inscripto', 25, 130, {
             border: { size: 5, color: 'black' }
         })
         doc.text('Domicilio Comercial: Colonia Segovia El banco 8230', 25, 110, {
@@ -113,20 +115,20 @@ controller.alquilerFactura = async (request, response) => {
             .rect(15, 150, 582, 25)
             .stroke();
         //---------------------------------------
-        doc.text('CUIT:', 25, 184, {
+        doc.text('CUIT: '+request.datos.cuil, 25, 184, {
             border: { size: 5, color: 'black' }
         })
-        doc.text('Condición frente al IVA:', 25, 204, {
+        doc.text('Condición frente al IVA: '+request.condicion_iva, 25, 204, {
             border: { size: 5, color: 'black' }
         })
-        doc.text('Condición de venta:', 25, 224, {
+        doc.text('Condición de venta: ', 25, 224, {
             border: { size: 5, color: 'black' }
         })
 
-        doc.text('Apellido y Nombre/ Razón Social:', 244, 184, {
+        doc.text('Apellido y Nombre/ Razón Social: '+request.datos.nombreApe, 244, 184, {
             border: { size: 5, color: 'black' }
         })
-        doc.text('Domicilio:', 354, 204, {
+        doc.text('Domicilio: '+request.domicilio, 354, 204, {
             border: { size: 5, color: 'black' }
         })
         doc.lineJoin('miter')
@@ -162,7 +164,7 @@ controller.alquilerFactura = async (request, response) => {
     
             {
                 codigo: '1',
-                p_servicio: 'Ejemplo',
+                p_servicio: request.eleccion,
                 cantidad: '1',
                 precioUni: '50',
                 boni: 'no',
