@@ -14,9 +14,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            position: relative;
         }
-
-        /*...Barra...*/
 
         .container {
             max-width: 1200px;
@@ -24,59 +23,14 @@
             padding: 30px;
         }
 
-        .about {
-            font-size: 20px;
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
-        }
-
-        .logo {
-            margin-left: -100px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
-            text-decoration: none;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            font-size: large;
-            position: relative;
-            right: 70px;
-            left: 70px;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
-
         /*...Segunda Seccion...*/
 
         .main-content {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding-top: 3%;
             background-color: rgba(240, 248, 255, 0.772);
-            padding-left: 50px;
-            padding-right: 70px;
+            padding-left: 40px;
+            margin-top: 60px; 
         }
 
         .main-content .text {
@@ -130,21 +84,81 @@
             91.66% {transform: translateX(-200%);}
             100% {transform: translateX(0%);}
         }
+
+        /*...Barra...*/
+
+        .menu {
+            background-color: rgb(105, 37, 253);
+            color: #fff;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 8vh;
+            width: auto;
+            margin-top: 0;
+        }
+
+        .RAD {
+            display: none;
+        }
+
+        .barra {
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+            border: none;
+            border-bottom: 1.5px solid rgb(148, 148, 148);
+            transform: all 0.2s;
+        }
+
+        .menu input:checked+.barra {
+            transform: translate(x 1s);
+            border: none;
+            border-top: transparent;
+            border-left: transparent;
+            border-right: transparent;
+            border-bottom: 3px solid aqua;
+        }
+
     </style>
 </head>
 
 <body>
+
     <div class="container">
-        <nav>
-            <a class="logo" href="#">Logo</a>
-            <ul>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="http://localhost:3000/compras">Comprar</a></li>
-                <li><a href="http://localhost:3000/alquiler">Alquilar</a></li>
-                <li><a href="#">Contactanos</a></li>
-            </ul>
-            <a href="http://localhost:3000/login" class="about">Ingresar</a>
-        </nav>
+
+        <header>
+            <div class="Principal">
+    
+                <ul class="menu">
+    
+                    <label class="MARCADO" onclick="INICIO()">
+                        <input type="radio" class="RAD" id="uno"><span class="barra">INICIO</span>
+                    </label>
+    
+                    <label class="MARCADO" onclick="COMPRAR()">
+                        <input type="radio" class="RAD" id="dos"><span class="barra">COMPRAR</span>
+                    </label>
+    
+                    <label class="MARCADO" onclick="ALQUILAR()">
+                        <input type="radio" class="RAD" id="tres"><span class="barra">ALQUILAR</span>
+                    </label>
+    
+                    <label class="MARCADO" onclick="ACERCA_DE()">
+                        <input type="radio" class="RAD" id="cuatro"><span class="barra">ACERCA DE</span>
+                    </label>
+    
+                    <label class="MARCADO" onclick="CONTACTANOS()">
+                        <input type="radio" class="RAD" id="cinco"><span class="barra">CONTACTANOS</span>
+                    </label>
+    
+                </ul>
+    
+            </div>
+        </header>
 
         <div class="main-content">
             <div class="text">
@@ -159,19 +173,19 @@
             <figure class="Slider">
                 <div class="slider-wrapper">
                     <div class="slider-slide">
-                        <a href="http://localhost:3000/automovilA">
+                        <a href="autos/b.html">
                             <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                             alt="Imagen 1">
                         </a>
                     </div>
                     <div class="slider-slide">
-                        <a href="http://localhost:3000/automovilB">
+                        <a href="autos/a.html">
                             <img src="https://images.unsplash.com/photo-1563339018-51d1ef22f402?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                             alt="Imagen 2">
                         </a>
                     </div>
                     <div class="slider-slide">
-                        <a href="http://localhost:3000/automovilC">
+                        <a href="Compras.html">
                             <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                             alt="Imagen 3">
                         </a>
@@ -181,4 +195,27 @@
 
         </div>
     </div>
+
+    <script>
+        function redireccionar() {
+            window.location.href = "http://localhost:3000/alquilarPost";
+        }
+        function INICIO(){
+            window.location.href = "http://localhost:3000";
+        }
+        function COMPRAR(){
+            window.location.href = "http://localhost:3000/compras";  
+        }
+        function ALQUILAR(){
+            window.location.href = "http://localhost:3000/alquilar";
+        }
+        function ACERCA_DE(){
+            window.location.href = "#";
+        }
+        function CONTACTANOS(){
+            window.location.href = "https://linktab.co/RedesDS";
+        }
+
+    </script>
+    
 </body>
