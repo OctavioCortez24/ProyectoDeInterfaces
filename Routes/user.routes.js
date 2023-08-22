@@ -10,7 +10,8 @@ router.post('/loginPost',controller.verificarCuil, controller.getUser,controller
    
     var enlace=controller.enlace
     var url=(enlace!=null)?enlace:'/'
-    res.redirect(enlace)
+   
+    res.redirect(url)
  })
 
 //Registro de la aplicación
