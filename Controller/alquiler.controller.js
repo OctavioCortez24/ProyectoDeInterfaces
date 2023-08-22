@@ -3,13 +3,8 @@ const modeloUsuarios = require("../Model/user.model")
 const controladorDeUsuarios = require("../Controller/user.controller")
 const PDF = require("pdfkit-construct")
 controller.alquiler = (request, response) => {
-    var usuarios = modeloUsuarios.enviarUsuariosClientes();
-    var stringUsuarios = "";
-    for (var i = 0; i < usuarios.length; i++) {
-        stringUsuarios += "<option value='" + JSON.stringify(usuarios[i].id) + "'>" + usuarios[i].cuil + "</option>";
-    }
-
-    response.render('./View/alquiler', { usuarios: stringUsuarios });
+    
+    response.render('./View/alquiler');
 }
 
 controller.alquilerPost = (request, response) => {

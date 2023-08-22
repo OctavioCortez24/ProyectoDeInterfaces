@@ -2,15 +2,14 @@ const controller={};
 
 const passport = require('passport');
 const modelo=require('../Model/user.model')
+
 //Login
   
 controller.login =(request, response) => {
+    
     response.render('./View/login');
 }
-controller.loginPost=passport.authenticate('local',{
-    successRedirect:"/",
-    failureRedirect:"/login"
-})
+controller.loginPost=passport.authenticate('local',{failureRedirect:"/login"})
 
 controller.getUser=(request, response, next) => {
     
@@ -21,6 +20,7 @@ controller.getUser=(request, response, next) => {
     
 }
 controller.verificarCuil=(request, response, next) => {
+    request.enlace='enlace'
     var validacionCuil=modelo.validacionCuil(request.body.cuil);
   
     if(validacionCuil) {
@@ -37,5 +37,11 @@ controller.registerPost=(request, response) => {
     modelo.saveUser(request.body)
     response.redirect('/menu')
 }
+
+controller.enlaceAnterior=function(enlace){
+
+   controller.enlace=enlace;
+}
+
 
 module.exports=controller;
