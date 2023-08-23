@@ -3,6 +3,17 @@ const Clases = require('../Class')
 const GoogleSheet = require('./Google Sheet/GoogleSheet.js')
 
 var autos=[];
+const loadCars= async () =>{
+    const registros = await GoogleSheet.requerirRegistros(1); 
+
+    for (let i = 0; i < registros.length; i++) {
+        var auto = JSON.parse(registros[i].auto)//Recupero el usuario desde la hoja de calculo
+
+        autos.push(auto);
+
+    }
+}
+loadCars();
 modelo.saveCar= (atributosAuto) => {
    var marca=atributosAuto.marca;
    var modelo=atributosAuto.modelo;

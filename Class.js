@@ -55,7 +55,7 @@ class alquiler {
 
 }
 class auto{
-    constructor(marca, modelo, fechaFabricacion,precio, combustible, color, ruedas, calefaccion, seguro, personas){
+    constructor(marca, modelo, fechaFabricacion,precio, combustible, color, ruedas, calefaccion, seguro, personas, imagen, cantidad){
         this.id =uuidv4.v4();
         this.marca=marca;
         this.modelo=modelo;
@@ -67,6 +67,8 @@ class auto{
         this.calefaccion=calefaccion;
         this.seguro=seguro;
         this.personas=personas;
+        this.imagen=imagen;
+        this.cantidad=cantidad;
     }
     getId(){ return this.id}
     setMarca(marca){this.marca=marca}
@@ -89,5 +91,9 @@ class auto{
     getSeguro(){return this.seguro}
     setPersonas(personas){this.personas=personas}
     getPersonas(){return this.personas}
+    setImagen(imagen){this.imagen=imagen}
+    getImagen(){return imagen}
+    setCantidad(cantidad){this.cantidad=cantidad}
+    getCantidad(){return cantidad}
 }
 module.exports = { user, alquiler, auto }
