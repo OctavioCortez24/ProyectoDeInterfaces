@@ -4,7 +4,7 @@ const GoogleSheet = require('./Google Sheet/GoogleSheet.js')
 var users = []
 
 const loadUsers = async () => { 
-    const registros = await GoogleSheet.requerirRegistros(0);
+    const registros = await GoogleSheet.requerirRegistros(0); 
 
     for (let i = 0; i < registros.length; i++) {
         var userJSON = JSON.parse(registros[i].user)//Recupero el usuario desde la hoja de calculo

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Añadir un auto
+    </h1>
+
+    <form action="/anadirAutoPost" method="post">
+
+
+        <input type="text" name="marca" placeholder="Marca"><br>
+        <input type="text" name="modelo" placeholder="Modelo"><br>
+        <input type="text" name="fechaFabricacion" placeholder="FechaFabricacion"><br>
+        <input type="text" name="precio" placeholder="precio"><br>
+        <input type="text" name="combustible" placeholder="combustible"><br>
+        <input type="text" name="color" placeholder="Color"><br>
+        <input type="text" name="ruedas" placeholder="ruedas"><br>
+        <select name="calefaccion" id="calefaccion">
+            <option value="True">Si tiene calefaccion</option>
+            <option value="False"> No tiene calefaccion</option>
+        </select>
+        <select name="seguro" id="seguro">
+            <option value="True">Si tiene seguro</option>
+            <option value="False"> No tiene seguro</option>
+        </select>
+
+        <select name="personas" id="personas"> 
+            <option value="4">4 Personas</option>
+            <option value="2">2 Personas</option>
+        </select>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

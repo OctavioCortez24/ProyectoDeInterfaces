@@ -6,5 +6,7 @@ const {enlace}=require('../Helpers/auth')
 const controller=require('../Controller/admin.controller')
 router.get('/administracion', controller.menu)
 router.get('/facturarPedido', controller.facturar)
+router.get('/anadirAuto', controller.anadirAuto)
+router.post('/anadirAutoPost', controller.anadirAutoPost)
 
 module.exports=router;

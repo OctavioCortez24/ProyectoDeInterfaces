@@ -55,11 +55,39 @@ class alquiler {
 
 }
 class auto{
-    constructor(marca, modelo, fechaFabriicacion,){
+    constructor(marca, modelo, fechaFabricacion,precio, combustible, color, ruedas, calefaccion, seguro, personas){
         this.id =uuidv4.v4();
-        
+        this.marca=marca;
+        this.modelo=modelo;
+        this.fechaFabricacion=fechaFabricacion;
+        this.precio=precio;
+        this.combustible=combustible;
+        this.color=color;
+        this.ruedas=ruedas;
+        this.calefaccion=calefaccion;
+        this.seguro=seguro;
+        this.personas=personas;
     }
-
-
+    getId(){ return this.id}
+    setMarca(marca){this.marca=marca}
+    getMarca(){return this.marca}
+    setModelo(modelo){this.modelo=modelo}
+    getModelo(){return this.modelo}
+    setFechaFabriicacion(fechaFabriicacion){this.fechaFabriicacion=fechaFabriicacion}
+    getFechaFabriicacion(){return this.fechaFabriicacion}
+    setPrecio(precio){this.precio=precio}
+    getPrecio(){return this.precio}
+    setCombustible(combustible){this.combustible=combustible}
+    getCombustible(){return this.combustible}
+    setColor(color){this.color=color}
+    getColor(){return this.color}
+    setRuedas(ruedas){this.ruedas=ruedas}
+    getRuedas(){return this.ruedas}
+    setCalefaccion(calefaccion){this.calefaccion=calefaccion}
+    getCalefaccion(){return this.calefaccion}
+    setSeguro(seguro){this.seguro=seguro}
+    getSeguro(){return this.seguro}
+    setPersonas(personas){this.personas=personas}
+    getPersonas(){return this.personas}
 }
-module.exports = { user, alquiler }
+module.exports = { user, alquiler, auto }
