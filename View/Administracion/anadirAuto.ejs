@@ -17,7 +17,13 @@
         <input type="text" name="modelo" placeholder="Modelo"><br>
         <input type="text" name="fechaFabricacion" placeholder="FechaFabricacion"><br>
         <input type="text" name="precio" placeholder="precio"><br>
-        <input type="text" name="combustible" placeholder="combustible"><br>
+        
+        <select name="combustible" id="combustible">
+            <option value="Electrico">Electrico</option>
+            <option value="Gasolero">Gasolero</option>
+            <option value="Naftero">Naftero</option>
+        </select>
+        <br>
         <input type="text" name="color" placeholder="Color"><br>
         <input type="text" name="ruedas" placeholder="ruedas"><br>
         <select name="calefaccion" id="calefaccion">
@@ -32,6 +38,13 @@
         <select name="personas" id="personas"> 
             <option value="4">4 Personas</option>
             <option value="2">2 Personas</option>
+        </select><br>
+        <input type="text" name="imagen" placeholder="Insertar Imagen">
+        <input type="number" name="cantidad" placeholder="Insertar Cantidad de Autos">
+        <select name="categoria" id="categoria" placeholder="">
+            <option value="(Categoria A)">Categoria A</option>
+            <option value="(Categoria B)">Categoria B</option>
+            <option value="(Categoria C)">Categoria C</option>
         </select>
 
         <input type="submit" value="Enviar">

@@ -15,5 +15,6 @@ router.get('/automovilH',controller.automovilH)
 router.get('/automovilI',controller.automovilI)
 router.get('/automovilJ',controller.automovilJ)
 router.get('/automovilK',controller.automovilK)
+router.get('/getAutos',controller.getCars)
 
 module.exports=router;

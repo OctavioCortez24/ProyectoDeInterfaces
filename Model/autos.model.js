@@ -7,7 +7,7 @@ const loadCars= async () =>{
     const registros = await GoogleSheet.requerirRegistros(1); 
 
     for (let i = 0; i < registros.length; i++) {
-        var auto = JSON.parse(registros[i].auto)//Recupero el usuario desde la hoja de calculo
+        var auto = JSON.parse(registros[i].auto)//Recupero el auto desde la hoja de calculo
 
         autos.push(auto);
 
@@ -25,10 +25,13 @@ modelo.saveCar= (atributosAuto) => {
    var calefaccion= atributosAuto.calefaccion;
    var seguro = atributosAuto.seguro;
    var personas = atributosAuto.personas;
-   var auto = new Clases.auto(marca, modelo, fechaFabricacion, precio, combustible, color, ruedas, calefaccion, seguro, personas)
+   var imagen= atributosAuto.imagen;
+   var cantidad= atributosAuto.cantidad;
+   var categoria= atributosAuto.categoria;
+   var auto = new Clases.auto(marca, modelo, fechaFabricacion, precio, combustible, color, ruedas, calefaccion, seguro, personas,imagen,cantidad,categoria)
 
     var validacion = autos.reduce((acumulador, Item) => {
-        return acumulador = acumulador || (Item.email == auto.getId());
+        return acumulador = acumulador || (Item.marca == auto.getMarca()&&Item.modelo==auto.getModelo()&&Item.fechaFabricacion==auto.getFechaFabricacion());
     }, false)
 
     //Terimina de comprobar
@@ -45,6 +48,13 @@ modelo.saveCar= (atributosAuto) => {
 
 }
 
+modelo.enviarAutos= function(){
+
+  
+    return autos;
+}
+
+
 module.exports=modelo;
 
 async function saveCarGoogleSheet(auto) {
@@ -52,3 +62,4 @@ async function saveCarGoogleSheet(auto) {
     var numeroHoja = 1;//Es la hoja en la cual se van a guardar los datos
     await GoogleSheet.guardarDatos(numeroHoja, objeto);
 }
+

@@ -1,4 +1,5 @@
 const controller={};
+const modelo=require('../Model/autos.model')
 controller.automovilA=(request, response) => {
     response.render('./View/AutosParaMostrar/automovilA');
 }
@@ -31,6 +32,12 @@ controller.automovilJ=(request, response) => {
 }
 controller.automovilK=(request, response) => {
     response.render('./View/AutosParaMostrar/automovilK')
+}
+
+controller.getCars=(req, res)=>{
+   const autos= modelo.enviarAutos();
+  
+   res.json(autos)
 }
 
 module.exports=controller;
