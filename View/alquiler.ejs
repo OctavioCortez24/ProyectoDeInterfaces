@@ -444,6 +444,7 @@
             plantilla.getElementById('auto1').src = auto.imagen;
             plantilla.getElementById('modelo').textContent = auto.modelo;
             plantilla.getElementById('categoria').textContent=auto.categoria;
+            plantilla.getElementById('autoEleccion').value=auto.modelo;
             return plantilla;
         }
     </script>
@@ -462,7 +463,7 @@
                     <i class="fi fi-bs-shield-check"></i>
                     <i class="fi fi-tr-circle-bolt"></i>
 
-                    <input type="radio" name="eleccion" class="Radio" value="Modelo">
+                    <input type="radio" name="eleccion" class="Radio" value="Modelo" id="autoEleccion">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="like">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
