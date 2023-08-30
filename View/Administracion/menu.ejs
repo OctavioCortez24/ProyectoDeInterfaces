@@ -1,14 +1,130 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <title>Admin</title>
+
+    <style>
+        .container-md{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30%;
+          text-align: center;
+        }
+
+        .input-group{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30vh;
+        }
+
+        .navbar, .offcanvas-header{
+          background-color: rgb(123, 0, 255);
+          color: azure;
+        }
+
+    </style>
+    
 </head>
 <body>
-    <h1>Menu de administracion</h1>
-    <a href="/facturarPedido">Facturacion</a><br>
-    <a href="/anadirAuto">AnadirPedido</a>
+
+  <nav class="navbar">
+    <div class="container-fluid navbar-dark">
+      <a class="navbar-brand" href="#"></a>
+      <h1>PANEL VEHICULAR</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Funciones</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active text-primary" aria-current="page" href="#">Generar Factura</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="#">Agregar Vehiculos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="input-group">
+    <select class="form-select" id="Lista" aria-label="Example select with button addon"></select>
+    <button class="btn btn-outline-secondary" type="button" onclick="ListarAutos()">Ver</button>
+  </div>
+  
+  <div id="Exit" class="container-md"></div>
+  
+  <script>
+    var marcas = [
+      {nombre: "AUDI"},
+      {nombre: "BMW"},
+      {nombre: "FORD"},
+      {nombre: "CHEVROLET"},
+      {nombre: "VOLVO"},
+      {nombre: "PEUGEOT"},
+      {nombre: "RENAULT"}
+    ];
+  
+    function LsMarcas() {
+      var Ls = "";
+      for (i = 0; i < marcas.length; i++) {
+        Ls += "<option value='" + marcas[i].nombre + "'>" + marcas[i].nombre + "</option>";
+      }
+  
+      document.getElementById("Lista").innerHTML = Ls;
+
+    }
+  
+    LsMarcas();
+
+    function ListarAutos(){
+
+      var marcSelec = document.getElementById("Lista").value;
+      console.log("Seleccionado:", marcSelec);
+
+      var data = marcSelec;
+
+      var vehiculos = [
+        {modelo: "A3", tipo: "Sedán", marca: "AUDI"},
+        {modelo: "A4", tipo: "Sedán", marca: "AUDI"},
+        {modelo: "X5", tipo: "SUV", marca: "BMW"},
+        {modelo: "Mustang", tipo: "Coupé", marca: "FORD"},
+        {modelo: "Camaro", tipo: "Deportivo", marca: "CHEVROLET"},
+        {modelo: "XC90", tipo: "SUV", marca: "VOLVO"},
+        {modelo: "208", tipo: "Hatchback", marca: "PEUGEOT"},
+        {modelo: "Clio", tipo: "Hatchback", marca: "RENAULT"},
+        {modelo: "Corolla", tipo: "Sedán", marca: "TOYOTA"},
+        {modelo: "Golf", tipo: "Hatchback", marca: "VOLKSWAGEN"},
+        {modelo: "Wrangler", tipo: "Todo Terreno", marca: "JEEP"}
+      ];
+
+      var Lista = "";
+      
+      for (i = 0; i < vehiculos.length; i++) {
+        if(vehiculos[i].marca  === data){
+          Lista += "<tr><td>" + vehiculos[i].modelo + "</td><td>" + vehiculos[i].tipo + "</td><td>" + vehiculos[i].marca + "</td><td><button type='button' class='btn btn-outline-danger'><i class='ti ti-trash-off'></i></button></td><td><button type='button' class='btn btn-outline-success'><i class='ti ti-edit'></i></button></td></tr>";
+        }
+      }
+      
+      Lista = "<table class='table table-striped'> <thead class='table-dark border'>  <tr>  <th>Modelo</th>  <th>Nombre</th>  <th>Marca</th>  <th>Eliminar</th>  <th>Editar</th> </tr>  </thead>" + Lista + "</table>";
+      document.getElementById("Exit").innerHTML = Lista;
+    }
+
+  </script>
+
 </body>
 </html>
