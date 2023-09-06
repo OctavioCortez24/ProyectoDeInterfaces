@@ -17,16 +17,19 @@
           text-align: center;
         }
 
+        .Principal{
+          font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
         .input-group{
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 30vh;
+          height: 5vh;
         }
 
-        .navbar, .offcanvas-header{
+        .navbar, .container-fluid{
           background-color: rgb(123, 0, 255);
-          color: azure;
         }
 
     </style>
@@ -34,39 +37,30 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container-fluid navbar-dark">
-      <a class="navbar-brand" href="#"></a>
-      <h1>PANEL VEHICULAR</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a style="color: azure; font-family: 'Times New Roman', Times, serif;" class="navbar-brand" href="#">Gestion De Inventario</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Funciones</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active text-primary" aria-current="page" href="/facturarPedido">Generar Factura</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="#">Agregar Vehiculos</a>
-            </li>
-          </ul>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" style="color: rgba(240, 255, 255, 0.556);" href="#">Ingresar Productos</a>
         </div>
       </div>
     </div>
   </nav>
 
+  <div class="Principal">
+    <h3 style="text-align: center; height: 10%; margin-top: 5vh;">BUSCAR VEHICULOS</h3>
 
-  <div class="input-group">
-    <select class="form-select" id="Lista" aria-label="Example select with button addon"></select>
-    <button class="btn btn-outline-secondary" type="button" onclick="ListarAutos()">Ver</button>
+    <div class="input-group">
+      <select class="form-select" id="Lista" aria-label="Example select with button addon"></select>
+      <button class="btn btn-outline-secondary" type="button" onclick="ListarAutos()">Ver</button>
+    </div>
+    
+    <div id="Exit" class="container-md"></div>
   </div>
-  
-  <div id="Exit" class="container-md"></div>
   
   <script>
     var marcas = [
