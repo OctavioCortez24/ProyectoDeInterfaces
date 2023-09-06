@@ -36,7 +36,8 @@ controller.automovilK=(request, response) => {
 
 controller.getCars=(req, res)=>{
    const autos= modelo.enviarAutos();
-  
+
+
    res.json(autos)
 }
 

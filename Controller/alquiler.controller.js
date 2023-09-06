@@ -16,11 +16,13 @@ controller.alquilerPost = (request, response) => {
     //response.send(request.body)
     //controller.alquilerFactura(request.body, response) <-----------Crea la factura
     //response.redirect("/pagar")
+    //---------------------------
     modelo.saveAlquiler(request.body)
     response.redirect("/alquiler")
+   
 }
 controller.enviarPedidosAlquiler=(req, res)=>{
-
+    
     res.json(modelo.enviarPedidos())
     
 }

@@ -15,13 +15,15 @@ loadUsers()
 
 console.log(alquileres)
 modelo.saveAlquiler = (atributosAlquiler) => {
+    var autoValores=JSON.parse(atributosAlquiler.eleccion);
 
-    var eleccion = atributosAlquiler.eleccion;
+    var eleccion = autoValores.modelo;
+    var precioAuto=autoValores.precio;
     var idUser = atributosAlquiler.usuario;
     var fechaSalida = atributosAlquiler.fechaSalida;
     var fechaRegreso = atributosAlquiler.fechaRegreso;
-    const alquiler = new Clases.alquiler(idUser, fechaSalida, fechaRegreso, eleccion)
-    console.log(alquileres)
+    const alquiler = new Clases.alquiler(idUser,precioAuto, fechaSalida, fechaRegreso, eleccion)
+  
     saveAlquilerGoogleSheet(alquiler)
 
 }

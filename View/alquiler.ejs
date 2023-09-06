@@ -404,7 +404,8 @@
             plantilla.getElementById('auto1').src = auto.imagen;
             plantilla.getElementById('modelo').textContent = auto.modelo;
             plantilla.getElementById('categoria').textContent=auto.categoria;
-            plantilla.getElementById('autoEleccion').value=auto.modelo;
+
+            plantilla.getElementById('autoEleccion').value='{"modelo":"'+auto.modelo+'","precio":"'+auto.precio+'"}';
             return plantilla;
         }
     </script>
