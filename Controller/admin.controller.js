@@ -21,5 +21,8 @@ controller.anadirAutoPost=(request, response)=>{
    response.redirect('/anadirAuto')
 }
 
+controller.creearFactura=(req, res)=>{
+    
+}
 
 module.exports=controller;

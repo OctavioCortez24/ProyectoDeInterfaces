@@ -9,6 +9,7 @@ router.get('/alquiler',tieneAcceso,controller.alquiler)
 router.post('/alquilarPost',controller.alquilerPost)
 
 router.get('/getFacturaAlquiler', controller.alquilerFactura)
+router.get('/pedidosAquiler',controller.enviarPedidosAlquiler)
 
 
 module.exports=router;

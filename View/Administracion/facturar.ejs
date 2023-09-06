@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Facturacion</h1>
+
+
+    <script>
+        async function conseguirAlquileres() {
+
+            try {
+
+                const response = await fetch('/pedidosAquiler');
+                const pedidos = await response.json();
+                console.log(pedidos)
+            } catch (e) {
+                console.log(e.message);
+            }
+        }
+        conseguirAlquileres();
+    </script>
 </body>
+
 </html>

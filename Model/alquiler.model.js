@@ -1,8 +1,39 @@
-const modelo={};
-const Clases=require('../Class');
+const modelo = {};
+const Clases = require('../Class')
 const GoogleSheet = require('./Google Sheet/GoogleSheet.js');
-var alquileres=[];
+var alquileres = [];
 
-modelo.saveAlquiler=function guardarAlquiler(atributosAlquiler){
+const loadUsers = async () => {
+    const registros = await GoogleSheet.requerirRegistros(2);
+
+    for (let i = 0; i < registros.length; i++) {
+        var alquilerJSON = JSON.parse(registros[i].alquiler)//Recupero el usuario desde la hoja de calculo
+        alquileres.push(alquilerJSON)
+    }
+}
+loadUsers()
+
+console.log(alquileres)
+modelo.saveAlquiler = (atributosAlquiler) => {
+
+    var eleccion = atributosAlquiler.eleccion;
+    var idUser = atributosAlquiler.usuario;
+    var fechaSalida = atributosAlquiler.fechaSalida;
+    var fechaRegreso = atributosAlquiler.fechaRegreso;
+    const alquiler = new Clases.alquiler(idUser, fechaSalida, fechaRegreso, eleccion)
+    console.log(alquileres)
+    saveAlquilerGoogleSheet(alquiler)
 
 }
+async function saveAlquilerGoogleSheet(alquiler) {
+    var objeto = { "alquiler": '' + JSON.stringify(alquiler) + '' }//Pongo el formato para poder guardar el usuario
+    var numeroHoja = 2;//Es la hoja en la cual se van a guardar los datos
+    await GoogleSheet.guardarDatos(numeroHoja, objeto);
+
+}
+modelo.enviarPedidos=()=>{
+    
+    return alquileres;
+}
+
+module.exports = modelo;
