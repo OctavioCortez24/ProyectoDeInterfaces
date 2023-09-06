@@ -20,6 +20,9 @@ controller.anadirAutoPost=(request, response)=>{
    modelo.saveCar(request.body)
    response.redirect('/anadirAuto')
 }
+controller.menu=(request,response)=>{
+    response.render('./View/Administracion/menu.ejs')
+}
 
 
 module.exports=controller;

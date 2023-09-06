@@ -8,5 +8,6 @@ router.get('/administracion', controller.menu)
 router.get('/facturarPedido', controller.facturar)
 router.get('/anadirAuto', controller.anadirAuto)
 router.post('/anadirAutoPost', controller.anadirAutoPost)
+router.get('/menu', controller.menu)
 
 module.exports=router;

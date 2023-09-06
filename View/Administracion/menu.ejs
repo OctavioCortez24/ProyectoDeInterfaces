@@ -92,19 +92,7 @@
 
       var data = marcSelec;
 
-      var vehiculos = [
-        {modelo: "A3", tipo: "Sedán", marca: "AUDI"},
-        {modelo: "A4", tipo: "Sedán", marca: "AUDI"},
-        {modelo: "X5", tipo: "SUV", marca: "BMW"},
-        {modelo: "Mustang", tipo: "Coupé", marca: "FORD"},
-        {modelo: "Camaro", tipo: "Deportivo", marca: "CHEVROLET"},
-        {modelo: "XC90", tipo: "SUV", marca: "VOLVO"},
-        {modelo: "208", tipo: "Hatchback", marca: "PEUGEOT"},
-        {modelo: "Clio", tipo: "Hatchback", marca: "RENAULT"},
-        {modelo: "Corolla", tipo: "Sedán", marca: "TOYOTA"},
-        {modelo: "Golf", tipo: "Hatchback", marca: "VOLKSWAGEN"},
-        {modelo: "Wrangler", tipo: "Todo Terreno", marca: "JEEP"}
-      ];
+    
 
       var Lista = "";
       
@@ -117,6 +105,80 @@
       Lista = "<table class='table table-striped'> <thead class='table-dark border'>  <tr>  <th>Modelo</th>  <th>Nombre</th>  <th>Marca</th>  <th>Eliminar</th>  <th>Editar</th> </tr>  </thead>" + Lista + "</table>";
       document.getElementById("Exit").innerHTML = Lista;
     }
+    async function conseguirAutos() {
+
+try {
+   
+    const response = await fetch('/getAutos');
+    const autos = await response.json();
+   console.log(autos);
+   
+   autos.forEach(auto => {
+
+
+
+      const fila = document.createElement('tr');
+      // Crea una columna para el botón de eliminar
+      const eliminarColumna = document.createElement('td');
+
+      // Crea un botón de eliminar
+      const botonEliminar = document.createElement('button');
+      botonEliminar.textContent = 'Eliminar';
+      botonEliminar.addEventListener('click', () => {
+        // Función para eliminar la fila al hacer clic en el botón
+        tbody.removeChild(fila);
+      });
+      // Agrega el botón de eliminar a la columna de eliminación
+      eliminarColumna.appendChild(botonEliminar);
+      // Crea una columna para el botón de actualizar
+      const actualizarColumna = document.createElement('td');
+
+      // Crea un botón de actualizar
+      const botonActualizar = document.createElement('button');
+      botonActualizar.textContent = 'Actualizar';
+      botonActualizar.addEventListener('click', () => {
+        // Función para actualizar la fila al hacer clic en el botón
+        document.getElementById('editar-marca').value = auto.marca;
+        document.getElementById('editar-modelo').value = auto.modelo;
+   
+    document.getElementById('formulario-edicion').style.display = 'block';
+      });
+      document.getElementById('guardar-edicion').addEventListener('click', () => {
+  // Obtener los valores editados del formulario
+  const nuevaMarca = document.getElementById('editar-marca').value;
+  const nuevoModelo = document.getElementById('editar-modelo').value;
+  // Actualizar los datos en la fila (puedes ajustar esto según tus necesidades)
+  auto.marca = nuevaMarca;
+  auto.modelo = nuevoModelo;
+  // Ocultar el formulario de edición
+  document.getElementById('formulario-edicion').style.display = 'none';
+
+  // Mostrar una alerta con los datos actualizados
+});
+
+    
+      // Agrega el botón de actualizar a la columna de actualización
+      actualizarColumna.appendChild(botonActualizar);
+      const marcaColumna = document.createElement('td');
+      marcaColumna.textContent = auto.marca; // Suponiendo que "marca" es una propiedad del objeto auto
+      fila.appendChild(marcaColumna);
+
+      const modeloColumna = document.createElement('td');
+      modeloColumna.textContent = auto.modelo; // Suponiendo que "modelo" es una propiedad del objeto auto
+      fila.appendChild(modeloColumna);
+       // Agrega la columna de eliminación a la fila
+       fila.appendChild(eliminarColumna);
+       fila.appendChild(actualizarColumna);
+
+      tbody.appendChild(fila);
+    });
+
+
+} catch (e) {
+    console.log(e.message);
+}
+}
+conseguirAutos();
 
   </script>
 
