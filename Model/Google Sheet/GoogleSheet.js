@@ -23,7 +23,7 @@ async function requerirRegistros(numeroHoja) {
 
 async function guardarDatos(numeroHoja, objeto) {
 
-    console.log(numeroHoja);
+    
     const hoja = await requerirHojaDeCalculo(numeroHoja);
     await hoja.addRow(objeto);
 

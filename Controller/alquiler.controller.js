@@ -1,21 +1,30 @@
 const controller = {};
-const modeloUsuarios = require("../Model/user.model")
+
 const controladorDeUsuarios = require("../Controller/user.controller")
 const PDF = require("pdfkit-construct")
+const modelo=require('../Model/alquiler.model')
 controller.alquiler = (request, response) => {
     
     response.render('./View/alquiler');
 }
 
 controller.alquilerPost = (request, response) => {
-    //request.body.iDK="Lorezo"
+    
     request.body.usuario = controladorDeUsuarios.id
 
-    request.body.datos=controladorDeUsuarios.datos
-
-    controller.alquilerFactura(request.body, response)
+    //request.body.datos=controladorDeUsuarios.datos
+    //response.send(request.body)
+    //controller.alquilerFactura(request.body, response) <-----------Crea la factura
     //response.redirect("/pagar")
-
+    //---------------------------
+    modelo.saveAlquiler(request.body)
+    response.redirect("/alquiler")
+   
+}
+controller.enviarPedidosAlquiler=(req, res)=>{
+    
+    res.json(modelo.enviarPedidos())
+    
 }
 
 

@@ -34,18 +34,17 @@ class user {
 }
 // creo clases para el alquilr de vehiculos Lunes 17/4
 class alquiler {
-    constructor( idUsuario, tipoDeAutomovil, fechaAdquisitiva, fechaDevolucion, vehiculo) {
+    constructor( idUsuario, precio, fechaAdquisitiva, fechaDevolucion, vehiculo) {
         this.idAlquiler =uuidv4.v4();
         this.idUsuario=idUsuario;
-        this.tipoDeAutomovil = tipoDeAutomovil;
+        this.precio=precio;
         this.fechaAdquisitiva = fechaAdquisitiva;
         this.fechaDevolucion = fechaDevolucion;
         this.vehiculo=vehiculo;
 
     }
     getId() { return this.idAlquiler}
-    setTipoDeAutomovil(tipoDeAutomovil) { this.tipoDeAutomovil = tipoDeAutomovil }
-    getTipoDeAutomovil() { return this.tipoDeAutomovil }
+    
     setFechaAdquisitiva(fechaAdquisitiva) { this.fechaAdquisitiva = fechaAdquisitiva }
     getFechaAdquisitiva() { return this.fechaAdquisitiva }
     setFechaDevolucion(fechaDevolucion) { this.fecha = fechaDevolucion }
