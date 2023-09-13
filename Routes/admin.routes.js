@@ -9,5 +9,6 @@ router.get('/facturarPedido', controller.facturar)
 router.post('/facturarPedido',controller.creearFactura)
 router.get('/anadirAuto', controller.anadirAuto)
 router.post('/anadirAutoPost', controller.anadirAutoPost)
+router.get('/menu', controller.menu)
 
 module.exports=router;
