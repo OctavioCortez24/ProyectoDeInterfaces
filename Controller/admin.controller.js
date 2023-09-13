@@ -23,6 +23,7 @@ controller.anadirAutoPost=(request, response)=>{
 }
 
 controller.creearFactura=(request, response)=>{
+    console.log(request.body+'Hola')
     const doc = new PDF({ bufferPages: true });
 
     const filename = `Factura${Date.now()}.pdf`;

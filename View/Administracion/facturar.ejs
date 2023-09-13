@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facturación</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -14,6 +16,7 @@
     <form action="/facturarPedido" method="post">
 
         <input type="submit" value="Facturar">
+
     </form>
 
     <script>
@@ -28,28 +31,39 @@
                 var pedidosT = document.createElement('table');
                 pedidosT.setAttribute('class', 'table table-success table-striped')
 
-                var fila=pedidosT.createTHead().insertRow(0)
-                fila.insertCell(0).innerHTML='<b>Vehiculo</b>'
-                fila.insertCell(1).innerHTML='<b>Precio</b>'
-                fila.insertCell(2).innerHTML='<b>Fecha de Salida</b>'
-                fila.insertCell(3).innerHTML='<b>Fecha de Regreso</b>'
-                fila.insertCell(4).innerHTML='<b>Cliente</b>'
+                var fila = pedidosT.createTHead().insertRow(0)
+                fila.insertCell(0).innerHTML = '<b>Vehiculo</b>'
+                fila.insertCell(1).innerHTML = '<b>Precio</b>'
+                fila.insertCell(2).innerHTML = '<b>Fecha de Salida</b>'
+                fila.insertCell(3).innerHTML = '<b>Fecha de Regreso</b>'
+                fila.insertCell(4).innerHTML = '<b>Cliente</b>'
+                fila.insertCell(5).innerHTML = '<b>Facturar</b>'
 
-                var Tbody=pedidosT.createTBody();
-                pedidos.forEach((orden, index)=> addRowInTable(orden, Tbody.insertRow(index)))
+                var Tbody = pedidosT.createTBody();
+                pedidos.forEach((orden, index) => addRowInTable(orden, Tbody.insertRow(index)))
 
                 document.getElementById('pedidoID').appendChild(pedidosT)
             } catch (e) {
                 console.log(e.message);
             }
         }
-        function addRowInTable(pedido, fila){
-            
-            fila.insertCell(0).innerHTML=pedido.vehiculo;
-            fila.insertCell(1).innerHTML=pedido.precio;
-            fila.insertCell(2).innerHTML=pedido.fechaAdquisitiva;
-            fila.insertCell(3).innerHTML=pedido.fechaDevolucion;
-            fila.insertCell(4).innerHTML='Auto';
+        function addRowInTable(pedido, fila) {
+            var boton = document.createElement('button');
+            boton.setAttribute('class','btn btn-outline-danger')
+            boton.setAttribute('type', 'button');
+            boton.innerHTML = '<i class="bi bi-file-earmark-pdf"></i>'
+            boton.addEventListener("click", () => {
+                console.log(pedido)
+            });
+            fila.insertCell(0).innerHTML = pedido.vehiculo;
+            fila.insertCell(1).innerHTML = pedido.precio;
+            fila.insertCell(2).innerHTML = pedido.fechaAdquisitiva;
+            fila.insertCell(3).innerHTML = pedido.fechaDevolucion;
+            fila.insertCell(4).innerHTML = 'Auto';
+            fila.insertCell(5).appendChild(boton);
+        }
+        function miFuncion() {
+            console.log(pedido)
         }
         conseguirAlquileres();
     </script>
