@@ -128,7 +128,7 @@ controller.creearFactura=(request, response)=>{
        doc.text('CUIT: '+user.cuil, 25, 184, {
            border: { size: 5, color: 'black' }
        })
-       doc.text('Condición frente al IVA: '+'request.condicion_iva', 25, 204, {
+       doc.text('Condición frente al IVA: '+user.IVA, 25, 204, {
            border: { size: 5, color: 'black' }
        })
        doc.text('Condición de venta: ', 25, 224, {

@@ -109,6 +109,7 @@ modelo.getDatosUserConID= function conseguirDatos(id) {
             datos.nombreApe=users[i].name+' '+users[i].surname;
             datos.cuil=users[i].cuil;
             datos.domicilio=users[i].localidad;
+            datos.IVA=users[i].IVA;
             break;
         }
     }
