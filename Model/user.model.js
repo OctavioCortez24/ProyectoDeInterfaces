@@ -101,6 +101,21 @@ modelo.getDatosUser= function conseguirID(email, password) {
 
     return datos;
 }
+modelo.getDatosUserConID= function conseguirDatos(id) {
+    var datos={};
+    
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].id == id) {
+            datos.nombreApe=users[i].name+' '+users[i].surname;
+            datos.cuil=users[i].cuil;
+            datos.domicilio=users[i].localidad;
+            break;
+        }
+    }
+
+
+    return datos;
+}
 modelo.enviarUsuariosClientes=function sendUserClient(){
     return users;
 }

@@ -29,7 +29,7 @@ controller.enviarPedidosAlquiler=(req, res)=>{
 
 
 controller.alquilerFactura = async (request, response) => {
-   
+   console.log('Hola------------------------> alquilerFactura')
     const doc = new PDF({ bufferPages: true });
 
     const filename = `Factura${Date.now()}.pdf`;

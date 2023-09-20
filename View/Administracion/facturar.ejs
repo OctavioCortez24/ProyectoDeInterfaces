@@ -13,11 +13,8 @@
 <body>
     <h1>Facturacion</h1>
     <table id="pedidoID"></table>
-    <form action="/facturarPedido" method="post">
 
-        <input type="submit" value="Facturar">
 
-    </form>
 
     <script>
         async function conseguirAlquileres() {
@@ -26,7 +23,7 @@
 
                 const response = await fetch('/pedidosAquiler');
                 const pedidos = await response.json();
-                console.log(pedidos)
+         
 
                 var pedidosT = document.createElement('table');
                 pedidosT.setAttribute('class', 'table table-success table-striped')
@@ -47,23 +44,60 @@
                 console.log(e.message);
             }
         }
-        function addRowInTable(pedido, fila) {
-            var boton = document.createElement('button');
-            boton.setAttribute('class','btn btn-outline-danger')
-            boton.setAttribute('type', 'button');
-            boton.innerHTML = '<i class="bi bi-file-earmark-pdf"></i>'
-            boton.addEventListener("click", () => {
-                console.log(pedido)
-            });
-            fila.insertCell(0).innerHTML = pedido.vehiculo;
-            fila.insertCell(1).innerHTML = pedido.precio;
-            fila.insertCell(2).innerHTML = pedido.fechaAdquisitiva;
-            fila.insertCell(3).innerHTML = pedido.fechaDevolucion;
-            fila.insertCell(4).innerHTML = 'Auto';
-            fila.insertCell(5).appendChild(boton);
+        async function getC(pedido) {
+            const response = await fetch(`/getCliente/?datos=${JSON.stringify(pedido)}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Deberías ver "Función llamada" en la consola
+                    var c = JSON.parse(data)
+
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            return 'Hola'
         }
-        function miFuncion() {
+        function addRowInTable(pedido, fila) {
+
+            var boton = document.createElement('a');
+            boton.setAttribute('class', 'btn btn-outline-danger')
+            //boton.setAttribute('type', 'button');
+            boton.innerHTML = '<i class="bi bi-file-earmark-pdf"></i>'
+            /*boton.addEventListener("click", () => {
+                facturar(pedido)
+            });*/
+            boton.href = `http://localhost:3000/facturar/?datos=${JSON.stringify(pedido)}`
+
+            fetch(`/getCliente/?datos=${JSON.stringify(pedido)}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Deberías ver "Función llamada" en la consola
+                    
+                    var cliente = JSON.parse(data).nombreApe;
+                    fila.insertCell(0).innerHTML = pedido.vehiculo;
+                    fila.insertCell(1).innerHTML = pedido.precio;
+                    fila.insertCell(2).innerHTML = pedido.fechaAdquisitiva;
+                    fila.insertCell(3).innerHTML = pedido.fechaDevolucion;
+                    fila.insertCell(4).innerHTML = cliente;
+                    fila.insertCell(5).appendChild(boton);
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+        }
+        function facturar(pedido) {
             console.log(pedido)
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+
+                }
+            }
+            xmlHttp.open("GET", 'http://localhost:3000/facturar', true); // true for asynchronous 
+            xmlHttp.send('Hola');
         }
         conseguirAlquileres();
     </script>
