@@ -84,6 +84,7 @@
          // console.log(autos);
           const selectElement = document.getElementById("Lista");
           ListarAutos(autos);
+          
           autos.forEach((auto) => {
             const option = document.createElement("option");
             option.value = auto.marca; // Supongo que la marca está en la propiedad 'marca' del objeto auto
