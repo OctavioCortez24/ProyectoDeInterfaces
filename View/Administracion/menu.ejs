@@ -61,125 +61,156 @@
     
     <div id="Exit" class="container-md"></div>
   </div>
-  
+  <form id="formulario-edicion" style="display: none;">
+    <input type="text" id="editar-marca" placeholder="Nueva marca">
+    <input type="text" id="editar-modelo" placeholder="Nuevo modelo">
+    <button type="button" id="guardar-edicion" onclick="guardar()">Guardar</button>
+  </form>
   <script>
-    var marcas = [
-      {nombre: "AUDI"},
-      {nombre: "BMW"},
-      {nombre: "FORD"},
-      {nombre: "CHEVROLET"},
-      {nombre: "VOLVO"},
-      {nombre: "PEUGEOT"},
-      {nombre: "RENAULT"}
-    ];
-  
-    function LsMarcas() {
-      var Ls = "";
-      for (i = 0; i < marcas.length; i++) {
-        Ls += "<option value='" + marcas[i].nombre + "'>" + marcas[i].nombre + "</option>";
-      }
-  
-      document.getElementById("Lista").innerHTML = Ls;
-
-    }
-  
-    LsMarcas();
-
-    function ListarAutos(){
-
-      var marcSelec = document.getElementById("Lista").value;
-      console.log("Seleccionado:", marcSelec);
-
-      var data = marcSelec;
-
-    
-
-      var Lista = "";
+    function fun() {
+        ListarAutos()
       
-      for (i = 0; i < vehiculos.length; i++) {
-        if(vehiculos[i].marca  === data){
-          Lista += "<tr><td>" + vehiculos[i].modelo + "</td><td>" + vehiculos[i].tipo + "</td><td>" + vehiculos[i].marca + "</td><td><button type='button' class='btn btn-outline-danger'><i class='ti ti-trash-off'></i></button></td><td><button type='button' class='btn btn-outline-success'><i class='ti ti-edit'></i></button></td></tr>";
+        
+      }
+      function guardar(){
+        guardarCambios()
+      } 
+       
+
+      async function conseguirAutos() {
+        try {
+          const response = await fetch("/getAutos");
+          const autos = await response.json();
+         // console.log(autos);
+          const selectElement = document.getElementById("Lista");
+          ListarAutos(autos);
+          
+          autos.forEach((auto) => {
+            const option = document.createElement("option");
+            option.value = auto.marca; // Supongo que la marca está en la propiedad 'marca' del objeto auto
+            option.text = auto.marca; // El texto de la opción será la marca del auto
+            // Agrega la opción al select
+           // Verificar si la opción ya existe en el select
+  let optionExists = false;
+  for (let i = 0; i < selectElement.options.length; i++) {
+    if (selectElement.options[i].value === option.value) {
+      optionExists = true;
+      break;
+    }
+  }
+
+  // Si la opción no existe, lo agréga
+  if (!optionExists) {
+    selectElement.appendChild(option);
+  }
+          });
+        } catch (e) {
+          console.log(e.message);
         }
       }
+      async function ListarAutos() {
+        try {
+          const response = await fetch("/getAutos");
+          const auto = await response.json();
+          var marcSelec = document.getElementById("Lista").value;
+          //  console.log("Seleccionado:", marcSelec);
+
+          var data = marcSelec;
+          var Lista = "";
+
+          // Ahora estamos utilizando el array 'autos'
+          for (i = 0; i < auto.length; i++) {
+            if (auto[i].marca == data) {
+              Lista += 
+               "<tr><td>" + auto[i].modelo+  "</td><td>" + auto[i].marca+ "</td><td><button type='button' class='btn btn-outline-danger' onclick='eliminarFila(" +
+      i +
+      ")' data-index='" +
+      i +
+      "'><i class='ti ti-trash-off'></i></button></td><td><button type='button' class='btn btn-outline-success' onclick='editarAuto(" +
+      i +
+      ")' data-index='" +
+      i +
+      "'><i class='ti ti-edit'></i></button></td></tr>";
+            }
+          }
+
+          Lista =
+            "<table class='table table-striped'> <thead class='table-dark border'>  <tr>  <th>Modelo</th><th>Marca</th>  <th>Eliminar</th>  <th>Editar</th>  </tr>  </thead>" +
+            Lista +
+            "</table>";
+          document.getElementById("Exit").innerHTML = Lista;
+
+        } catch (e) {
+          console.log(e.message);
+        }
+        
+        
+      }
       
-      Lista = "<table class='table table-striped'> <thead class='table-dark border'>  <tr>  <th>Modelo</th>  <th>Nombre</th>  <th>Marca</th>  <th>Eliminar</th>  <th>Editar</th> </tr>  </thead>" + Lista + "</table>";
-      document.getElementById("Exit").innerHTML = Lista;
-    }
-    async function conseguirAutos() {
-
-try {
+function eliminarFila(index) {
    
-    const response = await fetch('/getAutos');
-    const autos = await response.json();
-   console.log(autos);
-   
-   autos.forEach(auto => {
+  const table = document.querySelector("table"); 
+  const row = table.rows[index + 1]; 
+ console.log("hola"+index);
+row.remove();
+  
+  //auto.splice(index,1); no funciona xq el octavio tiene que hacer una cosa para que se borre de la hoda de calculo
 
 
+}
+ async function editarAuto(index) {
+    try{
+        const response = await fetch("/getAutos");
+          const auto = await response.json();
+          
+const editForm = document.getElementById("formulario-edicion");
+  const editModelo = document.getElementById("editar-marca");
+  const editMarca = document.getElementById("editar-modelo");
 
-      const fila = document.createElement('tr');
-      // Crea una columna para el botón de eliminar
-      const eliminarColumna = document.createElement('td');
+  // formulario con los datos actuales del auto
+  editModelo.value = auto[index].modelo;
+  editMarca.value = auto[index].marca;
 
-      // Crea un botón de eliminar
-      const botonEliminar = document.createElement('button');
-      botonEliminar.textContent = 'Eliminar';
-      botonEliminar.addEventListener('click', () => {
-        // Función para eliminar la fila al hacer clic en el botón
-        tbody.removeChild(fila);
-      });
-      // Agrega el botón de eliminar a la columna de eliminación
-      eliminarColumna.appendChild(botonEliminar);
-      // Crea una columna para el botón de actualizar
-      const actualizarColumna = document.createElement('td');
+  // Guarda el índice del auto que se está editando en un atributo data del formulario
+  editForm.setAttribute("data-index", index);
 
-      // Crea un botón de actualizar
-      const botonActualizar = document.createElement('button');
-      botonActualizar.textContent = 'Actualizar';
-      botonActualizar.addEventListener('click', () => {
-        // Función para actualizar la fila al hacer clic en el botón
-        document.getElementById('editar-marca').value = auto.marca;
-        document.getElementById('editar-modelo').value = auto.modelo;
-   
-    document.getElementById('formulario-edicion').style.display = 'block';
-      });
-      document.getElementById('guardar-edicion').addEventListener('click', () => {
-  // Obtener los valores editados del formulario
-  const nuevaMarca = document.getElementById('editar-marca').value;
-  const nuevoModelo = document.getElementById('editar-modelo').value;
-  // Actualizar los datos en la fila (puedes ajustar esto según tus necesidades)
-  auto.marca = nuevaMarca;
-  auto.modelo = nuevoModelo;
-  // Ocultar el formulario de edición
-  document.getElementById('formulario-edicion').style.display = 'none';
+  // Muestra el formulario de edición
+  editForm.style.display = "block";
 
-  // Mostrar una alerta con los datos actualizados
-});
+    }catch(e){
+        console.log(e.message);
+  
+}
+ }
 
-    
-      // Agrega el botón de actualizar a la columna de actualización
-      actualizarColumna.appendChild(botonActualizar);
-      const marcaColumna = document.createElement('td');
-      marcaColumna.textContent = auto.marca; // Suponiendo que "marca" es una propiedad del objeto auto
-      fila.appendChild(marcaColumna);
-
-      const modeloColumna = document.createElement('td');
-      modeloColumna.textContent = auto.modelo; // Suponiendo que "modelo" es una propiedad del objeto auto
-      fila.appendChild(modeloColumna);
-       // Agrega la columna de eliminación a la fila
-       fila.appendChild(eliminarColumna);
-       fila.appendChild(actualizarColumna);
-
-      tbody.appendChild(fila);
-    });
+ async function guardarCambios() {
+  try{
+    const response = await fetch("/getAutos");
+    const auto = await response.json();
+ const editForm = document.getElementById("formulario-edicion");
+  const editModelo = document.getElementById("editar-marca");
+  const editMarca = document.getElementById("editar-modelo");
+  const dataIndex = editorm.getAttribute("data-index");
 
 
-} catch (e) {
+    const nuevoModelo = editModelo.value;
+    const nuevaMarca = editMarca.value;
+
+    // Actualiza los nuevos valores de la tabla
+    auto[dataIndex].modelo = nuevoModelo;
+    auto[dataIndex].marca = nuevaMarca;
+
+    // Oculta el formulario de edición
+    editForm.style.display = "none";
+
+    ListarAutos();
+  }catch(e){
     console.log(e.message);
-}
-}
-conseguirAutos();
-
+  }
+  
+  }
+ 
+    conseguirAutos();
   </script>
 
 </body>
