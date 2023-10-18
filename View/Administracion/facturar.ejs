@@ -23,7 +23,7 @@
 
                 const response = await fetch('/pedidosAquiler');
                 const pedidos = await response.json();
-         
+                console.log(pedidos)
 
                 var pedidosT = document.createElement('table');
                 pedidosT.setAttribute('class', 'table table-success table-striped')

@@ -1,19 +1,27 @@
 const modelo = {};
-const Clases = require('../Class')
+const Clases = require('../Class');
+const { alquiler } = require('../Controller/alquiler.controller');
 const GoogleSheet = require('./Google Sheet/GoogleSheet.js');
 var alquileres = [];
 
-const loadUsers = async () => {
+const loadAlquiler = async () => {
     const registros = await GoogleSheet.requerirRegistros(2);
 
     for (let i = 0; i < registros.length; i++) {
         var alquilerJSON = JSON.parse(registros[i].alquiler)//Recupero el usuario desde la hoja de calculo
-        alquileres.push(alquilerJSON)
+        const existe=alquileres.reduce((acum,item)=>acum+(JSON.stringify(item)==JSON.stringify(alquilerJSON)), false)
+        if(!existe){
+            alquileres.push(alquilerJSON)
+        }
+      
+        //console.log(existe)
     }
 }
-loadUsers()
-
-console.log(alquileres)
+loadAlquiler()
+modelo.guardarNumeroDeComprobante=()=>{
+    var nComprobante=0
+    saveNumeroDeComprobanteGoogleSheet(nComprobante)
+}
 modelo.saveAlquiler = (atributosAlquiler) => {
     var autoValores=JSON.parse(atributosAlquiler.eleccion);
 
@@ -33,8 +41,15 @@ async function saveAlquilerGoogleSheet(alquiler) {
     await GoogleSheet.guardarDatos(numeroHoja, objeto);
 
 }
+async function saveNumeroDeComprobanteGoogleSheet(nComprobante){
+    var objeto = Number.parseInt(nComprobante)//Pongo el formato para poder guardar el usuario
+   
+    var numeroHoja = 3;//Es la hoja en la cual se van a guardar los datos
+    await GoogleSheet.modificarDatos(numeroHoja, 1, objeto);
+}
+
 modelo.enviarPedidos=()=>{
-    
+   loadAlquiler()
     return alquileres;
 }
 

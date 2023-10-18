@@ -9,6 +9,7 @@ async function requerirHojaDeCalculo(numeroHoja) {
     const documento = new GoogleSpreadsheet(googleID);
     await documento.useServiceAccountAuth(credenciales);
     await documento.loadInfo();
+    
     const hoja = documento.sheetsByIndex[numeroHoja];
 
     return hoja;
@@ -28,15 +29,18 @@ async function guardarDatos(numeroHoja, objeto) {
     await hoja.addRow(objeto);
 
 }
-async function modificarDatos(numeroHoja, nueroCeldaFila, objeto) {
+async function modificarDatos(numeroHoja, nueroCeldaFila,  objeto) {
+    
     const hoja = await requerirHojaDeCalculo(numeroHoja);
 
 
     //await hoja.addRow(socioG);
     await hoja.loadCells();
+   
     const celda = hoja.getCell(nueroCeldaFila, 0);//Obtengo el numero de la celda, mediante el numero de fila y el numero de columna que siempre va a ser 0
+    
     celda.value = objeto//Actualizo el valor
-
+    console.log('---------------------> Hasta aca funciona ')
     hoja.saveUpdatedCells();//Guardo los cambios
     console.log("Funciona")
 }

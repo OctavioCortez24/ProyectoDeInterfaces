@@ -35,6 +35,7 @@ controller.creearFactura=(request, response)=>{
  
    const pedido=JSON.parse(request.query.datos);
    const user=modeloUser.getDatosUserConID(pedido.idUsuario);
+   modeloAlquiler.guardarNumeroDeComprobante()
    
    const doc = new PDF({ bufferPages: true });
 
@@ -90,7 +91,7 @@ controller.creearFactura=(request, response)=>{
        doc.text('Fecha Emisión: ' + fechaActual.toLocaleDateString(), 330, 92, {
            border: { size: 5, color: 'black' }
        })
-       doc.text('CUIT:', 330, 110, {
+       doc.text('CUIT: 30-68537634-9', 330, 110, {
            border: { size: 5, color: 'black' }
        })
        doc.text('Ingresos Brutos:', 330, 120, {
