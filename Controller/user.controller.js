@@ -35,7 +35,7 @@ controller.register =(request, response) => {
 controller.registerPost=(request, response) => {
     
     modelo.saveUser(request.body)
-    response.redirect('/menu')
+    response.redirect('/login')
 }
 
 controller.enlaceAnterior=function(enlace){

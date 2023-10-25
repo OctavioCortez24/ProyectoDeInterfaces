@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +27,7 @@
     }
 
     form {
-      position:relative;
+      position: relative;
       width: 80%;
       max-width: 500px;
       margin: 0 auto;
@@ -55,12 +56,13 @@
       font-size: 20px;
       margin-right: 5px;
     }
-    
+
     input[type="number"],
     input[type="text"],
     input[type="email"],
     input[type="date"],
-    input[type="password"] {
+    input[type="password"],
+    select {
       display: block;
       width: 100%;
       padding: 10px;
@@ -68,7 +70,7 @@
       border-radius: 5px;
       border: none;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      
+
     }
 
     input[type="submit"] {
@@ -90,25 +92,34 @@
     }
   </style>
 </head>
+
 <body>
   <a href="/"><button onclick="goBack()" class="back-button"><span class="arrow">&#8592;</span> Volver</button></a>
   <div class="Contenedor">
-  <h1>Registro</h1>
-  <form action="/registerPost" method="post">
-    <input type="text" name="name" placeholder="Ingrese su nombre">
-    <input type="text" name="surname" placeholder="Ingrese su apellido">
-    <input type="email" name="email" placeholder="Ingrese su correo electronico">
-    
-    <input type="number" name="cuil" placeholder="CUIL">
-    <input type="text" name="provincia" placeholder="Provincia">
-    <input type="text" name="pais" placeholder="Pais">
-    <input type="text" name="localidad" placeholder="Localidad">
-    <input type="text" name="password" placeholder="Ingrese su contraseña">
-    <label for="">Fecha de nacimiento</label>
-    <input type="date" name="dateOfBirth" placeholder="Ingrese su fecha de nacimiento">
+    <h1>Registro</h1>
+    <form action="/registerPost" method="post">
+      <input type="text" name="name" placeholder="Ingrese su nombre">
+      <input type="text" name="surname" placeholder="Ingrese su apellido">
+      <input type="email" name="email" placeholder="Ingrese su correo electronico">
 
-    <input type="submit" value="Enviar">
-  </form>
+      <input type="number" name="cuil" placeholder="CUIL">
+      <input type="text" name="provincia" placeholder="Provincia">
+      <input type="text" name="pais" placeholder="Pais">
+      <input type="text" name="localidad" placeholder="Localidad">
+      <input type="text" name="password" placeholder="Ingrese su contraseña">
+      <label for="">Fecha de nacimiento</label>
+      <input type="date" name="dateOfBirth" placeholder="Ingrese su fecha de nacimiento">
+      <label for="IVA">Ingrese su condicion frente al IVA</label>
+      <select name="IVA" id="" required>
+        <option>Selecione un valor</option>
+        <option value="Responsable Inscripto">Responsable Inscripto</option>
+        <option value="Monotributista Clase A">Monotributista Clase A</option>
+        <option value="Monotributista Clase B">Monotributista Clase B</option>
+      </select>
+
+      <input type="submit" value="Enviar">
+    </form>
   </div>
 </body>
+
 </html>
