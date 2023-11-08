@@ -1,6 +1,6 @@
 const uuidv4 = require("uuid");
 class user {
-    constructor( name, surname, email, password, dateOfBirth,pais, provincia, localidad, cuil) {
+    constructor( name, surname, email, password, dateOfBirth,pais, provincia, localidad, cuil, IVA, dadoDeBaja) {
         this.id =uuidv4.v4();
         this.name = name;
         this.surname = surname;
@@ -11,6 +11,8 @@ class user {
         this.provincia=provincia;
         this.localidad=localidad;
         this.cuil=cuil;
+        this.IVA=IVA;
+        this.dadoDeBaja=dadoDeBaja;
     }
     getId(){return this.id}
     setName(name) { this.name = name; }

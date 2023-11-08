@@ -13,6 +13,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css'>
     <title>Alquilar</title>
+    <link rel="shortcut icon" href="coche-electrico.ico" type="image/x-icon" />
     <style>
         html body {
             background-repeat: no-repeat;
@@ -110,7 +111,7 @@
 
         .Imagen {
             width: 100%;
-            height: auto;
+            height: 70%;
         }
 
         .Vehiculos .opcion {
@@ -292,26 +293,9 @@
     <section class="Contenido">
 
         <div class="Parte1">
-            <form action="http://localhost:3000/alquilarPost" method="post" class="Datos">
+            <form action="/alquilarPost" method="post" class="Datos">
 
                 <div class="contenedor">
-                    <section class="date">
-                        <div class="info">
-                            <h2 style="text-align: center;">Datos Personales</h2>
-                            <div class="Inputs">
-
-                                <select name="condicion_iva" id="condicion_iva" class="Inputs">
-                                    <option>Condición frente al IVA:</option>
-                                    <option value="responsable_inscripto">Responsable Inscripto</option>
-                                    <option value="monotributista_clase_a">Monotributista Clase A</option>
-                                    <option value="monotributista_clase_b">Monotributista Clase B</option>
-
-                                </select>
-
-                                <input type="text" class="Usuario" placeholder="Domicilio de recidencia" />
-                            </div>
-                        </div>
-                    </section>
 
                    
 
@@ -354,16 +338,16 @@
 
     <script>
         function redireccionar() {
-            window.location.href = "http://localhost:3000/alquilarPost";
+            window.location.href = "/alquilarPost";
         }
         function INICIO() {
-            window.location.href = "http://localhost:3000";
+            window.location.href = "/";
         }
         function COMPRAR() {
-            window.location.href = "http://localhost:3000/compras";
+            window.location.href = "/compras";
         }
         function ALQUILAR() {
-            window.location.href = "http://localhost:3000/alquilar";
+            window.location.href = "/alquiler";
         }
         function ACERCA_DE() {
             window.location.href = "#";

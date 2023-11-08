@@ -121,7 +121,7 @@
             /*boton.addEventListener("click", () => {
                 facturar(pedido)
             });*/
-            boton.href = `http://localhost:3000/facturar/?datos=${JSON.stringify(pedido)}`
+            boton.href = `/facturar/?datos=${JSON.stringify(pedido)}`
 
             fetch(`/getCliente/?datos=${JSON.stringify(pedido)}`)
                 .then(response => response.text())
@@ -150,7 +150,7 @@
 
                 }
             }
-            xmlHttp.open("GET", 'http://localhost:3000/facturar', true); // true for asynchronous 
+            xmlHttp.open("GET", '/facturar', true); // true for asynchronous 
             xmlHttp.send('Hola');
         }
         conseguirAlquileres();

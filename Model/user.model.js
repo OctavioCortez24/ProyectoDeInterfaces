@@ -24,8 +24,10 @@ modelo.saveUser = (atributosUsuario) => {
     var pais = atributosUsuario.pais;
     var provincia = atributosUsuario.provincia;
     var localidad = atributosUsuario.localidad;
-    var cuil = atributosUsuario.cuil
-    var user = new Clases.user(nameUser, surnameUser, emailUser, passwordUser, dateOfBirthUser, pais, provincia, localidad, cuil)
+    var cuil = atributosUsuario.cuil;
+    var iva=atributosUsuario.IVA;
+
+    var user = new Clases.user(nameUser, surnameUser, emailUser, passwordUser, dateOfBirthUser, pais, provincia, localidad, cuil, iva, false)
  
 
     var validacion = users.reduce((acumulador, userItem) => {
