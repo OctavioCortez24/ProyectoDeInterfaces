@@ -19,7 +19,7 @@ const loadAlquiler = async () => {
 }
 loadAlquiler()
 modelo.guardarNumeroDeComprobante=()=>{
-    var nComprobante=0
+    var nComprobante=8
     saveNumeroDeComprobanteGoogleSheet(nComprobante)
 }
 modelo.saveAlquiler = (atributosAlquiler) => {
