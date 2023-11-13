@@ -17,6 +17,7 @@
             background-color: rgba(255, 255, 255, 0.815);
             width: 50%;
             margin-top: 10px;
+            margin-bottom: 10px;
         }
     
         h1 {
@@ -50,22 +51,12 @@
         }
     
         input[type="submit"]:hover {
-            background-color: #0069d9;
+            background-color: #0055ff;
         }
-
-        .back-button {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #0026ff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
+        
+        .navbar, .container-fluid{
+            background: rgb(9,9,121);
+            background: linear-gradient(90deg, rgba(9,9,121,1) 11%, rgba(3,147,212,1) 42%, rgba(0,212,255,1) 66%, rgba(153,238,255,0.7254551478794643) 96%, rgba(255,255,255,0.6834383411567753) 100%);
         }
         
     </style>
@@ -73,77 +64,89 @@
 </head>
 <body>
 
-    <a href="/"><button onclick="goBack()" class="back-button"><span class="arrow">&#8592;</span> Volver</button></a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a href="/administracion" style="color: azure; font-family: 'Times New Roman', Times, serif;" class="navbar-brand" href="#">Gestion De Inventario</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" style="color: rgba(240, 255, 255, 0.556);" href="/anadirAuto">Ingresar Productos</a>
+            </div>
+          </div>
+        </div>
+    </nav>   
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1 class="text-center">AÑADIR AUTO</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center">AÑADIR AUTO</h1>
 
-            <form action="/anadirAutoPost" method="post" class="Formulario">
-                <div class="form-group">
-                    <input class="form-control" type="text" name="marca" placeholder="Marca">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Modelo">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="fechaFabricacion" placeholder="Fecha de Fabricacion">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="precio" placeholder="Precio">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="color" placeholder="Color">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="ruedas" placeholder="Ruedas">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="imagen" placeholder="Insertar Imagen">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="number" name="cantidad" placeholder="Insertar Cantidad de Autos">
-                </div>
-                <div class="form-group">
-                    <select class="form-select" name="combustible" id="combustible">
-                        <option value="Electrico">Electrico</option>
-                        <option value="Gasolero">Gasolero</option>
-                        <option value="Naftero">Naftero</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-select" name="calefaccion" id="calefaccion">
-                        <option value="True">Si tiene calefaccion</option>
-                        <option value="False">No tiene calefaccion</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-select" name="seguro" id="seguro">
-                        <option value="True">Si tiene seguro</option>
-                        <option value="False">No tiene seguro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-select" name="personas" id="personas">
-                        <option value="4">4 Personas</option>
-                        <option value="2">2 Personas</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-select" name="categoria" id="categoria">
-                        <option value="(Categoria A)">Categoria A</option>
-                        <option value="(Categoria B)">Categoria B</option>
-                        <option value="(Categoria C)">Categoria C</option>
-                    </select>
-                </div>
-                <div class="form-group text-center">
-                    <input type="submit" value="Enviar" class="btn btn-primary">
-                </div>
-            </form>
+                <form action="/anadirAutoPost" method="post" class="Formulario">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="marca" placeholder="Marca">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Modelo">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="fechaFabricacion" placeholder="Fecha de Fabricacion">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="precio" placeholder="Precio">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="color" placeholder="Color">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="ruedas" placeholder="Ruedas">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="imagen" placeholder="Insertar Imagen">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="number" name="cantidad" placeholder="Insertar Cantidad de Autos">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" name="combustible" id="combustible">
+                            <option value="Electrico">Electrico</option>
+                            <option value="Gasolero">Gasolero</option>
+                            <option value="Naftero">Naftero</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" name="calefaccion" id="calefaccion">
+                            <option value="True">Si tiene calefaccion</option>
+                            <option value="False">No tiene calefaccion</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" name="seguro" id="seguro">
+                            <option value="True">Si tiene seguro</option>
+                            <option value="False">No tiene seguro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" name="personas" id="personas">
+                            <option value="4">4 Personas</option>
+                            <option value="2">2 Personas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-select" name="categoria" id="categoria">
+                            <option value="(Categoria A)">Categoria A</option>
+                            <option value="(Categoria B)">Categoria B</option>
+                            <option value="(Categoria C)">Categoria C</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Enviar" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 </html>

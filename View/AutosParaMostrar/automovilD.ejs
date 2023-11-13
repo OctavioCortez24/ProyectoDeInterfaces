@@ -17,12 +17,27 @@
             background-position: center;
         }
 
+        .Home {
+            display: flex;
+        }
+
+        .Home li {
+            margin: 20px;
+        }
+
+        .Barra {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: large;
+        }
+
         .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
+            display: flex;
             gap: 1rem;
             max-width: 60%;
+            height: auto;
             /* Ajustar al tamaño de la imagen */
             margin: 2rem auto;
             background-color: #FFF;
@@ -51,47 +66,25 @@
         .description p {
             text-align: justify;
             padding-right: 10%;
-            line-height: 1.5;
         }
 
         .button-container {
-            text-align: center;
-            margin-top: 1rem;
-            position: absolute;
-            left: 58%;
-            bottom: 7%;
+            display: flex;
+            flex: 1;
+            justify-content: start;
         }
 
         .button-container a {
-            display: inline-block;
             padding: 1rem 2rem;
             border-radius: 2rem;
             background-color: #E51837;
             color: #FFF;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease;
-        }
-    </style>
-
-    <style>
-        .Home {
-            display: flex;
-        }
-
-        .Home li {
-            margin: 20px;
-        }
-
-        .Barra {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: large;
         }
     </style>
 
@@ -118,10 +111,11 @@
             <div class="description">
                 <h1>Ferrari</h1>
                 <p>Aire acondicionado, Climatizador automático, Dirección asistida, Cierre centralizado, Vidrios eléctricos, Butacas de cuero, Volante regulable, Computadora de abordo, Control de velocidad crucero, Espejos eléctricos, Faros antiniebla, Sensor de estacionamiento, Camara de estacionamiento trasera, Sensor de lluvia, Sensor de luz, Llantas de Aleación, Alarma, Frenos ABS, Airbags, Control de tracción, Entrada USB / Auxiliar,
-                    Bluetooth, Comandos en el volante / satelital, Sistema de sonido de alto rendimiento, GPS</p>
-            </div>
-            <div class="button-container">
-                <a href="/pago">COMPRAR</a>
+                    Bluetooth, Comandos en el volante / satelital, Sistema de sonido de alto rendimiento, GPS
+                </p>
+                <div class="button-container">
+                    <a href="/pago">COMPRAR</a>
+                </div>
             </div>
         </div>
     </main>

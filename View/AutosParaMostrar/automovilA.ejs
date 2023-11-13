@@ -15,61 +15,6 @@
             background-position: center;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
-            gap: 1rem;
-            max-width: 60%;
-            /* Ajustar al tamaño de la imagen */
-            margin: 2rem auto;
-            background-color: #FFF;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .Imagen {
-            /* Eliminar el ancho fijo */
-            height: 100%;
-            border-radius: 20px 0 0 10px;
-            object-fit: cover;
-            /* Ajustar al tamaño del contenedor sin distorsionar */
-        }
-
-        .description {
-            padding: 1rem;
-        }
-
-        .description p {
-            text-align: justify;
-            padding-right: 10%;
-            line-height: 1.5;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 1rem;
-            position: absolute;
-            left: 58%;
-            bottom: 7%;
-        }
-
-        .button-container a {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 2rem;
-            background-color: #E51837;
-            color: #FFF;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-    </style>
-
-    <style>
         .Home {
             display: flex;
         }
@@ -85,19 +30,65 @@
             justify-content: space-between;
             font-size: large;
         }
-    </style>
 
+        .container {
+            display: flex;
+            gap: 1rem;
+            max-width: 60%;
+            height: auto;
+            margin: 2rem auto;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .Imagen {
+            height: 100%;
+            border-radius: 20px 0 0 10px;
+            object-fit: cover;
+        }
+
+        .description {
+            padding: 1rem;
+        }
+
+        .description p {
+            display: block;
+            text-align: justify;
+            padding-right: 10%;
+        }
+
+        .button-container {
+            display: flex;
+            flex: 1;
+            justify-content: flex-start;
+        }
+
+        .button-container a {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background-color: #E51837;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
+
+    </style>
 </head>
 
 <body>
 
     <nav class="Barra">
-        <nav class="Home">
+        <div class="Home">
             <li><a href="#" style="text-decoration: none; color: #000;" onclick="history.back()">Regresar</a></li>
             <li><a href="#" style="text-decoration: none; color: #000;">Home</a></li>
             <li><a href="#" style="text-decoration: none; color: #000;">Contactanos</a></li>
             <li><a href="#" style="text-decoration: none; color: #000;">Acerca de</a></li>
-        </nav>
+        </div>
     </nav>
 
     <main>
@@ -118,9 +109,9 @@
                     asientos infantiles (Isofix), Rueda de auxilio de igual medida, Reproduce CD / DVD, Entrada USB /
                     Auxiliar, Bluetooth, Comandos en el volante / satelital, Sistema de sonido de alto rendimiento, GPS
                 </p>
-            </div>
-            <div class="button-container">
-                <a href="/Pagar">COMPRAR</a>
+                <div class="button-container">
+                    <a href="/Pagar">COMPRAR</a>
+                </div>
             </div>
         </div>
     </main>

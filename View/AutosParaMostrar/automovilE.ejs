@@ -16,67 +16,6 @@
             background-position: center;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
-            gap: 1rem;
-            max-width: 60%;
-            /* Ajustar al tamaño de la imagen */
-            margin: 2rem auto;
-            background-color: #FFF;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        img {
-            width: 390px;
-            height: 580px;
-        }
-
-
-        .Imagen {
-            /* Eliminar el ancho fijo */
-            height: 100%;
-            border-radius: 20px 0 0 10px;
-            object-fit: cover;
-            /* Ajustar al tamaño del contenedor sin distorsionar */
-        }
-
-        .description {
-            padding: 1rem;
-        }
-
-        .description p {
-            text-align: justify;
-            padding-right: 10%;
-            line-height: 1.5;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 1rem;
-            position: absolute;
-            left: 58%;
-            bottom: 7%;
-        }
-
-        .button-container a {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 2rem;
-            background-color: #E51837;
-            color: #FFF;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-    </style>
-
-    <style>
         .Home {
             display: flex;
         }
@@ -91,6 +30,57 @@
             align-items: center;
             justify-content: space-between;
             font-size: large;
+        }
+
+        .container {
+            display: flex;
+            gap: 1rem;
+            max-width: 60%;
+            /* Ajustar al tamaño de la imagen */
+            margin: 2rem auto;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 390px;
+            height: 580px;
+        }
+
+        .Imagen {
+            height: 100%;
+            border-radius: 20px 0 0 10px;
+            object-fit: cover;
+        }
+
+        .description {
+            padding: 1rem;
+        }
+
+        .description p {
+            text-align: justify;
+            padding-right: 10%;
+            line-height: 1;
+        }
+
+        .button-container {
+            display: flex;
+            flex: 1;
+            justify-content: start;
+        }
+
+        .button-container a {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background-color: #E51837;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
         }
     </style>
 
@@ -111,16 +101,20 @@
         <div class="container">
             
             <div class="Imagen">
-                <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80">
+                <img src="https://images.unsplash.com/photo-1541348263662-e068662d82af?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             </div>
 
             <div class="description">
-                <h1>Audi</h1>
-                <p>Aire acondicionado, Dirección asistida, Cierre centralizado, Vidrios eléctricos, Computadora de abordo, 
-                    Espejos eléctricos, Alarma, Frenos ABS, Airbags, Reproduce CD / DVD, Entrada USB / Auxiliar, Bluetooth</p>
-            </div>
-            <div class="button-container">
-                <a href="/pago">COMPRAR</a>
+                <h1>Audi R8</h1>
+                <p>
+                    El Audi R8 es un automóvil deportivo de alto rendimiento que encarna la esencia de la velocidad y el lujo. 
+                    Con un diseño aerodinámico y elegante, este vehículo destaca por su agresividad y sofisticación. 
+                    Equipado con un potente motor y tecnología de vanguardia, el R8 ofrece una experiencia de conducción excepcional. 
+                    Su interior combina materiales de alta calidad y acabados exquisitos, creando un ambiente lujoso y confortable. 
+                </p>
+                <div class="button-container">
+                    <a href="/pago">COMPRAR</a>
+                </div>
             </div>
         </div>
     </main>
