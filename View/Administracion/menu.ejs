@@ -1,51 +1,76 @@
-
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-    <title>Admin</title>
-    <link rel="shortcut icon" href="coche-electrico.ico" type="image/x-icon" />
-    <style>
-        .container-md{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 30%;
-          text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
-        .Principal{
-          font-family:Georgia, 'Times New Roman', Times, serif;
-        }
+  <title>Admin</title>
+  <link rel="shortcut icon" href="coche-electrico.ico" type="image/x-icon" />
+  <style>
+    body{
+background-color: rgb(248, 243, 237);
+    }
+    .container-md {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30%;
+      text-align: center;
+    }
 
-        .input-group{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 5vh;
-        }
-        .navbar, .container-fluid{
-          background: rgb(9,9,121);
-          background: linear-gradient(90deg, rgba(9,9,121,1) 11%, rgba(3,147,212,1) 42%, rgba(0,212,255,1) 66%, rgba(153,238,255,0.7254551478794643) 96%, rgba(255,255,255,0.6834383411567753) 100%);
-        }
+    .Principal {
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+    }
 
-    </style>
+    .input-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 5vh;
+    }
+
+    .navbar,
+    .container-fluid {
+      background: rgb(78, 78, 80);
+      background: linear-gradient(90deg, rgb(49, 49, 50) 11%, 100%);
+    }
+
+    a:hover {
+      color: rgb(228, 222, 222);
+      background-color: rgb(28, 28, 29);
+      border-radius: 10px;
     
+    }
+
+    h3 {
+      text-decoration: underline rgb(54, 100, 185);
+    }
+    a{
+            padding: 5px;
+        }
+  </style>
+
+
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a style="color: azure; font-family: 'Times New Roman', Times, serif;" class="navbar-brand" href="#">Gestion De Inventario</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <a style="color: azure;" class="navbar-brand" href="#">Gestion De Inventario</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" style="color: rgba(240, 255, 255, 0.556);" href="/anadirAuto">Ingresar Productos</a>
+          <a class="navbar-brand" style="color: white;" href="/anadirAuto">Ingresar Productos</a>
         </div>
       </div>
     </div>
@@ -58,7 +83,7 @@
       <select class="form-select" id="Lista" aria-label="Example select with button addon"></select>
       <button class="btn btn-outline-secondary" type="button" onclick="ListarAutos()">Ver</button>
     </div>
-    
+
     <div id="Exit" class="container-md"></div>
   </div>
   <form id="formulario-edicion" style="display: none;">
@@ -68,150 +93,151 @@
   </form>
   <script>
     function fun() {
-        ListarAutos()
-      
-        
-      }
-      function guardar(){
-        guardarCambios()
-      } 
-       
+      ListarAutos()
 
-      async function conseguirAutos() {
-        try {
-          const response = await fetch("/getAutos");
-          const autos = await response.json();
-         // console.log(autos);
-          const selectElement = document.getElementById("Lista");
-          ListarAutos(autos);
-          
-          autos.forEach((auto) => {
-            const option = document.createElement("option");
-            option.value = auto.marca; // Supongo que la marca está en la propiedad 'marca' del objeto auto
-            option.text = auto.marca; // El texto de la opción será la marca del auto
-            // Agrega la opción al select
-           // Verificar si la opción ya existe en el select
-  let optionExists = false;
-  for (let i = 0; i < selectElement.options.length; i++) {
-    if (selectElement.options[i].value === option.value) {
-      optionExists = true;
-      break;
+
     }
-  }
+    function guardar() {
+      guardarCambios()
+    }
 
-  // Si la opción no existe, lo agréga
-  if (!optionExists) {
-    selectElement.appendChild(option);
-  }
-          });
-        } catch (e) {
-          console.log(e.message);
-        }
-      }
-      async function ListarAutos() {
-        try {
-          const response = await fetch("/getAutos");
-          const auto = await response.json();
-          var marcSelec = document.getElementById("Lista").value;
-          //  console.log("Seleccionado:", marcSelec);
 
-          var data = marcSelec;
-          var Lista = "";
+    async function conseguirAutos() {
+      try {
+        const response = await fetch("/getAutos");
+        const autos = await response.json();
+        // console.log(autos);
+        const selectElement = document.getElementById("Lista");
+        ListarAutos(autos);
 
-          // Ahora estamos utilizando el array 'autos'
-          for (i = 0; i < auto.length; i++) {
-            if (auto[i].marca == data) {
-              Lista += 
-               "<tr><td>" + auto[i].modelo+  "</td><td>" + auto[i].marca+ "</td><td><button type='button' class='btn btn-outline-danger' onclick='eliminarFila(" +
-      i +
-      ")' data-index='" +
-      i +
-      "'><i class='ti ti-trash-off'></i></button></td><td><button type='button' class='btn btn-outline-success' onclick='editarAuto(" +
-      i +
-      ")' data-index='" +
-      i +
-      "'><i class='ti ti-edit'></i></button></td></tr>";
+        autos.forEach((auto) => {
+          const option = document.createElement("option");
+          option.value = auto.marca; // Supongo que la marca está en la propiedad 'marca' del objeto auto
+          option.text = auto.marca; // El texto de la opción será la marca del auto
+          // Agrega la opción al select
+          // Verificar si la opción ya existe en el select
+          let optionExists = false;
+          for (let i = 0; i < selectElement.options.length; i++) {
+            if (selectElement.options[i].value === option.value) {
+              optionExists = true;
+              break;
             }
           }
 
-          Lista =
-            "<table class='table table-striped'> <thead class='table-dark border'>  <tr>  <th>Modelo</th><th>Marca</th>  <th>Eliminar</th>  <th>Editar</th>  </tr>  </thead>" +
-            Lista +
-            "</table>";
-          document.getElementById("Exit").innerHTML = Lista;
-
-        } catch (e) {
-          console.log(e.message);
-        }
-        
-        
-      }
-      
-function eliminarFila(index) {
-   
-  const table = document.querySelector("table"); 
-  const row = table.rows[index + 1]; 
- console.log("hola"+index);
-row.remove();
-  
-  //auto.splice(index,1); no funciona xq el octavio tiene que hacer una cosa para que se borre de la hoda de calculo
-
-
-}
- async function editarAuto(index) {
-    try{
-        const response = await fetch("/getAutos");
-          const auto = await response.json();
-          
-const editForm = document.getElementById("formulario-edicion");
-  const editModelo = document.getElementById("editar-marca");
-  const editMarca = document.getElementById("editar-modelo");
-
-  // formulario con los datos actuales del auto
-  editModelo.value = auto[index].modelo;
-  editMarca.value = auto[index].marca;
-
-  // Guarda el índice del auto que se está editando en un atributo data del formulario
-  editForm.setAttribute("data-index", index);
-
-  // Muestra el formulario de edición
-  editForm.style.display = "block";
-
-    }catch(e){
+          // Si la opción no existe, lo agréga
+          if (!optionExists) {
+            selectElement.appendChild(option);
+          }
+        });
+      } catch (e) {
         console.log(e.message);
-  
-}
- }
+      }
+    }
+    async function ListarAutos() {
+      try {
+        const response = await fetch("/getAutos");
+        const auto = await response.json();
+        var marcSelec = document.getElementById("Lista").value;
+        //  console.log("Seleccionado:", marcSelec);
 
- async function guardarCambios() {
-  try{
-    const response = await fetch("/getAutos");
-    const auto = await response.json();
- const editForm = document.getElementById("formulario-edicion");
-  const editModelo = document.getElementById("editar-marca");
-  const editMarca = document.getElementById("editar-modelo");
-  const dataIndex = editorm.getAttribute("data-index");
+        var data = marcSelec;
+        var Lista = "";
+
+        // Ahora estamos utilizando el array 'autos'
+        for (i = 0; i < auto.length; i++) {
+          if (auto[i].marca == data) {
+            Lista +=
+              "<tr><td>" + auto[i].modelo + "</td><td>" + auto[i].marca + "</td><td><button type='button' class='btn btn-outline-danger' onclick='eliminarFila(" +
+              i +
+              ")' data-index='" +
+              i +
+              "'><i class='ti ti-trash-off'></i></button></td><td><button type='button' class='btn btn-outline-success' onclick='editarAuto(" +
+              i +
+              ")' data-index='" +
+              i +
+              "'><i class='ti ti-edit'></i></button></td></tr>";
+          }
+        }
+
+        Lista =
+          "<table class='table table-striped'> <thead class='table-dark border'>  <tr>  <th>Modelo</th><th>Marca</th>  <th>Eliminar</th>  <th>Editar</th>  </tr>  </thead>" +
+          Lista +
+          "</table>";
+        document.getElementById("Exit").innerHTML = Lista;
+
+      } catch (e) {
+        console.log(e.message);
+      }
 
 
-    const nuevoModelo = editModelo.value;
-    const nuevaMarca = editMarca.value;
+    }
 
-    // Actualiza los nuevos valores de la tabla
-    auto[dataIndex].modelo = nuevoModelo;
-    auto[dataIndex].marca = nuevaMarca;
+    function eliminarFila(index) {
 
-    // Oculta el formulario de edición
-    editForm.style.display = "none";
+      const table = document.querySelector("table");
+      const row = table.rows[index + 1];
+      console.log("hola" + index);
+      row.remove();
 
-    ListarAutos();
-  }catch(e){
-    console.log(e.message);
-  }
-  
-  }
- 
+      //auto.splice(index,1); no funciona xq el octavio tiene que hacer una cosa para que se borre de la hoda de calculo
+
+
+    }
+    async function editarAuto(index) {
+      try {
+        const response = await fetch("/getAutos");
+        const auto = await response.json();
+
+        const editForm = document.getElementById("formulario-edicion");
+        const editModelo = document.getElementById("editar-marca");
+        const editMarca = document.getElementById("editar-modelo");
+
+        // formulario con los datos actuales del auto
+        editModelo.value = auto[index].modelo;
+        editMarca.value = auto[index].marca;
+
+        // Guarda el índice del auto que se está editando en un atributo data del formulario
+        editForm.setAttribute("data-index", index);
+
+        // Muestra el formulario de edición
+        editForm.style.display = "block";
+
+      } catch (e) {
+        console.log(e.message);
+
+      }
+    }
+
+    async function guardarCambios() {
+      try {
+        const response = await fetch("/getAutos");
+        const auto = await response.json();
+        const editForm = document.getElementById("formulario-edicion");
+        const editModelo = document.getElementById("editar-marca");
+        const editMarca = document.getElementById("editar-modelo");
+        const dataIndex = editorm.getAttribute("data-index");
+
+
+        const nuevoModelo = editModelo.value;
+        const nuevaMarca = editMarca.value;
+
+        // Actualiza los nuevos valores de la tabla
+        auto[dataIndex].modelo = nuevoModelo;
+        auto[dataIndex].marca = nuevaMarca;
+
+        // Oculta el formulario de edición
+        editForm.style.display = "none";
+
+        ListarAutos();
+      } catch (e) {
+        console.log(e.message);
+      }
+
+    }
+
     conseguirAutos();
   </script>
 
 </body>
+
 </html>

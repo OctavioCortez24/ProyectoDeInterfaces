@@ -86,10 +86,11 @@
       background-color: #0069d9;
     }
 
-    label {
+    label, p {
       font-weight: bold;
       margin-bottom: 5px;
     }
+   
   </style>
 </head>
 
@@ -106,7 +107,26 @@
       <input type="text" name="provincia" placeholder="Provincia">
       <input type="text" name="pais" placeholder="Pais">
       <input type="text" name="localidad" placeholder="Localidad">
-      <input type="text" name="password" placeholder="Ingrese su contraseña">
+      <p>Bono de sueldo</p>
+      <input class="padding" type="file" name="file" placeholder="Ingrese su bono de sueldo">
+      
+      <p>licencia de conducir</p>
+      <input class="padding" type="file" name="file" placeholder="Ingrese su bono de sueldo">
+      
+      <p>Certificado de buena conducta</p>
+     
+      <input class="padding" type="file" name="file" placeholder="Ingrese su bono de sueldo">
+ <p>Posee cuenta bancaria?</p>
+      <label>
+        <input type="radio" name="gusta_pelota" value="si"> Sí
+      </label>
+  
+      <label>
+        <input type="radio" name="gusta_pelota" value="no"> No
+      </label>
+      <p></p>
+      <input type="text" name="dateOfBirth" placeholder="Nombe del banco">
+      
       <label for="">Fecha de nacimiento</label>
       <input type="date" name="dateOfBirth" placeholder="Ingrese su fecha de nacimiento">
       <label for="IVA">Ingrese su condicion frente al IVA</label>
@@ -116,6 +136,7 @@
         <option value="Monotributista Clase A">Monotributista Clase A</option>
         <option value="Monotributista Clase B">Monotributista Clase B</option>
       </select>
+      <input type="text" name="password" placeholder="Ingrese su contraseña">
 
       <input type="submit" value="Enviar">
     </form>
