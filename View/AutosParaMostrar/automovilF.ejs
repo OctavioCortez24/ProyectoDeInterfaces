@@ -1,12 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota Hilux</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1620064853086-abbd426f9cbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Home {
+            display: flex;
+        }
+
+        .Home li {
+            margin: 20px;
+        }
+
+        .Barra {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: large;
+        }
+
+        .container {
+            display: flex;
+            gap: 1rem;
+            max-width: 60%;
+            margin: 2rem auto;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 390px;
+            height: 580px;
+        }
+
+
+        .Imagen {
+            /* Eliminar el ancho fijo */
+            height: 100%;
+            border-radius: 20px 0 0 10px;
+            object-fit: cover;
+            /* Ajustar al tamaño del contenedor sin distorsionar */
+        }
+
+        .description {
+            padding: 1rem;
+        }
+
+        .description p {
+            text-align: justify;
+            padding-right: 10%;
+        }
+
+        .button-container {
+            display: flex;
+            flex: 1;
+            justify-content: flex-start;
+        }
+
+        .button-container a {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background-color: #E51837;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+    </style>
+
 </head>
+
 <body>
+
     <nav class="Barra">
         <nav class="Home">
             <li><a href="#" style="text-decoration: none; color: #000;" onclick="history.back()">Regresar</a></li>
@@ -15,6 +96,7 @@
             <li><a href="#" style="text-decoration: none; color: #000;">Acerca de</a></li>
         </nav>
     </nav>
+
     <main>
         <div class="container">
             
@@ -24,17 +106,19 @@
 
             <div class="description">
                 <h1>BMW Serie 5</h1>
-                <p>
-                    El Audi R8 es un automóvil deportivo de alto rendimiento que encarna la esencia de la velocidad y el lujo. 
-                    Con un diseño aerodinámico y elegante, este vehículo destaca por su agresividad y sofisticación. 
-                    Equipado con un potente motor y tecnología de vanguardia, el R8 ofrece una experiencia de conducción excepcional. 
-                    Su interior combina materiales de alta calidad y acabados exquisitos, creando un ambiente lujoso y confortable. 
+                <p> 
+                    El BMW Serie 5 es un sedán de lujo de tamaño mediano que ofrece un alto rendimiento y una amplia variedad de 
+                    características tecnológicas avanzadas. Con un diseño elegante y aerodinámico, el Serie 5 cuenta con motores 
+                    potentes y eficientes, así como con una amplia gama de opciones de seguridad y entretenimiento. Además, 
+                    el interior del vehículo está diseñado con materiales de alta calidad y ofrece una experiencia de conducción cómoda
+                    y lujosa.
                 </p>
                 <div class="button-container">
-                    <a href="/pago">COMPRAR</a>
+                    <a href="/Pagar">COMPRAR</a>
                 </div>
             </div>
         </div>
     </main>
 </body>
+
 </html>

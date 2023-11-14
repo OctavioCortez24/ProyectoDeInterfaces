@@ -1,16 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Toyota Hilux</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1620064853086-abbd426f9cbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Home {
+            display: flex;
+        }
+
+        .Home li {
+            margin: 20px;
+        }
+
+        .Barra {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: large;
+        }
+
+        .container {
+            display: flex;
+            gap: 1rem;
+            max-width: 60%;
+            margin: 2rem auto;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            width: 390px;
+            height: 580px;
+        }
+
+
+        .Imagen {
+            /* Eliminar el ancho fijo */
+            height: 100%;
+            border-radius: 20px 0 0 10px;
+            object-fit: cover;
+            /* Ajustar al tamaño del contenedor sin distorsionar */
+        }
+
+        .description {
+            padding: 1rem;
+        }
+
+        .description p {
+            text-align: justify;
+            padding-right: 10%;
+        }
+
+        .button-container {
+            display: flex;
+            flex: 1;
+            justify-content: flex-start;
+        }
+
+        .button-container a {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            background-color: #E51837;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+    </style>
+
 </head>
+
 <body>
-    <h1>Ford Ranger C/D 4x2 XLS</h1>
-    <img src="https://images.squarespace-cdn.com/content/v1/5724da732fe1315d3927a3c1/1516895530558-OCMNANWC8AJ7CLFSYIEJ/Ford-Ranger-Gif-360.gif" alt="">
-    <P>Aire acondicionado, Dirección asistida, Cierre centralizado, Vidrios eléctricos, 
-        Computadora de abordo, Control de velocidad crucero, Espejos eléctricos, Faros antiniebla, Faros regulables desde el interior, Motor Turbo, Llantas de Aleación, Alarma, Frenos ABS, Frenos de disco en las cuatro ruedas, Airbags, Control de tracción, Control de estabilidad (ESP), Traba para niños, Rueda de auxilio de igual medida, Reproduce CD / DVD, Entrada USB / Auxiliar, Bluetooth, Comandos en el volante / satelital</P>
-        <a href="/pagar">Comprar</a>
+
+    <nav class="Barra">
+        <nav class="Home">
+            <li><a href="#" style="text-decoration: none; color: #000;" onclick="history.back()">Regresar</a></li>
+            <li><a href="#" style="text-decoration: none; color: #000;">Home</a></li>
+            <li><a href="#" style="text-decoration: none; color: #000;">Contactanos</a></li>
+            <li><a href="#" style="text-decoration: none; color: #000;">Acerca de</a></li>
+        </nav>
+    </nav>
+
+    <main>
+        <div class="container">
+            
+            <div class="Imagen">
+                <img src="https://i.pinimg.com/564x/3e/ee/13/3eee134a9410b7b875bd5b194bcd0926.jpg" alt="">
+            </div>
+
+            <div class="description">
+                <h1>Ford Ranger C/D 4x2 XLS</h1>
+                <p> 
+                    Cuenta con un motor de gasolina o diésel, tracción en las cuatro ruedas y una caja de cambios manual o automática. 
+                    Además, está diseñada para ser resistente y duradera, con características como una carrocería reforzada y un chasis 
+                    resistente. En cuanto a las características de seguridad y tecnología, la Toyota Hilux puede incluir sistemas como 
+                    frenos antibloqueo, control de estabilidad y tracción, cámara de visión trasera y conectividad Bluetooth.
+                </p>
+                <div class="button-container">
+                    <a href="/Pagar">COMPRAR</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
