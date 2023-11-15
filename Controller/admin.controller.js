@@ -197,13 +197,13 @@ controller.creearFactura=(request, response)=>{
    
        })
        doc.fontSize(12);
-       doc.text('Subtotal: $', 365, 616, {
+       doc.text('Subtotal: $0', 365, 616, {
            border: { size: 5, color: 'black' }
        });
-       doc.text('Importe Otros Tributos: $', 291, 628, {
+       doc.text('Importe Otros Tributos: $0', 291, 628, {
            border: { size: 5, color: 'black' }
        });
-       doc.text('Importe Total: $', 340, 640, {
+       doc.text('Importe Total: $'+pedido.precio, 340, 640, {
            border: { size: 5, color: 'black' }
        });
    

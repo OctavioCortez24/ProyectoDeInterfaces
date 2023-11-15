@@ -169,11 +169,11 @@ controller.alquilerFactura = async (request, response) => {
             {
                 codigo: '1',
                 p_servicio: request.eleccion,
-                cantidad: '1',
+                cantidad: '99999999',
                 precioUni: '50',
                 boni: 'no',
                 impuestoBoni: 'no',
-                subtotal: '599'
+                subtotal: '0'
             }
         ], {
     
