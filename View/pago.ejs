@@ -88,6 +88,18 @@
     <div class="background"></div>
     <div class="form-container">
         <form action="/pagarPost" method="post">
+            <h1 class="pa">Seleciones metodo de pago</h1>
+
+    <br>
+    <select class="se" name="pago" id="pago" onchange="mostrarFinanciacion()">
+        <option value="contado">contado</option>
+        <option value="financiado">financiado</option>
+    </select>
+    <br>
+<label class="pa"for="cuota">selecione el tipo de cuota que desea abonar</label>
+<select name="cuota" id="cuota">
+    
+</select>
             <h1 style="text-align: center;">PAGOS</h1>
             <p></p>
             <div class="mb-3">
@@ -104,7 +116,7 @@
                 <label>Vencimiento</label>
                 <input type="text" name="" class="form-control"  placeholder="MM/A">
             </div>
-            <input type="hidden" value="<%= auto %>" name="auto">
+            <input type="hidden" value="<%= auto %>" name="auto"> 
 
             <input type="submit" value="Pagar">
         </form>
@@ -117,6 +129,33 @@
             </a>
         </div>
     </div>
+    <script>
+        function mostrarFinanciacion() {
+          var tipoPago= document.getElementById("pago");
+          var tipoCuota = document.getElementById("cuota");
+          var pagoSelecionado = tipoPago.value;
+      
+          
+          tipoCuota.innerHTML = "";
+      
+          // Generar las opciones correspondientes de cuotasssssshhhhhhh
+          if (pagoSelecionado === "financiado") {
+            agregarOption(tipoCuota, "uno", "3 cuotas de 14.000 USD");
+            agregarOption(tipoCuota, "dos", "6 cuotas de 10.000 USD");
+            agregarOption(tipoCuota, "tres", "12 cuotas de 4.000 USD");
+           
+          }
+          
+      
+          // Función auxiliar para agregar opciones al select de cuotas
+          function agregarOption(select, value, text) {
+            var option = document.createElement("option");
+            option.value = value;
+            option.text = text;
+            select.appendChild(option);
+          }
+        }
+      </script>
 </body>
 
 </html>
