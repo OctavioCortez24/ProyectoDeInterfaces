@@ -113,7 +113,12 @@
                     Su interior combina materiales de alta calidad y acabados exquisitos, creando un ambiente lujoso y confortable. 
                 </p>
                 <div class="button-container">
-                    <a href="/pago">COMPRAR</a>
+                    <form action="/compraPost" method="get">
+                        <input type="hidden" value='<%= auto %>' name="auto">
+                        
+
+                        <input type="submit" value="Comprar">
+                    </form>
                 </div>
             </div>
         </div>

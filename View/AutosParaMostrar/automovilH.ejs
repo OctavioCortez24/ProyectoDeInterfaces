@@ -113,7 +113,12 @@
                     Es una opción ideal para aquellos que buscan combinar la versatilidad de una camioneta con el confort de un vehículo familiar.
                 </p>
                 <div class="button-container">
-                    <a href="/Pagar">COMPRAR</a>
+                    <form action="/compraPost" method="get">
+                        <input type="hidden" value='<%= auto %>' name="auto">
+                        
+
+                        <input type="submit" value="Comprar">
+                    </form>
                 </div>
             </div>
         </div>

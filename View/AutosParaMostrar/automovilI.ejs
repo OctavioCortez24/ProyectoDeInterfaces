@@ -112,7 +112,12 @@
                     limitado de unidades, convirtiéndolo en un automóvil muy codiciado por los coleccionistas y amantes de los superdeportivos.
                 </p>
                 <div class="button-container">
-                    <a href="/pago">COMPRAR</a>
+                    <form action="/compraPost" method="get">
+                        <input type="hidden" value='<%= auto %>' name="auto">
+                        
+
+                        <input type="submit" value="Comprar">
+                    </form>
                 </div>
             </div>
         </div>

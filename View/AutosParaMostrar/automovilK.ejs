@@ -113,7 +113,12 @@
                     frenos antibloqueo, control de estabilidad y tracción, cámara de visión trasera y conectividad Bluetooth.
                 </p>
                 <div class="button-container">
-                    <a href="/Pagar">COMPRAR</a>
+                    <form action="/compraPost" method="get">
+                        <input type="hidden" value='<%= auto %>' name="auto">
+                        
+
+                        <input type="submit" value="Comprar">
+                    </form>
                 </div>
             </div>
         </div>

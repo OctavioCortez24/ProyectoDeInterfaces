@@ -17,8 +17,11 @@ controller.compras=(request, response) => {
 
 
 controller.compraPost=(request, response) => { 
+    var auto=JSON.parse(request.query.auto)
+    console.log("Auto----: "+JSON.stringify(auto.nombreAuto1))
+    //response.redirect("/pagar");
 
-    response.redirect("/pagar");
+    response.send('---> '+JSON.stringify(request.query.auto))
 }
 
 controller.Pagar=(request, response) => {

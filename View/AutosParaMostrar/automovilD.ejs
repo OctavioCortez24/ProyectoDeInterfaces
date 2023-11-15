@@ -112,7 +112,12 @@
                     de 0 a 100 km/h en solo 3,4 segundos.
                 </p>
                 <div class="button-container">
-                    <a href="/Pagar">COMPRAR</a>
+                    <form action="/compraPost" method="get">
+                        <input type="hidden" value='<%= auto %>' name="auto">
+                        
+
+                        <input type="submit" value="Comprar">
+                    </form>
                 </div>
             </div>
         </div>
