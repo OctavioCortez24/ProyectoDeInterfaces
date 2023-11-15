@@ -70,7 +70,8 @@
             justify-content: flex-start;
         }
 
-        .button-container input {
+        .btn-comprar {
+            overflow: hidden;
             padding: 1rem 2rem;
             border-radius: 2rem;
             background-color: #E51837;
@@ -79,7 +80,6 @@
             font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease;
         }
     </style>
@@ -117,7 +117,7 @@
                         <input type="hidden" value='<%= auto %>' name="auto">
                         
 
-                        <input type="submit" value="Comprar">
+                        <input class="btn-comprar" type="submit" value="Comprar">
                     </form>
                 </div>
             </div>
