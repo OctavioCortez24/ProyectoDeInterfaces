@@ -87,7 +87,7 @@
     
     <div class="background"></div>
     <div class="form-container">
-        <form action="tarjeta">
+        <form action="/pagarPost" method="post">
             <h1 style="text-align: center;">PAGOS</h1>
             <p></p>
             <div class="mb-3">
@@ -104,6 +104,7 @@
                 <label>Vencimiento</label>
                 <input type="text" name="" class="form-control"  placeholder="MM/A">
             </div>
+            <input type="hidden" value="<%= auto %>" name="auto">
 
             <input type="submit" value="Pagar">
         </form>

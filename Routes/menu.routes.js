@@ -11,5 +11,6 @@ router.get('/compras',tieneAcceso,controller.compras)
 router.get('/compraPost',controller.compraPost) 
 
 router.get("/pagar", controller.Pagar)
+router.post("/pagarPost", controller.PagarPost)
 
 module.exports=router;
